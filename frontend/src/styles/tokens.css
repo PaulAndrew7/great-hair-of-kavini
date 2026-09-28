@@ -1,0 +1,103 @@
+/*
+  Prior design tokens: the classroom periodic-table wall chart.
+  Three inks on cool chart stock: ink (known, structure), cobalt (missing goal skills, the one action colour),
+  chart yellow (missing foundations, cautions). No shadows, no radii: tiles are printed squares.
+*/
+:root {
+  color-scheme: light;
+  --stock: #f4f6f7;
+  --panel: #e8ecef;
+  --ink: #14171c;
+  --ink-2: #48505a;
+  --ink-3: #5c646e;
+  --hair: #c3cad1;
+
+  --cobalt: #2448d2;
+  --cobalt-deep: #1a37a8;
+  --on-cobalt: #f4f6f7;
+  --yellow: #f2c21b;
+  --yellow-deep: #d9aa06;
+  --on-yellow: #14171c;
+  --known: var(--ink);
+  --on-known: var(--stock);
+  --hatch: color-mix(in srgb, var(--ink) 78%, transparent);
+
+  --font: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+
+  --tile: 112px;
+  --tile-gap: 6px;
+  --rule: 2px;
+  --rule-heavy: 3px;
+
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+
+  --text-xs: 0.8125rem;  /* 13px, minimum for labels */
+  --text-sm: 0.9375rem;  /* 15px */
+  --text-md: 1.0625rem;  /* 17px body: projector-first */
+  --text-lg: 1.25rem;    /* 20px */
+  --text-xl: 1.5rem;     /* 24px */
+  --text-2xl: 1.875rem;  /* 30px */
+  --text-3xl: 2.5rem;    /* 40px */
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --fast: 160ms;
+  --medium: 240ms;
+
+  /* z-index scale: content < sticky bar < skip link */
+  --z-sticky: 10;
+  --z-skip: 20;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --stock: #101316;
+    --panel: #191e23;
+    --ink: #e8ecef;
+    --ink-2: #b2bac3;
+    --ink-3: #97a0aa;
+    --hair: #343c45;
+    --cobalt: #3358e6;
+    --cobalt-deep: #2848c4;
+    --on-cobalt: #f4f6f7;
+    --yellow: #e9b90f;
+    --yellow-deep: #cfa20a;
+    --on-yellow: #14171c;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --stock: #101316;
+  --panel: #191e23;
+  --ink: #e8ecef;
+  --ink-2: #b2bac3;
+  --ink-3: #97a0aa;
+  --hair: #343c45;
+  --cobalt: #3358e6;
+  --cobalt-deep: #2848c4;
+  --on-cobalt: #f4f6f7;
+  --yellow: #e9b90f;
+  --yellow-deep: #cfa20a;
+  --on-yellow: #14171c;
+}
+
+@media (min-width: 1441px) {
+  :root { --tile: 124px; }
+}
+@media (max-width: 1280px) {
+  :root { --tile: 104px; }
+}
+@media (max-width: 900px) {
+  :root { --tile: 88px; --text-2xl: 1.5rem; --text-3xl: 2rem; }
+}
+@media (max-width: 480px) {
+  :root { --tile: 76px; --tile-gap: 4px; }
+}

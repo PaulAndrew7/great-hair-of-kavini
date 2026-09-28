@@ -1,0 +1,40 @@
+{
+  "version": "2026-09-28.1",
+  "frozen": "2026-09-28",
+  "note": "Written before any retrieval output was inspected. Development queries may inform tuning; test queries are held out and must not. Each query is run through the same goal parser as Discover, so retrieval sees the goal's target text (known-skill clauses removed).",
+  "relevance_rule": "A course is relevant when its main subject is the learning topic the query asks for and it respects explicit constraints in the query (for example 'beginner' or a named tool). A course that only uses the topic in passing, or is about a different subject that shares words, is not relevant.",
+  "queries": [
+    {"id": "ml-d1", "split": "dev", "track": "machine_learning", "text": "I know Python and SQL. Help me move into machine learning."},
+    {"id": "ml-d2", "split": "dev", "track": "machine_learning", "text": "How do computers learn to recognise images with neural networks?"},
+    {"id": "ml-t1", "split": "test", "track": "machine_learning", "text": "I want to build predictive models from data."},
+    {"id": "ml-t2", "split": "test", "track": "machine_learning", "text": "Teach me deep learning with TensorFlow."},
+    {"id": "ml-t3", "split": "test", "track": "machine_learning", "text": "I'm good at statistics and want to learn regression and classification algorithms."},
+    {"id": "ml-t4", "split": "test", "track": "machine_learning", "text": "A beginner-friendly introduction to machine learning concepts."},
+
+    {"id": "da-d1", "split": "dev", "track": "data_analytics", "text": "Suggest a path from beginner to advanced data analytics."},
+    {"id": "da-d2", "split": "dev", "track": "data_analytics", "text": "I want to make interactive dashboards in Tableau."},
+    {"id": "da-t1", "split": "test", "track": "data_analytics", "text": "How do I analyse spreadsheets of sales numbers to find trends?"},
+    {"id": "da-t2", "split": "test", "track": "data_analytics", "text": "I know Excel, help me become a data analyst."},
+    {"id": "da-t3", "split": "test", "track": "data_analytics", "text": "Learn to clean messy datasets and visualise the results."},
+    {"id": "da-t4", "split": "test", "track": "data_analytics", "text": "Power BI for business reporting."},
+
+    {"id": "cc-d1", "split": "dev", "track": "cloud_computing", "text": "I want to learn cloud computing from the basics."},
+    {"id": "cc-d2", "split": "dev", "track": "cloud_computing", "text": "Prepare for the AWS Certified Cloud Practitioner exam."},
+    {"id": "cc-t1", "split": "test", "track": "cloud_computing", "text": "How do I deploy applications with Docker and Kubernetes?"},
+    {"id": "cc-t2", "split": "test", "track": "cloud_computing", "text": "I know Linux and networking, help me move into cloud engineering."},
+    {"id": "cc-t3", "split": "test", "track": "cloud_computing", "text": "Renting servers and storage over the internet instead of owning hardware."},
+    {"id": "cc-t4", "split": "test", "track": "cloud_computing", "text": "Google Cloud fundamentals for beginners."}
+  ],
+  "edge_cases": [
+    {"id": "empty", "name": "Empty goal", "request": {"goal": "   "},
+     "expected": "Rejected with a validation message; no recommendations."},
+    {"id": "unrelated", "name": "Unrelated subject", "request": {"goal": "I want to learn to play the violin."},
+     "expected": "No skill chart or path; an 'unsupported track' warning; any courses shown are search results only."},
+    {"id": "no_match_filter", "name": "Filters with no matches", "request": {"goal": "I want to learn cloud computing from the basics.", "filters": {"organization": "No Such University"}},
+     "expected": "Zero courses, a 'loosen a filter' warning, and an honest empty path instead of padded results."},
+    {"id": "negated", "name": "Negated known skill", "request": {"goal": "I don't know Python yet but I know SQL. I want to get into machine learning."},
+     "expected": "SQL is confirmed; Python is not counted as known and stays in the gap."},
+    {"id": "ambiguous", "name": "Ambiguous track", "request": {"goal": "I want to work with data in the cloud."},
+     "expected": "The student is asked to choose between the matching tracks; no path is guessed."}
+  ]
+}

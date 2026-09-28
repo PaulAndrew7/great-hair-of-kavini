@@ -1,0 +1,5 @@
+{
+  "version": "2026-09-28.1",
+  "note": "Manual per-course decisions with reasons. Keys are course_id. Allowed fields: description_quality (Reviewed | Suspect | Missing), reason.",
+  "overrides": {}
+}

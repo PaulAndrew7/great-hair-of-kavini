@@ -1,0 +1,38 @@
+{
+  "version": "2026-09-28.1",
+  "frozen": "2026-09-28",
+  "note": "Nine student profiles, three per track. expected_missing was written by hand from the goal wording and any chip edits, against the curated track definition in data/rules/goal_skills.json (target skills plus their prerequisites). These cases therefore measure profile interpretation and gap arithmetic, not whether the curated curriculum itself is right. 'known_skills' and 'excluded_skills' are chip edits a student makes in the UI.",
+  "profiles": [
+    {"id": "ml-p1", "track": "machine_learning",
+     "goal": "I know Python and SQL. Help me move into machine learning.",
+     "expected_missing": ["Machine Learning", "Regression", "Deep Learning", "Statistics", "Linear Algebra", "Calculus"]},
+    {"id": "ml-p2", "track": "machine_learning",
+     "goal": "I'm comfortable with Python, statistics and linear algebra; I want to learn deep learning.",
+     "expected_missing": ["Machine Learning", "Regression", "Deep Learning", "Calculus"]},
+    {"id": "ml-p3", "track": "machine_learning",
+     "goal": "I don't know any programming yet but I studied calculus at school. I'd like to get into machine learning.",
+     "known_skills": ["Statistics"],
+     "expected_missing": ["Machine Learning", "Regression", "Deep Learning", "Python", "Linear Algebra"]},
+
+    {"id": "da-p1", "track": "data_analytics",
+     "goal": "Suggest a path from beginner to advanced data analytics.",
+     "expected_missing": ["SQL", "Data Analysis", "Data Cleaning", "Data Visualization", "BI Dashboards", "Spreadsheets", "Statistics"]},
+    {"id": "da-p2", "track": "data_analytics",
+     "goal": "I use Excel every day at work and know some SQL. I want to become a data analyst.",
+     "expected_missing": ["Data Analysis", "Data Cleaning", "Data Visualization", "BI Dashboards", "Statistics"]},
+    {"id": "da-p3", "track": "data_analytics",
+     "goal": "I already know statistics and Excel but not SQL; I want to build dashboards in Tableau.",
+     "expected_missing": ["SQL", "Data Analysis", "Data Cleaning", "Data Visualization", "BI Dashboards"]},
+
+    {"id": "cc-p1", "track": "cloud_computing",
+     "goal": "I want to learn cloud computing from the basics.",
+     "expected_missing": ["Cloud Computing", "Cloud Platforms", "Containers", "Kubernetes", "DevOps", "Cloud Security", "Linux", "Networking"]},
+    {"id": "cc-p2", "track": "cloud_computing",
+     "goal": "I know Linux and networking, help me move into cloud engineering.",
+     "expected_missing": ["Cloud Computing", "Cloud Platforms", "Containers", "Kubernetes", "DevOps", "Cloud Security"]},
+    {"id": "cc-p3", "track": "cloud_computing",
+     "goal": "I have used Docker and AWS; now I want to learn Kubernetes.",
+     "known_skills": ["Linux"],
+     "expected_missing": ["Cloud Computing", "Kubernetes", "DevOps", "Cloud Security", "Networking"]}
+  ]
+}

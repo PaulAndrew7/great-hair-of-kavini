@@ -1,0 +1,117 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: stretch;
+  gap: var(--s6);
+  height: 64px;
+  padding: 0 var(--s6);
+  background: var(--stock);
+  border-bottom: var(--rule-heavy) solid var(--ink);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  text-decoration: none;
+}
+.brand-tile {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--ink);
+  color: var(--stock);
+  font-weight: 850;
+  font-stretch: 112%;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+}
+.brand-name {
+  font-weight: 850;
+  font-stretch: 118%;
+  font-size: 1.375rem;
+  letter-spacing: -0.02em;
+}
+.brand-desc {
+  font-size: var(--text-sm);
+  font-stretch: 82%;
+  font-weight: 600;
+  color: var(--ink-2);
+  padding-left: var(--s3);
+  border-left: 1px solid var(--hair);
+}
+
+.tabs {
+  display: flex;
+  align-items: stretch;
+  gap: var(--s5);
+}
+.tabs a {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: var(--text-md);
+  text-decoration: none;
+  color: var(--ink-2);
+  border-bottom: 5px solid transparent;
+  margin-bottom: calc(-1 * var(--rule-heavy));
+  padding-top: 5px;
+  transition: color var(--fast) var(--ease-out), border-color var(--fast) var(--ease-out);
+}
+.tabs a:hover { color: var(--ink); }
+.tabs a[aria-current='page'] {
+  color: var(--ink);
+  border-bottom-color: var(--cobalt);
+}
+
+.topbar-end {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.status .mark { color: var(--ink); }
+.status-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--hair);
+  margin: 0 var(--s1);
+}
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: var(--rule) solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  transition: background-color var(--fast) var(--ease-out), color var(--fast) var(--ease-out);
+}
+.theme-toggle:hover { background: var(--ink); color: var(--stock); }
+
+@media (max-width: 1100px) {
+  .brand-desc { display: none; }
+}
+@media (max-width: 760px) {
+  .topbar {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 56px 44px;
+    height: auto;
+    gap: 0 var(--s4);
+    padding: 0 var(--s4);
+  }
+  .tabs { grid-column: 1 / -1; grid-row: 2; gap: var(--s5); }
+  .status { display: none; }
+}

@@ -1,0 +1,47 @@
+{
+  "data_version": "997a4813-dd69c366",
+  "created": "2026-09-28T06:44:53+00:00",
+  "source": {
+    "name": "azrai99/coursera-course-dataset",
+    "url": "https://huggingface.co/datasets/azrai99/coursera-course-dataset",
+    "file": "coursera_course_2024.csv",
+    "revision": "ccd36c1660fee9610d5262e7517d8397c343168b",
+    "downloaded": "2026-09-28",
+    "sha256": "997a4813b0b9f0d808512f5370a85ae710ed7ecd06dc11c3029253310c3ed4a7",
+    "columns": [
+      "Unnamed: 0",
+      "title",
+      "enrolled",
+      "rating",
+      "num_reviews",
+      "Instructor",
+      "Organization",
+      "Skills",
+      "Description",
+      "Modules/Courses",
+      "Level",
+      "Schedule",
+      "URL",
+      "Satisfaction Rate"
+    ]
+  },
+  "preprocessing_version": "prep-2026-09-28.1",
+  "rules": {
+    "skill_aliases.json": "5209ae70132d",
+    "goal_skills.json": "bacecfb44308",
+    "course_overrides.json": "cae43cf39235"
+  },
+  "model": {
+    "name": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dimensions": 384
+  },
+  "embedding_recipe": "title. Skills: skill list. first 160 words of the validated description (omitted when Missing or Suspect)",
+  "course_count": 6642,
+  "courses_sha256": "dd69c366096189fe2fa8cf0ef442a0db62daa580c37215a35de8b3eb7eb499cf",
+  "course_ids_sha256": "8015bd67b4a306c6bd55cec0ee33b91c852067859fc29278b441245970c3c164",
+  "embeddings_shape": [
+    6642,
+    384
+  ]
+}

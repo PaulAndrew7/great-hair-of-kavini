@@ -1,0 +1,1592 @@
+{
+ "created": "2026-09-28T09:08:14+00:00",
+ "conditions": {
+  "Catalog version": "997a4813-dd69c366",
+  "Courses": 6642,
+  "Source file": "coursera_course_2024.csv @ ccd36c1660fe",
+  "Embedding model": "all-MiniLM-L6-v2 @ 1110a243fdf4",
+  "Rules version": "2026-09-28.1",
+  "Query set": "2026-09-28.1 (6 dev, 12 test)",
+  "Judgments": "2026-09-28.1, Claude (AI assistant), blind to method; awaiting author review",
+  "Retrieval": "RRF k=60, depth 50 per channel, semantic floor 0.3"
+ },
+ "retrieval": [
+  {
+   "split": "dev",
+   "rows": [
+    {
+     "mode": "bm25",
+     "precision_at_5": 0.733,
+     "mrr_at_5": 0.806,
+     "queries": 6
+    },
+    {
+     "mode": "semantic",
+     "precision_at_5": 0.933,
+     "mrr_at_5": 1.0,
+     "queries": 6
+    },
+    {
+     "mode": "hybrid",
+     "precision_at_5": 0.9,
+     "mrr_at_5": 1.0,
+     "queries": 6
+    }
+   ],
+   "per_query": [
+    {
+     "query_id": "ml-d1",
+     "query": "I know Python and SQL. Help me move into machine learning.",
+     "mode": "bm25",
+     "results": [
+      "c195c1ab12e",
+      "c2c1c6e298d",
+      "c8a9e8a68ce",
+      "c4f73f862a8",
+      "cff03f9f500"
+     ],
+     "relevant": [
+      false,
+      true,
+      true,
+      false,
+      false
+     ],
+     "precision_at_5": 0.4,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "ml-d2",
+     "query": "How do computers learn to recognise images with neural networks?",
+     "mode": "bm25",
+     "results": [
+      "cfeb35009f3",
+      "c4d52dddc5b",
+      "c0d7a946141",
+      "c184533cec9",
+      "cc2bc9e7fc0"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-d1",
+     "query": "Suggest a path from beginner to advanced data analytics.",
+     "mode": "bm25",
+     "results": [
+      "c7276f4f912",
+      "cac5fa6c8bd",
+      "c33f07cc0f0",
+      "c27463b986e",
+      "c965c9468c4"
+     ],
+     "relevant": [
+      false,
+      false,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 0.6,
+     "rr_at_5": 0.3333333333333333
+    },
+    {
+     "query_id": "da-d2",
+     "query": "I want to make interactive dashboards in Tableau.",
+     "mode": "bm25",
+     "results": [
+      "cc3dae932f4",
+      "c264c3f343a",
+      "c3858f1b491",
+      "c267cd7dde4",
+      "c2498beb44b"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-d1",
+     "query": "I want to learn cloud computing from the basics.",
+     "mode": "bm25",
+     "results": [
+      "cee7d70ddd8",
+      "cc992dd1d5e",
+      "ccbeeeef29a",
+      "cc9b2fcc26e",
+      "c0345065691"
+     ],
+     "relevant": [
+      true,
+      false,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-d2",
+     "query": "Prepare for the AWS Certified Cloud Practitioner exam.",
+     "mode": "bm25",
+     "results": [
+      "c5848b14dd0",
+      "ce4d3ae4ee2",
+      "c2ca94e19b2",
+      "c96e150c5db",
+      "c93e59cf747"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      false,
+      false
+     ],
+     "precision_at_5": 0.6,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-d1",
+     "query": "I know Python and SQL. Help me move into machine learning.",
+     "mode": "semantic",
+     "results": [
+      "c77e5c92b37",
+      "c205b923395",
+      "c2c1c6e298d",
+      "c3bc3519e49",
+      "c6bc9935f0a"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-d2",
+     "query": "How do computers learn to recognise images with neural networks?",
+     "mode": "semantic",
+     "results": [
+      "c277ee969de",
+      "c0d7a946141",
+      "c598286c097",
+      "c70e04be018",
+      "ca0063e587f"
+     ],
+     "relevant": [
+      true,
+      true,
+      false,
+      true,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-d1",
+     "query": "Suggest a path from beginner to advanced data analytics.",
+     "mode": "semantic",
+     "results": [
+      "c27463b986e",
+      "c4539e20aa5",
+      "ce7dc45a0ca",
+      "c1af4af1209",
+      "cb217e5e995"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-d2",
+     "query": "I want to make interactive dashboards in Tableau.",
+     "mode": "semantic",
+     "results": [
+      "c23157e8c54",
+      "cc34eb59325",
+      "c264c3f343a",
+      "c9c9c2616b6",
+      "c3858f1b491"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-d1",
+     "query": "I want to learn cloud computing from the basics.",
+     "mode": "semantic",
+     "results": [
+      "c14dc800c57",
+      "ccbeeeef29a",
+      "cdff8ea69fb",
+      "c0d9a7f39ae",
+      "c87ff0e589d"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-d2",
+     "query": "Prepare for the AWS Certified Cloud Practitioner exam.",
+     "mode": "semantic",
+     "results": [
+      "c5848b14dd0",
+      "ce4d3ae4ee2",
+      "c96e150c5db",
+      "c14dc800c57",
+      "c7270a2c1e3"
+     ],
+     "relevant": [
+      true,
+      true,
+      false,
+      true,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-d1",
+     "query": "I know Python and SQL. Help me move into machine learning.",
+     "mode": "hybrid",
+     "results": [
+      "c2c1c6e298d",
+      "c8a9e8a68ce",
+      "c3bc3519e49",
+      "c6bc9935f0a",
+      "c77e5c92b37"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-d2",
+     "query": "How do computers learn to recognise images with neural networks?",
+     "mode": "hybrid",
+     "results": [
+      "c0d7a946141",
+      "cfeb35009f3",
+      "c598286c097",
+      "c4d52dddc5b",
+      "c3482ce3817"
+     ],
+     "relevant": [
+      true,
+      true,
+      false,
+      true,
+      false
+     ],
+     "precision_at_5": 0.6,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-d1",
+     "query": "Suggest a path from beginner to advanced data analytics.",
+     "mode": "hybrid",
+     "results": [
+      "c27463b986e",
+      "ce4ae8301c5",
+      "c26ebd11a29",
+      "cb05a00606a",
+      "cde399f9a8b"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-d2",
+     "query": "I want to make interactive dashboards in Tableau.",
+     "mode": "hybrid",
+     "results": [
+      "c264c3f343a",
+      "c3858f1b491",
+      "c23157e8c54",
+      "c2498beb44b",
+      "cc34eb59325"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-d1",
+     "query": "I want to learn cloud computing from the basics.",
+     "mode": "hybrid",
+     "results": [
+      "ccbeeeef29a",
+      "c14dc800c57",
+      "cc9b2fcc26e",
+      "c87ff0e589d",
+      "cab99c179d7"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-d2",
+     "query": "Prepare for the AWS Certified Cloud Practitioner exam.",
+     "mode": "hybrid",
+     "results": [
+      "c5848b14dd0",
+      "ce4d3ae4ee2",
+      "c96e150c5db",
+      "c2ca94e19b2",
+      "c14dc800c57"
+     ],
+     "relevant": [
+      true,
+      true,
+      false,
+      true,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    }
+   ]
+  },
+  {
+   "split": "test",
+   "rows": [
+    {
+     "mode": "bm25",
+     "precision_at_5": 0.633,
+     "mrr_at_5": 0.75,
+     "queries": 12
+    },
+    {
+     "mode": "semantic",
+     "precision_at_5": 0.867,
+     "mrr_at_5": 0.833,
+     "queries": 12
+    },
+    {
+     "mode": "hybrid",
+     "precision_at_5": 0.75,
+     "mrr_at_5": 0.903,
+     "queries": 12
+    }
+   ],
+   "per_query": [
+    {
+     "query_id": "ml-t1",
+     "query": "I want to build predictive models from data.",
+     "mode": "bm25",
+     "results": [
+      "c456a199038",
+      "c2100b17c31",
+      "cfc3d75ae1e",
+      "c92424df029",
+      "c43c652048f"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t2",
+     "query": "Teach me deep learning with TensorFlow.",
+     "mode": "bm25",
+     "results": [
+      "c41ca8eace6",
+      "c184533cec9",
+      "c2a9a57ffe8",
+      "caf78048244",
+      "c03eef33020"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      false,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t3",
+     "query": "I'm good at statistics and want to learn regression and classification algorithms.",
+     "mode": "bm25",
+     "results": [
+      "cce78c1900b",
+      "cf216c8ad1b",
+      "cb274865823",
+      "c6337376205",
+      "ccdbfc0985b"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t4",
+     "query": "A beginner-friendly introduction to machine learning concepts.",
+     "mode": "bm25",
+     "results": [
+      "c7e96f0c3fb",
+      "c2127f1c847",
+      "cf09362c369",
+      "c03187590c2",
+      "c40cab1cbfb"
+     ],
+     "relevant": [
+      false,
+      true,
+      true,
+      false,
+      false
+     ],
+     "precision_at_5": 0.4,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "da-t1",
+     "query": "How do I analyse spreadsheets of sales numbers to find trends?",
+     "mode": "bm25",
+     "results": [
+      "ca52b475b36",
+      "c3087fdca8b",
+      "c7d70209f98",
+      "cadb630c87c",
+      "c5830808462"
+     ],
+     "relevant": [
+      false,
+      true,
+      true,
+      false,
+      false
+     ],
+     "precision_at_5": 0.4,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "da-t2",
+     "query": "I know Excel, help me become a data analyst.",
+     "mode": "bm25",
+     "results": [
+      "c22b3a30a04",
+      "cf2735916d4",
+      "ce8f3f2f517",
+      "ce4017ae225",
+      "cec441f61aa"
+     ],
+     "relevant": [
+      false,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "da-t3",
+     "query": "Learn to clean messy datasets and visualise the results.",
+     "mode": "bm25",
+     "results": [
+      "cfcda8aa73d",
+      "ccdd2d07e12",
+      "c68f7e31ce8",
+      "cefd2647589",
+      "c78d555edba"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      false
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-t4",
+     "query": "Power BI for business reporting.",
+     "mode": "bm25",
+     "results": [
+      "cfdaca3a9f3",
+      "c5ee53c0aad",
+      "c9a1c2d61cc",
+      "cdd4ae8c5a4",
+      "caad2beee83"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-t1",
+     "query": "How do I deploy applications with Docker and Kubernetes?",
+     "mode": "bm25",
+     "results": [
+      "c7e00caae54",
+      "cbac0ca5535",
+      "c0c72eaa71f",
+      "cbc8d5385f8",
+      "ca380656eae"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      false,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-t2",
+     "query": "I know Linux and networking, help me move into cloud engineering.",
+     "mode": "bm25",
+     "results": [
+      "ce590b0575f",
+      "c46af0f8d02",
+      "cc62cbe500e",
+      "c5a99f41474",
+      "cf2cfd0d0ce"
+     ],
+     "relevant": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "precision_at_5": 0.0,
+     "rr_at_5": 0.0
+    },
+    {
+     "query_id": "cc-t3",
+     "query": "Renting servers and storage over the internet instead of owning hardware.",
+     "mode": "bm25",
+     "results": [
+      "c707eeec88f",
+      "c0489cbcf47",
+      "cf7f42ca4aa",
+      "c52295be60e",
+      "cb16433369e"
+     ],
+     "relevant": [
+      false,
+      true,
+      false,
+      false,
+      false
+     ],
+     "precision_at_5": 0.2,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "cc-t4",
+     "query": "Google Cloud fundamentals for beginners.",
+     "mode": "bm25",
+     "results": [
+      "c6a090df492",
+      "c548b23b208",
+      "cc7ba146608",
+      "c871d161cf7",
+      "c06cd56c659"
+     ],
+     "relevant": [
+      true,
+      false,
+      false,
+      true,
+      false
+     ],
+     "precision_at_5": 0.4,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t1",
+     "query": "I want to build predictive models from data.",
+     "mode": "semantic",
+     "results": [
+      "c92424df029",
+      "c7342e2cb57",
+      "c2100b17c31",
+      "c3b38f82dad",
+      "ccced0a9f89"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t2",
+     "query": "Teach me deep learning with TensorFlow.",
+     "mode": "semantic",
+     "results": [
+      "c41ca8eace6",
+      "c51bdc07380",
+      "ce64a40205c",
+      "c184533cec9",
+      "ca5a70f1396"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t3",
+     "query": "I'm good at statistics and want to learn regression and classification algorithms.",
+     "mode": "semantic",
+     "results": [
+      "ca3b13608fd",
+      "cefe440eaad",
+      "c4a3a4c1957",
+      "c038205a6eb",
+      "c95a7baf97f"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t4",
+     "query": "A beginner-friendly introduction to machine learning concepts.",
+     "mode": "semantic",
+     "results": [
+      "c3bc3519e49",
+      "c77e5c92b37",
+      "cb6eaa533e7",
+      "c2c1c6e298d",
+      "c4940268d0f"
+     ],
+     "relevant": [
+      false,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "da-t1",
+     "query": "How do I analyse spreadsheets of sales numbers to find trends?",
+     "mode": "semantic",
+     "results": [
+      "ccc8a69a7b2",
+      "c209041a9e2",
+      "c5eb8b7b4df",
+      "c771d7f9328",
+      "c2b9025f458"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-t2",
+     "query": "I know Excel, help me become a data analyst.",
+     "mode": "semantic",
+     "results": [
+      "c6c7a0f13ac",
+      "cde399f9a8b",
+      "ce8f3f2f517",
+      "c5d151bd335",
+      "ceeffebcd3e"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-t3",
+     "query": "Learn to clean messy datasets and visualise the results.",
+     "mode": "semantic",
+     "results": [
+      "ccdd2d07e12",
+      "ce1285a03f3",
+      "c0c824af989",
+      "c165407a2e8",
+      "ce7e08162b9"
+     ],
+     "relevant": [
+      true,
+      true,
+      false,
+      true,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-t4",
+     "query": "Power BI for business reporting.",
+     "mode": "semantic",
+     "results": [
+      "cbf82852430",
+      "cdd0865880d",
+      "c0d858566f2",
+      "cfdaca3a9f3",
+      "c9a1c2d61cc"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-t1",
+     "query": "How do I deploy applications with Docker and Kubernetes?",
+     "mode": "semantic",
+     "results": [
+      "cc2fd7be5bd",
+      "caa3a4a0fe7",
+      "cba5349c666",
+      "c7e00caae54",
+      "cf556e8560a"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-t2",
+     "query": "I know Linux and networking, help me move into cloud engineering.",
+     "mode": "semantic",
+     "results": [
+      "ce590b0575f",
+      "c51240681bf",
+      "cd1b9b6cd1e",
+      "ce751de0256",
+      "cdff8ea69fb"
+     ],
+     "relevant": [
+      false,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "cc-t3",
+     "query": "Renting servers and storage over the internet instead of owning hardware.",
+     "mode": "semantic",
+     "results": [
+      "cf419620d38",
+      "c9ed54a2254",
+      "c388cd80c73",
+      "c90e7d2fb9c",
+      "c7369b62482"
+     ],
+     "relevant": [
+      false,
+      true,
+      false,
+      true,
+      true
+     ],
+     "precision_at_5": 0.6,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "cc-t4",
+     "query": "Google Cloud fundamentals for beginners.",
+     "mode": "semantic",
+     "results": [
+      "c607c0a72c9",
+      "ca5eb625754",
+      "c871d161cf7",
+      "c3d1f128917",
+      "cc53a1f821a"
+     ],
+     "relevant": [
+      false,
+      true,
+      true,
+      false,
+      false
+     ],
+     "precision_at_5": 0.4,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "ml-t1",
+     "query": "I want to build predictive models from data.",
+     "mode": "hybrid",
+     "results": [
+      "c92424df029",
+      "c2100b17c31",
+      "c7342e2cb57",
+      "cb7f9549e9c",
+      "c013e878f88"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      false
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t2",
+     "query": "Teach me deep learning with TensorFlow.",
+     "mode": "hybrid",
+     "results": [
+      "c41ca8eace6",
+      "c184533cec9",
+      "c2a9a57ffe8",
+      "c51bdc07380",
+      "ce64a40205c"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t3",
+     "query": "I'm good at statistics and want to learn regression and classification algorithms.",
+     "mode": "hybrid",
+     "results": [
+      "cce78c1900b",
+      "c4a3a4c1957",
+      "cf09362c369",
+      "ccdbfc0985b",
+      "cf216c8ad1b"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "ml-t4",
+     "query": "A beginner-friendly introduction to machine learning concepts.",
+     "mode": "hybrid",
+     "results": [
+      "cf09362c369",
+      "c2127f1c847",
+      "c2c1c6e298d",
+      "c5e140585e0",
+      "cf6a237ed5a"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      false,
+      false
+     ],
+     "precision_at_5": 0.6,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-t1",
+     "query": "How do I analyse spreadsheets of sales numbers to find trends?",
+     "mode": "hybrid",
+     "results": [
+      "c7534608a59",
+      "c384986ab4f",
+      "c7d70209f98",
+      "cc1e8223afc",
+      "cee614d3979"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      false
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-t2",
+     "query": "I know Excel, help me become a data analyst.",
+     "mode": "hybrid",
+     "results": [
+      "ce8f3f2f517",
+      "cec441f61aa",
+      "c5d151bd335",
+      "ce4017ae225",
+      "cefd2647589"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-t3",
+     "query": "Learn to clean messy datasets and visualise the results.",
+     "mode": "hybrid",
+     "results": [
+      "ccdd2d07e12",
+      "c9400b1ff78",
+      "ccecc9bf644",
+      "ceada0ec81c",
+      "cdb7abd38c9"
+     ],
+     "relevant": [
+      true,
+      true,
+      false,
+      true,
+      true
+     ],
+     "precision_at_5": 0.8,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "da-t4",
+     "query": "Power BI for business reporting.",
+     "mode": "hybrid",
+     "results": [
+      "cfdaca3a9f3",
+      "c9a1c2d61cc",
+      "cbf82852430",
+      "c5ee53c0aad",
+      "c0d858566f2"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-t1",
+     "query": "How do I deploy applications with Docker and Kubernetes?",
+     "mode": "hybrid",
+     "results": [
+      "c7e00caae54",
+      "ca380656eae",
+      "c0c72eaa71f",
+      "cc2fd7be5bd",
+      "cb0df4828ba"
+     ],
+     "relevant": [
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "precision_at_5": 1.0,
+     "rr_at_5": 1.0
+    },
+    {
+     "query_id": "cc-t2",
+     "query": "I know Linux and networking, help me move into cloud engineering.",
+     "mode": "hybrid",
+     "results": [
+      "ce590b0575f",
+      "cd1b9b6cd1e",
+      "ce95568934d",
+      "cc62cbe500e",
+      "c2a451a4909"
+     ],
+     "relevant": [
+      false,
+      true,
+      false,
+      false,
+      false
+     ],
+     "precision_at_5": 0.2,
+     "rr_at_5": 0.5
+    },
+    {
+     "query_id": "cc-t3",
+     "query": "Renting servers and storage over the internet instead of owning hardware.",
+     "mode": "hybrid",
+     "results": [
+      "cf419620d38",
+      "c6cbc11e559",
+      "cee7d70ddd8",
+      "c1ead5560b7",
+      "c707eeec88f"
+     ],
+     "relevant": [
+      false,
+      false,
+      true,
+      false,
+      false
+     ],
+     "precision_at_5": 0.2,
+     "rr_at_5": 0.3333333333333333
+    },
+    {
+     "query_id": "cc-t4",
+     "query": "Google Cloud fundamentals for beginners.",
+     "mode": "hybrid",
+     "results": [
+      "c871d161cf7",
+      "ca5eb625754",
+      "c71e19247a0",
+      "cc7ba146608",
+      "c6a090df492"
+     ],
+     "relevant": [
+      true,
+      true,
+      false,
+      false,
+      true
+     ],
+     "precision_at_5": 0.6,
+     "rr_at_5": 1.0
+    }
+   ]
+  }
+ ],
+ "skill_gap": {
+  "profiles": 9,
+  "precision": 0.962,
+  "recall": 1.0,
+  "f1": 0.981,
+  "exact_matches": 7,
+  "convention": "Micro-averaged over all nine profiles (true positives, predictions and expected skills summed first). An empty predicted or expected set scores 1.0 when both are empty; exact-set matches are counted separately.",
+  "per_profile": [
+   {
+    "profile_id": "ml-p1",
+    "goal": "I know Python and SQL. Help me move into machine learning.",
+    "expected_track": "machine_learning",
+    "detected_track": "machine_learning",
+    "confirmed": [
+     "Python",
+     "SQL"
+    ],
+    "expected_missing": [
+     "Calculus",
+     "Deep Learning",
+     "Linear Algebra",
+     "Machine Learning",
+     "Regression",
+     "Statistics"
+    ],
+    "predicted_missing": [
+     "Calculus",
+     "Deep Learning",
+     "Linear Algebra",
+     "Machine Learning",
+     "Regression",
+     "Statistics"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "path": [
+     "1. Mathematics for Machine Learning Specialization -> Calculus, Linear Algebra",
+     "2. Statistics and Data Analysis with Excel, Part 1 -> Statistics",
+     "3. Foundations of Machine Learning -> Machine Learning, Regression",
+     "4. Structuring Machine Learning Projects -> Deep Learning"
+    ],
+    "unresolved": [],
+    "violations": []
+   },
+   {
+    "profile_id": "ml-p2",
+    "goal": "I'm comfortable with Python, statistics and linear algebra; I want to learn deep learning.",
+    "expected_track": "machine_learning",
+    "detected_track": "machine_learning",
+    "confirmed": [
+     "Python",
+     "Statistics",
+     "Linear Algebra"
+    ],
+    "expected_missing": [
+     "Calculus",
+     "Deep Learning",
+     "Machine Learning",
+     "Regression"
+    ],
+    "predicted_missing": [
+     "Calculus",
+     "Deep Learning",
+     "Machine Learning",
+     "Regression"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "path": [
+     "1. Mathematics for Machine Learning and Data Science Specialization -> Calculus, Machine Learning, Regression",
+     "2. Introduction to Deep Learning & Neural Networks with Keras -> Deep Learning"
+    ],
+    "unresolved": [],
+    "violations": []
+   },
+   {
+    "profile_id": "ml-p3",
+    "goal": "I don't know any programming yet but I studied calculus at school. I'd like to get into machine learning.",
+    "expected_track": "machine_learning",
+    "detected_track": "machine_learning",
+    "confirmed": [
+     "Statistics"
+    ],
+    "expected_missing": [
+     "Deep Learning",
+     "Linear Algebra",
+     "Machine Learning",
+     "Python",
+     "Regression"
+    ],
+    "predicted_missing": [
+     "Calculus",
+     "Deep Learning",
+     "Linear Algebra",
+     "Machine Learning",
+     "Python",
+     "Regression"
+    ],
+    "false_positives": [
+     "Calculus"
+    ],
+    "false_negatives": [],
+    "path": [
+     "1. Mathematics for Machine Learning: Multivariate Calculus -> Calculus, Regression",
+     "2. Linear Algebra for Data Science Using Python Specialization -> Linear Algebra, Python",
+     "3. Machine Learning: an overview -> Machine Learning",
+     "4. Introduction to Machine Learning -> Deep Learning"
+    ],
+    "unresolved": [],
+    "violations": []
+   },
+   {
+    "profile_id": "da-p1",
+    "goal": "Suggest a path from beginner to advanced data analytics.",
+    "expected_track": "data_analytics",
+    "detected_track": "data_analytics",
+    "confirmed": [],
+    "expected_missing": [
+     "BI Dashboards",
+     "Data Analysis",
+     "Data Cleaning",
+     "Data Visualization",
+     "SQL",
+     "Spreadsheets",
+     "Statistics"
+    ],
+    "predicted_missing": [
+     "BI Dashboards",
+     "Data Analysis",
+     "Data Cleaning",
+     "Data Visualization",
+     "SQL",
+     "Spreadsheets",
+     "Statistics"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "path": [
+     "1. Statistics and Data Analysis with Excel, Part 1 -> Spreadsheets, Statistics",
+     "2. Foundations: Data, Data, Everywhere -> SQL, Data Analysis, Data Cleaning",
+     "3. Fundamentals of Data Visualization -> Data Visualization",
+     "4. Advanced Data Visualization with Tableau -> BI Dashboards"
+    ],
+    "unresolved": [],
+    "violations": []
+   },
+   {
+    "profile_id": "da-p2",
+    "goal": "I use Excel every day at work and know some SQL. I want to become a data analyst.",
+    "expected_track": "data_analytics",
+    "detected_track": "data_analytics",
+    "confirmed": [
+     "Spreadsheets",
+     "SQL"
+    ],
+    "expected_missing": [
+     "BI Dashboards",
+     "Data Analysis",
+     "Data Cleaning",
+     "Data Visualization",
+     "Statistics"
+    ],
+    "predicted_missing": [
+     "BI Dashboards",
+     "Data Analysis",
+     "Data Cleaning",
+     "Data Visualization",
+     "Statistics"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "path": [
+     "1. Data Science for Health Research Specialization -> Statistics, Data Cleaning",
+     "2. Introduction to Data Analytics -> Data Analysis",
+     "3. Fundamentals of Data Visualization -> Data Visualization",
+     "4. Tableau Data Analyst Certification Preparation Specialization -> BI Dashboards"
+    ],
+    "unresolved": [],
+    "violations": []
+   },
+   {
+    "profile_id": "da-p3",
+    "goal": "I already know statistics and Excel but not SQL; I want to build dashboards in Tableau.",
+    "expected_track": "data_analytics",
+    "detected_track": "data_analytics",
+    "confirmed": [
+     "Statistics",
+     "Spreadsheets"
+    ],
+    "expected_missing": [
+     "BI Dashboards",
+     "Data Analysis",
+     "Data Cleaning",
+     "Data Visualization",
+     "SQL"
+    ],
+    "predicted_missing": [
+     "BI Dashboards",
+     "Data Analysis",
+     "Data Cleaning",
+     "Data Visualization",
+     "SQL"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "path": [
+     "1. Foundations: Data, Data, Everywhere -> SQL, Data Analysis, Data Cleaning",
+     "2. Advanced Data Visualization with Tableau -> Data Visualization",
+     "3. Tableau Data Analyst Certification Preparation Specialization -> BI Dashboards"
+    ],
+    "unresolved": [],
+    "violations": []
+   },
+   {
+    "profile_id": "cc-p1",
+    "goal": "I want to learn cloud computing from the basics.",
+    "expected_track": "cloud_computing",
+    "detected_track": "cloud_computing",
+    "confirmed": [],
+    "expected_missing": [
+     "Cloud Computing",
+     "Cloud Platforms",
+     "Cloud Security",
+     "Containers",
+     "DevOps",
+     "Kubernetes",
+     "Linux",
+     "Networking"
+    ],
+    "predicted_missing": [
+     "Cloud Computing",
+     "Cloud Platforms",
+     "Cloud Security",
+     "Containers",
+     "DevOps",
+     "Kubernetes",
+     "Linux",
+     "Networking"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "path": [
+     "1. Connecting to Devices and Networks -> Linux, Networking",
+     "2. Containers in the Cloud Specialization -> Cloud Computing, Containers",
+     "3. Getting Started with Google Kubernetes Engine -> Cloud Platforms, DevOps, Kubernetes",
+     "4. Managing Security in Google Cloud -> Cloud Security"
+    ],
+    "unresolved": [],
+    "violations": []
+   },
+   {
+    "profile_id": "cc-p2",
+    "goal": "I know Linux and networking, help me move into cloud engineering.",
+    "expected_track": "cloud_computing",
+    "detected_track": "cloud_computing",
+    "confirmed": [
+     "Linux"
+    ],
+    "expected_missing": [
+     "Cloud Computing",
+     "Cloud Platforms",
+     "Cloud Security",
+     "Containers",
+     "DevOps",
+     "Kubernetes"
+    ],
+    "predicted_missing": [
+     "Cloud Computing",
+     "Cloud Platforms",
+     "Cloud Security",
+     "Containers",
+     "DevOps",
+     "Kubernetes",
+     "Networking"
+    ],
+    "false_positives": [
+     "Networking"
+    ],
+    "false_negatives": [],
+    "path": [
+     "1. The Bits and Bytes of Computer Networking -> Networking",
+     "2. Introduction to Containers w/ Docker, Kubernetes & OpenShift -> Cloud Computing, Containers",
+     "3. Getting Started with Google Kubernetes Engine -> Cloud Platforms, DevOps, Kubernetes",
+     "4. Managing Security in Google Cloud -> Cloud Security"
+    ],
+    "unresolved": [],
+    "violations": []
+   },
+   {
+    "profile_id": "cc-p3",
+    "goal": "I have used Docker and AWS; now I want to learn Kubernetes.",
+    "expected_track": "cloud_computing",
+    "detected_track": "cloud_computing",
+    "confirmed": [
+     "Linux",
+     "Containers",
+     "Cloud Platforms"
+    ],
+    "expected_missing": [
+     "Cloud Computing",
+     "Cloud Security",
+     "DevOps",
+     "Kubernetes",
+     "Networking"
+    ],
+    "predicted_missing": [
+     "Cloud Computing",
+     "Cloud Security",
+     "DevOps",
+     "Kubernetes",
+     "Networking"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "path": [
+     "1. Network Principles in Practice: Linux Networking -> Networking, Kubernetes",
+     "2. Introduction to DevOps -> Cloud Computing, DevOps",
+     "3. Palo Alto Networks Cloud Security Fundamentals -> Cloud Security"
+    ],
+    "unresolved": [],
+    "violations": []
+   }
+  ]
+ },
+ "paths": {
+  "profiles": 9,
+  "target_coverage": 1.0,
+  "unresolved_gaps": 0,
+  "duplicate_courses": 0,
+  "prerequisite_violations": 0,
+  "unverified_steps": 0,
+  "notes": [
+   "Every path step has modelled prerequisites.",
+   "Violations check each step against the student's skills plus earlier steps, for both the course's modelled prerequisites and the curated skill order. Unknown official prerequisites are not checkable."
+  ]
+ },
+ "latency": {
+  "requests": 30,
+  "median_ms": 27.7,
+  "p95_ms": 31.8,
+  "max_ms": 32.8,
+  "server_median_ms": 25.9,
+  "cold_start_ms": 12839.4,
+  "machine": "Windows 11, AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD, 16 logical CPUs, Python 3.13.14, CPU inference. Warm requests run in-process through FastAPI (routing, validation, serialisation) without a network hop; cold start covers catalog load, BM25 index build and model load after Python imports."
+ },
+ "edge_cases": [
+  {
+   "name": "Empty goal",
+   "expected": "Rejected with a validation message; no recommendations.",
+   "observed": "HTTP 422: Describe what you want to learn.",
+   "passed": true
+  },
+  {
+   "name": "Unrelated subject",
+   "expected": "No skill chart or path; an 'unsupported track' warning; any courses shown are search results only.",
+   "observed": "No chart or path; warnings ['unsupported_track']; 5 search result(s) shown.",
+   "passed": true
+  },
+  {
+   "name": "Filters with no matches",
+   "expected": "Zero courses, a 'loosen a filter' warning, and an honest empty path instead of padded results.",
+   "observed": "0 eligible courses, 0 shown, 0 path steps; warnings ['path_incomplete', 'filters_excluded'].",
+   "passed": true
+  },
+  {
+   "name": "Negated known skill",
+   "expected": "SQL is confirmed; Python is not counted as known and stays in the gap.",
+   "observed": "Confirmed ['SQL']; negated ['Python']; Python missing: True.",
+   "passed": true
+  },
+  {
+   "name": "Ambiguous track",
+   "expected": "The student is asked to choose between the matching tracks; no path is guessed.",
+   "observed": "Track status 'detected', candidates ['cloud_computing']; path shown: True.",
+   "passed": false
+  }
+ ],
+ "findings": [
+  "Dev queries: semantic leads on Precision@5 (0.93); semantic and hybrid tie on MRR@5 (1.00).",
+  "Hybrid trails the best single method by 0.4 or more Precision@5 on ml-d2 (dev).",
+  "Test queries: semantic leads on Precision@5 (0.87); hybrid leads on MRR@5 (0.90).",
+  "Hybrid trails the best single method by 0.4 or more Precision@5 on cc-t2, cc-t3 (test).",
+  "Skill gap ml-p3 (“I don't know any programming yet but I studied calculus at school. I'd like to get into machine learning.”): Calculus counted as missing although the student has it.",
+  "Skill gap cc-p2 (“I know Linux and networking, help me move into cloud engineering.”): Networking counted as missing although the student has it.",
+  "Edge case failed: Ambiguous track. Track status 'detected', candidates ['cloud_computing']; path shown: True."
+ ],
+ "limitations": [
+  "Relevance labels come from one judge over pooled top-5 results of the three compared methods. They are not exhaustive catalog labels, so no catalog-wide recall is claimed.",
+  "18 queries is a small sample: one query changes a split's Precision@5 by up to 0.08.",
+  "Skill-gap expectations follow the project's curated track definitions; they test profile reading and gap arithmetic, not whether the curriculum itself is right.",
+  "Course prerequisites are verified for a handful of courses only; the rest use curated skill guidance or are labelled not verified.",
+  "Latency was measured on one development machine; it will differ on other hardware."
+ ]
+}

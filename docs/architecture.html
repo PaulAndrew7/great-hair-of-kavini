@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prior architecture</title>
+<!-- Source for docs/architecture.pdf and docs/architecture.jpg (render: docs/render_architecture.mjs). -->
+<style>
+  :root { --ink: #14181c; --ink2: #4a525a; --hair: #c9cfd4; --paper: #ffffff; --panel: #f3f5f6;
+          --cobalt: #1f4fd6; --cobalt-soft: #e6ecfb; --yellow: #f2c230; --yellow-soft: #fdf5d9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 1080px; background: var(--paper); color: var(--ink);
+               font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+  body { padding: 34px 40px; display: grid; grid-template-rows: auto 1fr auto; gap: 18px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 3px solid var(--ink); padding-bottom: 10px; }
+  h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.01em; }
+  h1 span { font-weight: 500; color: var(--ink2); font-size: 20px; margin-left: 10px; }
+  .legend { display: flex; gap: 18px; font-size: 13px; color: var(--ink2); align-items: center; }
+  .sw { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--ink); vertical-align: -2px; margin-right: 6px; }
+  .sw.store { background: var(--panel); } .sw.step { background: var(--paper); } .sw.ui { background: var(--cobalt-soft); border-color: var(--cobalt); }
+  .sw.eval { background: var(--yellow-soft); border-color: #b88a00; }
+
+  main { display: grid; grid-template-columns: 400px 44px 1fr 44px 330px; min-height: 0; }
+  .col { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+  .lane { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink2);
+          border-bottom: 1px solid var(--hair); padding-bottom: 5px; margin-bottom: 2px; }
+  .box { border: 2px solid var(--ink); background: var(--paper); padding: 9px 12px; }
+  .box h3 { font-size: 15px; font-weight: 800; margin-bottom: 3px; }
+  .box h3 code { font-weight: 700; }
+  .box p, .box li { font-size: 12.5px; line-height: 1.38; color: var(--ink2); }
+  .box ul { list-style: none; display: grid; gap: 1px; }
+  .store { background: var(--panel); }
+  .ui { background: var(--cobalt-soft); border-color: var(--cobalt); }
+  .eval { background: var(--yellow-soft); border-color: #b88a00; }
+  code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.95em; color: var(--ink); }
+  .down { text-align: center; font-size: 18px; line-height: 1; color: var(--ink); margin: -4px 0; }
+
+  .service { border: 3px solid var(--ink); padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 9px; }
+  .service > .lane { border: 0; margin: 0; padding: 0; }
+  .startup { font-size: 12.5px; color: var(--ink2); background: var(--panel); border-left: 4px solid var(--ink); padding: 6px 10px; }
+  .pipe { display: grid; grid-template-columns: 30px 1fr; gap: 7px 10px; align-items: stretch; }
+  .n { background: var(--ink); color: var(--paper); font-weight: 800; font-size: 15px; display: grid; place-items: center; }
+  .retrieve { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .retrieve .box { padding: 7px 10px; }
+  .endpoint-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .gutter { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 120px; font-size: 26px; color: var(--ink); }
+  .gutter small { display: block; font-size: 10.5px; color: var(--ink2); text-align: center; line-height: 1.2; margin-top: 2px; }
+  .flow { display: flex; flex-direction: column; align-items: center; }
+
+  footer { display: grid; grid-template-columns: 1fr; }
+  .evalrow { display: grid; grid-template-columns: 1.1fr 24px 1fr 24px 0.9fr 24px 0.9fr; align-items: stretch; }
+  .evalrow .arrow { display: grid; place-items: center; font-size: 20px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Prior <span>University Course Finder: data-to-recommendation flow</span></h1>
+  <div class="legend">
+    <span><i class="sw store"></i>stored artefact</span>
+    <span><i class="sw step"></i>processing step</span>
+    <span><i class="sw ui"></i>user application</span>
+    <span><i class="sw eval"></i>evaluation</span>
+  </div>
+</header>
+
+<main>
+  <!-- 1. Prepare -->
+  <section class="col">
+    <div class="lane">1 · Prepare once (offline scripts)</div>
+    <div class="box store">
+      <h3>Source dataset</h3>
+      <p><code>coursera_course_2024.csv</code>, 6,645 rows, 14 columns. Pinned Hugging Face revision, SHA-256 checked by <code>fetch_inputs.py</code>.</p>
+    </div>
+    <div class="down">↓</div>
+    <div class="box">
+      <h3><code>prepare_data.py</code> · clean</h3>
+      <ul>
+        <li>Drop 3 exact duplicates; stable IDs from canonical URLs</li>
+        <li>Missing stays missing (no rating ≠ 0, no level ≠ Beginner)</li>
+        <li>Safe skill-list parsing; 9,134 labels → canonical skills</li>
+        <li>196 descriptions marked Suspect (shared or off-topic)</li>
+      </ul>
+    </div>
+    <div class="down">↓</div>
+    <div class="box">
+      <h3><code>build_index.py</code> · embed</h3>
+      <p><code>all-MiniLM-L6-v2</code> (pinned), title + skills + validated description → 384-d unit vectors. Writes a manifest of hashes.</p>
+    </div>
+    <div class="down">↓</div>
+    <div class="box store">
+      <h3>Knowledge base <code>data/processed/</code></h3>
+      <p><code>courses.json</code> 6,642 courses · <code>embeddings.npy</code> 6,642 × 384 · <code>course_ids.json</code> · <code>manifest.json</code></p>
+    </div>
+    <div class="box store">
+      <h3>Reviewed rules <code>data/rules/</code></h3>
+      <p>Skill aliases · 3 tracks, 21 skills, 13 dependencies with reasons · 8 course prerequisites quoted from descriptions</p>
+    </div>
+  </section>
+
+  <div class="gutter"><div class="flow">→<small>loaded and<br>verified<br>at startup</small></div><div class="flow">→<small>rules</small></div></div>
+
+  <!-- 2. Serve -->
+  <section class="service">
+    <div class="lane">2 · FastAPI service, one process · <code>POST /recommend</code> (also used for What-If)</div>
+    <div class="startup">Startup: check artefact hashes (refuse a mismatch) · load catalog · build BM25 index · load model locally. Model missing → labelled keyword-only mode.</div>
+    <div class="pipe">
+      <div class="n">1</div>
+      <div class="box"><h3>Read the goal</h3><p>Clauses → known, negated and target skills; track detection (or ask when ambiguous). Chip edits win; simulated What-If skills kept separate.</p></div>
+      <div class="n">2</div>
+      <div class="box"><h3>Filter</h3><p>Difficulty, organization, minimum rating → eligible courses. Unknown values never pass a filter.</p></div>
+      <div class="n">3</div>
+      <div class="retrieve">
+        <div class="box"><h3>BM25 keywords</h3><p>Top 50; hits sharing no query term dropped</p></div>
+        <div class="box"><h3>MiniLM cosine</h3><p>Top 50 above similarity 0.30</p></div>
+        <div class="box"><h3>RRF fusion</h3><p>Σ 1/(60 + rank), deterministic ties</p></div>
+      </div>
+      <div class="n">4</div>
+      <div class="box"><h3>Skill gap</h3><p>Track goal skills + prerequisite closure − known (− simulated) → missing goal skills and foundations; coverage now and after the path.</p></div>
+      <div class="n">5</div>
+      <div class="box"><h3>Learning path</h3><p>Greedy over the whole filtered catalog: learnable skills first, modelled prerequisites respected, ≤ 5 steps, uncovered skills reported with a reason.</p></div>
+      <div class="n">6</div>
+      <div class="box"><h3>Personalise top 10</h3><p>Prerequisites met → unknown → unmet; then missing goal skills taught; then fused rank; rating breaks ties. Return ≤ 5.</p></div>
+      <div class="n">7</div>
+      <div class="box"><h3>Honest Advisor</h3><p>Templated from the response: why this helps · before you start (with prerequisite source) · things to consider.</p></div>
+    </div>
+    <div class="endpoint-row">
+      <div class="box"><h3><code>POST /feedback</code></h3><p>5 labels + note → SQLite (parameterised). Stored for review, not auto-training.</p></div>
+      <div class="box"><h3><code>POST /search</code></h3><p>Raw bm25 / semantic / hybrid for evaluation</p></div>
+      <div class="box"><h3><code>GET /health · /catalog · /evaluation</code></h3><p>Readiness and mode · tracks and filters · saved report</p></div>
+    </div>
+  </section>
+
+  <div class="gutter"><div class="flow">⇄<small>JSON over<br>/api proxy</small></div><div class="flow">⇄<small>feedback</small></div></div>
+
+  <!-- 3. Use -->
+  <section class="col">
+    <div class="lane">3 · React app (Vite, TypeScript)</div>
+    <div class="box ui">
+      <h3>Discover</h3>
+      <ul>
+        <li>Goal in plain language, three examples</li>
+        <li>Editable skill chips, track, filters</li>
+        <li>Skill chart: known · missing goal skills · missing foundations</li>
+        <li>Coverage now and after the path</li>
+        <li>Numbered learning path with prerequisite sources</li>
+        <li>Up to 5 courses with Honest Advisor and feedback</li>
+      </ul>
+    </div>
+    <div class="box ui">
+      <h3>What-If</h3>
+      <p>Press a missing tile → same <code>/recommend</code> with <code>simulated_skills</code>. Baseline kept separately; shows skills, steps added, moved or dropped, or "No path change". Reset restores the profile.</p>
+    </div>
+    <div class="box ui">
+      <h3>Evaluation screen</h3>
+      <p>Reads the saved report only; never runs models. Shows "Not evaluated yet" until a real report exists.</p>
+    </div>
+    <div class="box store">
+      <h3>SQLite <code>feedback.sqlite3</code></h3>
+      <p>Course, label, note, request and profile context, timestamp</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="lane">4 · Evaluation (<code>scripts/evaluate.py</code>) uses the same engine and the same <code>/recommend</code> pipeline</div>
+  <div class="evalrow">
+    <div class="box eval"><h3>Frozen inputs</h3><p>18 goals (6 dev, 12 held out) · 9 profiles with hand-written expected gaps · 5 edge cases</p></div>
+    <div class="arrow">→</div>
+    <div class="box eval"><h3>Blind pooled judgments</h3><p>Top 5 of BM25, semantic and hybrid, method hidden; 187 labels with reasons</p></div>
+    <div class="arrow">→</div>
+    <div class="box eval"><h3>Measure</h3><p>Precision@5, MRR@5 · gap P/R/F1 · path checks · warm latency</p></div>
+    <div class="arrow">→</div>
+    <div class="box eval"><h3><code>report.json</code></h3><p>→ Evaluation screen, with findings and limitations</p></div>
+  </div>
+</footer>
+</body>
+</html>

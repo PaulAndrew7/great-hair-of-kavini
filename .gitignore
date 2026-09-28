@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+backend/.venv/
+.pytest_cache/
+# Runtime + downloaded artifacts (recreate per README)
+models/
+backend/feedback.sqlite3
+*.sqlite3
+# Frontend
+frontend/node_modules/
+frontend/dist/
+# Tooling
+.impeccable/live/
+.impeccable/hook.cache.json
+.impeccable/questions/

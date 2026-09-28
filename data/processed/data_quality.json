@@ -1,0 +1,109 @@
+{
+  "source": {
+    "name": "azrai99/coursera-course-dataset",
+    "url": "https://huggingface.co/datasets/azrai99/coursera-course-dataset",
+    "file": "coursera_course_2024.csv",
+    "revision": "ccd36c1660fee9610d5262e7517d8397c343168b",
+    "downloaded": "2026-09-28",
+    "sha256": "997a4813b0b9f0d808512f5370a85ae710ed7ecd06dc11c3029253310c3ed4a7",
+    "columns": [
+      "Unnamed: 0",
+      "title",
+      "enrolled",
+      "rating",
+      "num_reviews",
+      "Instructor",
+      "Organization",
+      "Skills",
+      "Description",
+      "Modules/Courses",
+      "Level",
+      "Schedule",
+      "URL",
+      "Satisfaction Rate"
+    ]
+  },
+  "preprocessing_version": "prep-2026-09-28.1",
+  "input_rows": 6645,
+  "dropped": {
+    "missing_title": 0,
+    "duplicate_url": 0,
+    "exact_duplicate": 3
+  },
+  "missing": {
+    "description": 10,
+    "difficulty": 778,
+    "duration_text": 1887,
+    "rating": 1434,
+    "skills": 1953
+  },
+  "difficulty": {
+    "Advanced": 252,
+    "Beginner": 3589,
+    "Intermediate": 2023,
+    "Unknown": 778
+  },
+  "course_type": {
+    "Course": 5619,
+    "Professional Certificate": 114,
+    "Specialization": 909
+  },
+  "raw_skill_labels": 9134,
+  "shared_description": {
+    "groups": 82,
+    "courses_flagged": 195
+  },
+  "output_courses": 6642,
+  "canonical_skills": 8670,
+  "courses_with_track_skill": 1577,
+  "track_skill_courses": {
+    "BI Dashboards": 109,
+    "Calculus": 32,
+    "Cloud Computing": 146,
+    "Cloud Platforms": 300,
+    "Cloud Security": 38,
+    "Containers": 35,
+    "Data Analysis": 340,
+    "Data Cleaning": 35,
+    "Data Visualization": 184,
+    "Deep Learning": 95,
+    "DevOps": 70,
+    "Kubernetes": 43,
+    "Linear Algebra": 26,
+    "Linux": 78,
+    "Machine Learning": 252,
+    "Networking": 83,
+    "Python": 234,
+    "Regression": 85,
+    "SQL": 99,
+    "Spreadsheets": 83,
+    "Statistics": 141
+  },
+  "track_skill_evidence_sources": {
+    "catalog tag": 1985,
+    "course title": 523
+  },
+  "title_description_similarity": {
+    "checked": 6437,
+    "threshold": 0.12,
+    "percentiles": {
+      "1": 0.354,
+      "5": 0.458,
+      "25": 0.588,
+      "50": 0.664
+    },
+    "flagged": [
+      {
+        "course_id": "ce4b0337d01",
+        "title": "JavaScript Security Part 2",
+        "similarity": 0.033
+      }
+    ]
+  },
+  "description_quality": {
+    "Unreviewed": 6436,
+    "Reviewed": 0,
+    "Suspect": 196,
+    "Missing": 10
+  }
+}

@@ -1,0 +1,44 @@
+.discover { display: grid; gap: 0; }
+.discover > .whatif,
+.discover > .degraded,
+.discover > .inline-error { margin-top: var(--s5); }
+
+.results {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); /* courses | skill chart and path */
+  gap: var(--s7);
+  padding-top: var(--s6);
+  transition: opacity var(--medium) var(--ease-out);
+}
+.results[data-stale] { opacity: 0.55; }
+.results-main { min-width: 0; }
+.results-side { display: grid; gap: var(--s4); align-content: start; min-width: 0; }
+
+.course-warning { max-width: none; padding: var(--s4); }
+
+.degraded,
+.inline-error {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  font-weight: 700;
+  font-size: var(--text-sm);
+}
+.inline-error {
+  padding: var(--s3) var(--s4);
+  border: var(--rule) solid var(--ink);
+}
+
+.offline { margin-top: var(--s7); }
+
+.provenance {
+  margin-top: var(--s7);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--hair);
+  font-size: var(--text-xs);
+  color: var(--ink-2);
+}
+
+@media (max-width: 1100px) {
+  .results { grid-template-columns: 1fr; gap: var(--s6); }
+}

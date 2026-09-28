@@ -1,0 +1,17 @@
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2px;
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+.meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 var(--s3);
+  border-left: 1px solid var(--hair);
+}
+.meta li:first-child { padding-left: 0; border-left: 0; }
+.meta svg { color: var(--ink); }
+.meta-dim { color: var(--ink-3); }

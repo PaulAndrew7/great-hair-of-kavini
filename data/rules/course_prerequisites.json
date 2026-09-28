@@ -1,0 +1,63 @@
+{
+  "version": "2026-09-28.1",
+  "note": "Reviewed prerequisite statements for path and demo candidates. Each entry quotes the catalog description it came from; 'requires' uses canonical skill names. Courses not listed fall back to curated guidance or 'not verified'. Reviewed 2026-09-28 against data_version 997a4813-dd69c366.",
+  "entries": [
+    {
+      "course_id": "c8a9e8a68ce",
+      "title": "Machine Learning: Algorithms in the Real World Specialization",
+      "requires": ["Python", "Linear Algebra", "Statistics"],
+      "source_type": "course description",
+      "evidence": "You should have a basic understanding of linear algebra (vector notation) and statistics (probability distributions and mean/median/mode).",
+      "note": "The same paragraph also asks for 'at least beginner-level background in Python programming'."
+    },
+    {
+      "course_id": "cccbf20bf40",
+      "title": "Structuring Machine Learning Projects",
+      "requires": ["Machine Learning"],
+      "source_type": "course description",
+      "evidence": "This is also a standalone course for learners who have basic machine learning knowledge."
+    },
+    {
+      "course_id": "c5f90479280",
+      "title": "Statistics and Data Analysis with Excel, Part 1",
+      "requires": [],
+      "source_type": "course description",
+      "evidence": "Designed for students with no prior statistics knowledge, this course will provide a foundation for further study in data science, data analytics, or machine learning."
+    },
+    {
+      "course_id": "c14dc800c57",
+      "title": "Cloud Fundamentals",
+      "requires": [],
+      "source_type": "course description",
+      "evidence": "No prerequisites are needed to enroll in this course."
+    },
+    {
+      "course_id": "c99087ca897",
+      "title": "Cloud and AWS Basics",
+      "requires": [],
+      "source_type": "course description",
+      "evidence": "This course requires no prerequisites."
+    },
+    {
+      "course_id": "ccbeeeef29a",
+      "title": "Cloud Computing Primer: Platform as a Service (PaaS)",
+      "requires": [],
+      "source_type": "course description",
+      "evidence": "This course is designed for semi-technical and business learners, providing a solid foundation of cloud computing basics."
+    },
+    {
+      "course_id": "cc9b2fcc26e",
+      "title": "Cloud Computing Primer: Infrastructure as a Service (IaaS)",
+      "requires": [],
+      "source_type": "course description",
+      "evidence": "This course is designed for semi-technical and business learners, providing a solid foundation of cloud computing basics."
+    },
+    {
+      "course_id": "c26c71db20f",
+      "title": "Connecting to Devices and Networks",
+      "requires": [],
+      "source_type": "course description",
+      "evidence": "This course is designed for learners with no technical experience, providing a solid foundation of connecting to devices and networks."
+    }
+  ]
+}

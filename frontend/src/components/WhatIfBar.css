@@ -1,0 +1,42 @@
+.whatif {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3) var(--s5);
+  padding: var(--s3) var(--s4);
+  border: var(--rule-heavy) solid var(--ink);
+  background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--ink) 14%, transparent) 0 1.5px, transparent 1.5px 9px), var(--stock);
+}
+.whatif-main { display: grid; gap: 2px; min-width: 0; }
+.whatif-title {
+  font-size: var(--text-md);
+  font-weight: 850;
+  font-stretch: 112%;
+}
+.whatif-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+.whatif-skill {
+  min-height: 28px;
+  padding: 0 var(--s2);
+  border: var(--rule) solid var(--ink);
+  background: var(--stock);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  text-decoration: line-through;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--fast) var(--ease-out), background-color var(--fast) var(--ease-out);
+}
+.whatif-skill:hover { text-decoration-color: currentColor; background: var(--panel); }
+.whatif-delta {
+  font-size: var(--text-sm);
+  font-weight: 800;
+  min-height: 1.4em;
+}
+.whatif-reset { background: var(--stock); }

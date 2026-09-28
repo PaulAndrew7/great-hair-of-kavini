@@ -1,0 +1,14 @@
+# Tested on Python 3.13 (Windows 11), 2026-09-28.
+# CPU-only torch keeps the install small; install it first:
+#   pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
+fastapi==0.141.1
+uvicorn[standard]==0.54.0
+pydantic==2.13.5
+pandas==3.0.6
+numpy==2.5.3
+rank-bm25==0.2.2
+sentence-transformers==6.1.0
+transformers==5.17.0
+huggingface_hub==1.33.0
+pytest==9.1.1
+httpx==0.28.1

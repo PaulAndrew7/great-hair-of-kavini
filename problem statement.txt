@@ -1,0 +1,126 @@
+
+
+
+UNIVERSITY COURSE FINDER – INTELLIGENT COURSE 
+DISCOVERY SYSTEM 
+Overview 
+Students often struggle to identify the right online courses based on their learning goals, 
+existing skills, preferred difficulty level, and career objectives. Traditional course search 
+systems generally rely on keywords and may return large numbers of courses without 
+understanding the student's actual intent. 
+Students may ask questions such as: 
+• “I want to learn data science from the basics. Which courses should I start with?”  
+• “I know Python and SQL. What courses should I take next to move into machine 
+learning?”  
+• “I want to learn cloud computing but I don't know which prerequisite courses I need.”  
+• “Can you suggest a learning path from beginner to advanced data analytics?”  
+Instead of relying only on keyword-based search, the system should understand the student's 
+learning goal, identify relevant courses, analyze skill gaps and prerequisites, and recommend a 
+suitable learning path. 
+Build an intelligent course discovery system that allows students to enter natural-language 
+learning goals and retrieve relevant courses along with skill-gap analysis, prerequisite 
+information and personalized learning-path recommendations. 
+Tasks 
+Task Task Overview Weightage 
+Task 1 – Course Data 
+Preparation & Knowledge 
+Base 
+Prepare the course dataset and build the 
+foundation for intelligent course discovery. 
+20% 
+Task 2 – Semantic Course 
+Search & Recommendation 
+Enable students to search for courses using 
+natural-language learning goals and receive 
+relevant recommendations. 
+25% 
+Task 3 – Skill Gap, 
+Prerequisite & Learning Path 
+Analysis 
+Extend the recommendation system to identify 
+skill gaps and create a structured learning 
+path. 
+25% 
+Task 4 – Evaluation, 
+Personalization & User 
+Application 
+Evaluate recommendation quality and provide 
+an application through which students can 
+interact with the course discovery system. 
+20% 
+Task 5 – Architecture, 
+Documentation & 
+Demonstration 
+Document the complete solution and 
+demonstrate how the intelligent course 
+discovery system works. 
+10% 
+Total 
+ 
+100% 
+ 
+Task Details 
+Task 1 – Course Data Preparation & Knowledge Base 
+• Prepare the provided course dataset for intelligent retrieval and recommendation.  
+• The task should result in a searchable course knowledge base containing course 
+descriptions, skills and relevant metadata.  
+• Document the preprocessing, embedding and indexing approach used. 
+Task 2 – Semantic Course Search & Recommendation 
+• Build the core course discovery capability. A student should be able to enter a natural
+language learning goal and receive relevant courses.  
+• The system should use semantic or hybrid retrieval, support appropriate filters and 
+provide an explanation for the recommended courses. 
+Task 3 – Skill Gap, Prerequisite & Learning Path Analysis 
+• Extend the basic recommendation system by analyzing the student's skill requirements 
+and prerequisites.  
+• The solution should identify missing skills and recommend suitable courses to address 
+those gaps.  
+• The system should organize the recommendations into a logical learning path from 
+foundational to advanced courses. 
+Task 4 – Evaluation, Personalization & User Application 
+• Evaluate the quality of course recommendations, skill-gap analysis and learning paths 
+using representative student queries.  
+• The solution should include a simple user interface through which students can enter 
+learning goals and view recommendations, prerequisites, skill gaps and learning paths. 
+• Feedback should be captured to support improvement of recommendations. 
+Task 5 – Architecture, Documentation & Demonstration 
+• Provide the complete technical documentation and demonstrate the working solution. 
+• The architecture should clearly show the data-to-recommendation flow, while the 
+design documentation should explain important technical decisions and trade-offs.  
+• The executable implementation and README should allow another user to set up and 
+run the solution. 
+ 
+Deliverables 
+1. Architecture Diagram 
+• Include a high-level view of your system in JPEG or PDF.  
+• Show how data is processed from the provided dataset through to the user's course 
+recommendation and learning-path response.  
+2. Design 
+• Articulate system design decisions taken and the trade-offs made.  
+ 
+3. Full Executable Code (Microservice) 
+• Focus on clarity and modularity.  
+• Provide a README explaining:  
+o Project setup (how to install or run)  
+o Sample usage (e.g., a student learning goal and the resulting course 
+recommendations)  
+4. Panel Presentation (10 minutes) 
+• Demo of your working solution outlining the design and approach (8 minutes).  
+• QCA (2 minutes).  
+ 
+Dataset Name 
+Online Courses / University Course Dataset 
+Primary Link 
+ https://www.kaggle.com/datasets/azraimohamad/coursera-course-data  
+Alternative Links  
+https://huggingface.co/datasets/azrai99/coursera-course-dataset 
+https://github.com/Siddharth1698/Coursera-Course-Dataset 
+https://www.kaggle.com/datasets/siddharthm1698/coursera-course-dataset 
+Format 
+CSV 
+Key Fields 
+Course name, course description, skills, difficulty level, rating, organization and other relevant 
+course metadata. 
+Reason 
+The course dataset provides information required to support semantic course discovery, skill 
+matching, prerequisite analysis and personalized learning-path recommendations. 

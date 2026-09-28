@@ -1,0 +1,2797 @@
+{
+ "relevance_rule": "A course is relevant when its main subject is the learning topic the query asks for and it respects explicit constraints in the query (for example 'beginner' or a named tool). A course that only uses the topic in passing, or is about a different subject that shares words, is not relevant.",
+ "pool": [
+  {
+   "query_id": "ml-d1",
+   "query": "I know Python and SQL. Help me move into machine learning.",
+   "candidates": [
+    {
+     "course_id": "c195c1ab12e",
+     "title": "Build and Operate Machine Learning Solutions with Azure",
+     "organization": "Microsoft",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Azure Machine Learning is a cloud platform for training, deploying, managing, and monitoring machine learning models. In this course, you will learn how to use the Azure Machine Learning Python SDK to create and manage enterprise-ready ML solutions. This is the third course in a five-course program that prepares you to take the DP-100: Designing and Implementing a Data Science Solution on Azurecertification exam.",
+     "skills": [
+      "Modeling",
+      "Cloud Platforms",
+      "Data Security",
+      "Machine Learning"
+     ]
+    },
+    {
+     "course_id": "c205b923395",
+     "title": "IBM Machine Learning Professional Certificate",
+     "organization": "IBM",
+     "difficulty": "Intermediate",
+     "course_type": "Professional Certificate",
+     "description_quality": "Unreviewed",
+     "summary": "Prepare for a career in the field of machine learning. In this program, you’ll learn in-demand skills like AI and Machine Learning toget job-ready in less than 3 months.",
+     "skills": [
+      "Ensemble Learning",
+      "Regression",
+      "Machine Learning",
+      "Feature Engineering",
+      "Statistics"
+     ]
+    },
+    {
+     "course_id": "c2c1c6e298d",
+     "title": "Machine Learning Introduction for Everyone",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This three-module course introduces machine learning and data science for everyone with a foundational understanding of machine learning models. You’ll learn about the history of machine learning, applications of machine learning, the machine learning model lifecycle, and tools for machine learning.",
+     "skills": [
+      "Artificial Intelligence",
+      "Reinforcement Learning",
+      "Machine Learning",
+      "Deep Learning",
+      "Machine Learning Model Lifecycle"
+     ]
+    },
+    {
+     "course_id": "c3bc3519e49",
+     "title": "Introduction to Applied Machine Learning",
+     "organization": "Alberta Machine Intelligence Institute",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is for professionals who have heard the buzz around machine learning and want to apply machine learning to data analysis and automation. Whether finance, medicine, engineering, business or other domains, this course will introduce you to problem definition and data preparation in a machine learning project.",
+     "skills": []
+    },
+    {
+     "course_id": "c4f73f862a8",
+     "title": "Machine Learning Implementation and Operations in AWS",
+     "organization": "Whizlabs",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Machine Learning Implementation Operations in AWS is the fifth Course in the AWS Certified Machine Learning Specialty specialization. The course has a major focus on designing and implementing machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance. This course is divided into two modules and each module is further segmented by Lessons and Video Lectures.",
+     "skills": [
+      "Machine Learning",
+      "Data Management",
+      "Cloud Platforms"
+     ]
+    },
+    {
+     "course_id": "c6bc9935f0a",
+     "title": "Machine Learning Foundations: A Case Study Approach",
+     "organization": "University of Washington",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Do you have data and wonder what it can tell you? Do you need a deeper understanding of the core ways in which machine learning can improve your business? Do you want to be able to converse with specialists about anything from regression and classification to deep learning and recommender systems? In this course, you will get hands-on experience with machine learning from a series of practical case-studies.",
+     "skills": [
+      "Python",
+      "Machine Learning Concepts",
+      "Machine Learning",
+      "Deep Learning"
+     ]
+    },
+    {
+     "course_id": "c77e5c92b37",
+     "title": "Foundations of Machine Learning",
+     "organization": "Fractal Analytics",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In a world where data-driven insights are reshaping industries, mastering the foundations of machine learning is a valuable skill that opens doors to innovation and informed decision-making. In this comprehensive course, you will be guided through the core concepts and practical aspects of machine learning.",
+     "skills": [
+      "Regression",
+      "Machine Learning",
+      "Data Pre-Processing",
+      "Decision Tree"
+     ]
+    },
+    {
+     "course_id": "c8a9e8a68ce",
+     "title": "Machine Learning: Algorithms in the Real World Specialization",
+     "organization": "Alberta Machine Intelligence Institute",
+     "difficulty": "Intermediate",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "This specialization is for professionals who have heard the buzz around machine learning and want to apply machine learning to data analysis and automation. Whether finance, medicine, engineering, business or other domains, this specialization will set you up to define, train, and maintain a successful machine learning application.",
+     "skills": [
+      "Project Management",
+      "Machine Learning",
+      "Classification Algorithms"
+     ]
+    },
+    {
+     "course_id": "cff03f9f500",
+     "title": "Developing Machine Learning Solutions",
+     "organization": "Amazon Web Services",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this machine learning course, you will learn about the machine learning lifecycle, and how to use AWS services at every stage. Additionally, you will discover the diverse sources for machine learning models and learn techniques to evaluate their performance.",
+     "skills": []
+    }
+   ]
+  },
+  {
+   "query_id": "ml-d2",
+   "query": "How do computers learn to recognise images with neural networks?",
+   "candidates": [
+    {
+     "course_id": "c0d7a946141",
+     "title": "Convolutional Neural Networks",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In the fourth course of the Deep Learning Specialization, you will understand how computer vision has evolved and become familiar with its exciting applications such as autonomous driving, face recognition, reading radiology images, and more.",
+     "skills": [
+      "Facial Recognition System",
+      "TensorFlow",
+      "Deep Learning",
+      "Object Detection and Segmentation"
+     ]
+    },
+    {
+     "course_id": "c184533cec9",
+     "title": "Convolutional Neural Networks in TensorFlow",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "If you are a software developer who wants to build scalable AI-powered algorithms, you need to understand how to use the tools to build them. This course is part of the DeepLearning.AI TensorFlow Developer Specialization and will teach you best practices for using TensorFlow, a popular open-source framework for machine learning.",
+     "skills": [
+      "TensorFlow",
+      "Deep Learning",
+      "Transfer Learning",
+      "Machine Learning",
+      "Dropouts",
+      "Data Augmentation"
+     ]
+    },
+    {
+     "course_id": "c277ee969de",
+     "title": "Introduction to Deep Learning for Computer Vision",
+     "organization": "MathWorks",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Starting with zero deep learning knowledge, this foundational course will guide you to effectively train cutting-edge models for image classification purposes. From analyzing medical images to recognizing traffic signs, classification is important for many applications. Classification models also serve as the backbone for more complicated object detection models.",
+     "skills": [
+      "Artificial Intelligence",
+      "Computer Vision",
+      "Deep Learning",
+      "Matlab",
+      "image classification"
+     ]
+    },
+    {
+     "course_id": "c3482ce3817",
+     "title": "Generative Deep Learning with TensorFlow",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you will: a) Learn neural style transfer using transfer learning: extract the content of an image (eg. swan), and the style of a painting (eg. cubist or impressionist), and combine the content and style into a new image.",
+     "skills": [
+      "Variational AutoEncoders",
+      "Auto Encoders",
+      "Generative Adversarial Networks",
+      "Neural Style Transfer"
+     ]
+    },
+    {
+     "course_id": "c4d52dddc5b",
+     "title": "Computer Vision Fundamentals with Google Cloud",
+     "organization": "Google Cloud",
+     "difficulty": "Advanced",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course describes different types of computer vision use cases and then highlights different machine learning strategies for solving these use cases. The strategies vary from experimenting with pre-built ML models through pre-built ML APIs and AutoML Vision to building custom image classifiers using linear models, deep neural network (DNN) models or convolutional neural network (CNN) models.",
+     "skills": [
+      "TensorFlow",
+      "Deep Learning",
+      "Estimator",
+      "Machine Learning"
+     ]
+    },
+    {
+     "course_id": "c598286c097",
+     "title": "Foundations of Deep Learning and Neural Networks",
+     "organization": "Packt",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Embark on a journey through the intricate world of deep learning and neural networks. This course starts with a foundation in the history and basic concepts of neural networks, including perceptrons and multi-layer structures. As you progress, you'll explore the mechanics of training neural networks, covering activation functions and the backpropagation algorithm.",
+     "skills": [
+      "Keras",
+      "Backpropagation",
+      "Machine Learning",
+      "TensorFlow",
+      "Artificial Intelligence"
+     ]
+    },
+    {
+     "course_id": "c70e04be018",
+     "title": "Deep Learning for Computer Vision Specialization",
+     "organization": "MathWorks",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "Thishands-on specialization dives in quickly, so you can start training models and gain practical deep learning skills. You don’t need to be an expert programmer or have prior deep learning experience to quicklygain valuable career skillsfor this rapidly growing area.",
+     "skills": [
+      "Anomaly Detection",
+      "Artificial Intelligence",
+      "Computer Vision",
+      "Object Detection",
+      "Deep Learning",
+      "classification",
+      "Matlab"
+     ]
+    },
+    {
+     "course_id": "ca0063e587f",
+     "title": "Advanced Computer Vision with TensorFlow",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you will: a) Explore image classification, image segmentation, object localization, and object detection. Apply transfer learning to object localization and detection. b) Apply object detection models such as regional-CNN and ResNet-50, customize existing models, and build your own models to detect, localize, and label your own rubber duck images.",
+     "skills": [
+      "Salience",
+      "Image Segmentation",
+      "Model Interpretability",
+      "Class Activation Maps",
+      "TensorFlow Object Detection API"
+     ]
+    },
+    {
+     "course_id": "cc2bc9e7fc0",
+     "title": "Computer Vision with Embedded Machine Learning",
+     "organization": "Edge Impulse",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Computer vision (CV) is a fascinating field of study that attempts to automate the process of assigning meaning to digital images or videos. In other words, we are helping computers see and understand the world around us! A number of machine learning (ML) algorithms and techniques can be used to accomplish CV tasks, and as ML becomes faster and more efficient, we can deploy these techniques to embedded systems.",
+     "skills": [
+      "Computer Programming",
+      "Python",
+      "Machine Learning",
+      "Microcontroller",
+      "Embedded System Development"
+     ]
+    },
+    {
+     "course_id": "cfeb35009f3",
+     "title": "Building and Training Neural Networks with PyTorch",
+     "organization": "Packt",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Embark on a journey through the intricacies of neural networks using PyTorch, a powerful framework favored by professionals and researchers alike. The course begins with an in-depth exploration of classification models, where you'll learn to tackle different types of classification problems, utilize confusion matrices, and interpret ROC curves.",
+     "skills": [
+      "Deep Learning",
+      "PyTorch",
+      "CNN",
+      "YOLO",
+      "Classification Models"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "ml-t1",
+   "query": "I want to build predictive models from data.",
+   "candidates": [
+    {
+     "course_id": "c013e878f88",
+     "title": "Analytics for Decision Making Specialization",
+     "organization": "University of Minnesota",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "The field of analytics is typically built on four pillars: Descriptive Analytics, Predictive Analytics, Causal Analytics, and Prescriptive Analytics.",
+     "skills": [
+      "Predictive Analytics",
+      "Monte Carlo Method",
+      "Prescriptive Analytics",
+      "Business Analytics",
+      "Linear Programming (LP)"
+     ]
+    },
+    {
+     "course_id": "c2100b17c31",
+     "title": "Predictive Modeling and Analytics",
+     "organization": "University of Colorado Boulder",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the second course in the Data Analytics for Business specialization! This course will introduce you to some of the most widely used predictive modeling techniques and their core principles. By taking this course, you will form a solid foundation of predictive analytics, which refers to tools and techniques for building statistical or machine learning models to make predictions based on data.",
+     "skills": [
+      "Regression",
+      "Data Cleaning",
+      "Predictive Modelling",
+      "Data Analysis"
+     ]
+    },
+    {
+     "course_id": "c3b38f82dad",
+     "title": "Machine Learning: Regression",
+     "organization": "University of Washington",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Case Study - Predicting Housing Prices In our first case study, predicting house prices, you will create models that predict a continuous value (price) from input features (square footage, number of bedrooms and bathrooms,...). This is just one of the many places where regression can be applied.",
+     "skills": [
+      "Regression",
+      "Lasso (Statistics)"
+     ]
+    },
+    {
+     "course_id": "c43c652048f",
+     "title": "Predictive Modeling with Logistic Regression using SAS",
+     "organization": "SAS",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course covers predictive modeling using SAS/STAT software with emphasis on the LOGISTIC procedure. This course also discusses selecting variables and interactions, recoding categorical variables based on the smooth weight of evidence, assessing models, treating missing values, and using efficiency techniques for massive data sets.",
+     "skills": [
+      "Oversampling",
+      "Regression",
+      "Predictive Modelling"
+     ]
+    },
+    {
+     "course_id": "c456a199038",
+     "title": "Predictive Modeling and Machine Learning with MATLAB",
+     "organization": "MathWorks",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you will build on the skills learned in Exploratory Data Analysis with MATLAB and Data Processing and Feature Engineering with MATLAB to increase your ability to harness the power of MATLAB to analyze data relevant to the work you do. These skills are valuable for those who have domain knowledge and some exposure to computational tools, but no programming background.",
+     "skills": [
+      "Machine Learning",
+      "Matlab",
+      "Predictive Modelling"
+     ]
+    },
+    {
+     "course_id": "c7342e2cb57",
+     "title": "Predictive Modeling, Model Fitting, and Regression Analysis",
+     "organization": "University of California, Irvine",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to Predictive Modeling, Model Fitting, and Regression Analysis. In this course, we will explore different approaches in predictive modeling, and discuss how a model can be either supervised or unsupervised. We will review how a model can be fitted, trained and scored to apply to both historical and future data in an effort to address business objectives.",
+     "skills": []
+    },
+    {
+     "course_id": "c92424df029",
+     "title": "Introduction to Predictive Modeling",
+     "organization": "University of Minnesota",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to Introduction to Predictive Modeling, the first course in the University of Minnesota’s Analytics for Decision Making specialization. This course will introduce to you the concepts, processes, and applications of predictive modeling, with a focus on linear regression and time series forecasting models and their practical use in Microsoft Excel. By the end of the course, you will be able to:",
+     "skills": [
+      "Predictive Analytics",
+      "Data Preparation",
+      "Time Series Forecasting",
+      "Regression"
+     ]
+    },
+    {
+     "course_id": "cb7f9549e9c",
+     "title": "Design Thinking and Predictive Analytics for Data Products",
+     "organization": "University of California San Diego",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the second course in the four-course specialization Python Data Products for Predictive Analytics, building on the data processing covered in Course 1 and introducing the basics of designing predictive models in Python. In this course, you will understand the fundamental concepts of statistical learning and learn various methods of building predictive models.",
+     "skills": []
+    },
+    {
+     "course_id": "ccced0a9f89",
+     "title": "Practical Machine Learning",
+     "organization": "Johns Hopkins University",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "One of the most common tasks performed by data scientists and data analysts are prediction and machine learning. This course will cover the basic components of building and applying prediction functions with an emphasis on practical applications. The course will provide basic grounding in concepts such as training and tests sets, overfitting, and error rates.",
+     "skills": [
+      "Random Forest",
+      "Machine Learning",
+      "R"
+     ]
+    },
+    {
+     "course_id": "cfc3d75ae1e",
+     "title": "Regression Modeling Fundamentals",
+     "organization": "SAS",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This introductory course is for SAS software users who perform statistical analyses using SAS/STAT software. The focus is on t tests, ANOVA, and linear regression, and includes a brief introduction to logistic regression. In this module you learn about the course and the data you analyze in this course. Then you set up the data you need to do the practices in the course.",
+     "skills": [
+      "Multivariate Time Series Analysis",
+      "Surrogate Model",
+      "Multivariate Analysis",
+      "Predictive Modelling"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "ml-t2",
+   "query": "Teach me deep learning with TensorFlow.",
+   "candidates": [
+    {
+     "course_id": "c03eef33020",
+     "title": "Sequences, Time Series and Prediction",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "If you are a software developer who wants to build scalable AI-powered algorithms, you need to understand how to use the tools to build them. This Specialization will teach you best practices for using TensorFlow, a popular open-source framework for machine learning. In this fourth course, you will learn how to build time series models in TensorFlow. You’ll first implement best practices to prepare time series data.",
+     "skills": [
+      "prediction",
+      "TensorFlow",
+      "Forecasting",
+      "Time Series",
+      "Machine Learning"
+     ]
+    },
+    {
+     "course_id": "c184533cec9",
+     "title": "Convolutional Neural Networks in TensorFlow",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "If you are a software developer who wants to build scalable AI-powered algorithms, you need to understand how to use the tools to build them. This course is part of the DeepLearning.AI TensorFlow Developer Specialization and will teach you best practices for using TensorFlow, a popular open-source framework for machine learning.",
+     "skills": [
+      "TensorFlow",
+      "Deep Learning",
+      "Transfer Learning",
+      "Machine Learning",
+      "Dropouts",
+      "Data Augmentation"
+     ]
+    },
+    {
+     "course_id": "c2a9a57ffe8",
+     "title": "Natural Language Processing in TensorFlow",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "If you are a software developer who wants to build scalable AI-powered algorithms, you need to understand how to use the tools to build them. This Specialization will teach you best practices for using TensorFlow, a popular open-source framework for machine learning. In Course 3 of the DeepLearning.AI TensorFlow Developer Specialization, you will build natural language processing systems using TensorFlow.",
+     "skills": [
+      "RNNs",
+      "TensorFlow",
+      "Machine Learning",
+      "Natural Language Processing",
+      "Text Vectorization"
+     ]
+    },
+    {
+     "course_id": "c41ca8eace6",
+     "title": "Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "If you are a software developer who wants to build scalable AI-powered algorithms, you need to understand how to use the tools to build them. This course is part of the DeepLearning.AI TensorFlow Developer Specialization and will teach you best practices for using TensorFlow, a popular open-source framework for machine learning.",
+     "skills": [
+      "Computer Vision",
+      "TensorFlow",
+      "Machine Learning"
+     ]
+    },
+    {
+     "course_id": "c51bdc07380",
+     "title": "Customising your models with TensorFlow 2",
+     "organization": "Imperial College London",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to this course on Customising your models with TensorFlow 2! In this course you will deepen your knowledge and skills with TensorFlow, in order to develop fully customised deep learning models and workflows for any application. You will use lower level APIs in TensorFlow to develop complex model architectures, fully customised layers, and a flexible data workflow.",
+     "skills": [
+      "TensorFlow",
+      "Deep Learning",
+      "Keras"
+     ]
+    },
+    {
+     "course_id": "ca5a70f1396",
+     "title": "TensorFlow on Google Cloud",
+     "organization": "Google Cloud",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course covers building ML models with TensorFlow and Keras, improving the accuracy of ML models and writing ML models for scaled use. This module provides an overview of the course and its objectives. This module introduces the TensorFlow framework and previews its main components as well as the overall API hierarchy. Data is the a crucial component of a machine learning model.",
+     "skills": [
+      "TensorFlow",
+      "Python",
+      "Machine Learning",
+      "Keras",
+      "Build Input Data Pipeline"
+     ]
+    },
+    {
+     "course_id": "caf78048244",
+     "title": "Data Pipelines with TensorFlow Data Services",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Bringing a machine learning model into the real world involves a lot more than just modeling. This Specialization will teach you how to navigate various deployment scenarios and use data more effectively to train your model.",
+     "skills": [
+      "TensorFlow",
+      "Extraction, Transformation And Loading (ETL)",
+      "Deep Learning",
+      "TensorFlow Datasets",
+      "Data Pipelines"
+     ]
+    },
+    {
+     "course_id": "ce64a40205c",
+     "title": "Getting started with TensorFlow 2",
+     "organization": "Imperial College London",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to this course on Getting started with TensorFlow 2! In this course you will learn a complete end-to-end workflow for developing deep learning models with Tensorflow, from building, training, evaluating and predicting with models using the Sequential API, validating your models and including regularisation, implementing callbacks, and saving and loading models.",
+     "skills": []
+    }
+   ]
+  },
+  {
+   "query_id": "ml-t3",
+   "query": "I'm good at statistics and want to learn regression and classification algorithms.",
+   "candidates": [
+    {
+     "course_id": "c038205a6eb",
+     "title": "Advanced Linear Models for Data Science 1: Least Squares",
+     "organization": "Johns Hopkins University",
+     "difficulty": "Advanced",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the Advanced Linear Models for Data Science Class 1: Least Squares. This class is an introduction to least squares from a linear algebraic and mathematical perspective. Before beginning the class make sure that you have the following: - A basic understanding of linear algebra and multivariate calculus. - A basic understanding of statistics and regression models.",
+     "skills": [
+      "Statistics",
+      "Regression",
+      "R",
+      "Linear Algebra"
+     ]
+    },
+    {
+     "course_id": "c4a3a4c1957",
+     "title": "Statistical Learning",
+     "organization": "Illinois Tech",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course offers a deep dive into the world of statistical analysis, equipping learners with cutting-edge techniques to understand and interpret data effectively. We explore a range of methodologies, from regression and classification to advanced approaches like kernel methods and support vector machines, all designed to enhance your data analysis skills.",
+     "skills": [
+      "Regression",
+      "Deep Learning",
+      "K-Means Clustering",
+      "Linear Discriminant Analysis (LDA)",
+      "K-Nearest Neighbors Algorithm (K-NN)",
+      "Bayesian Inference",
+      "Splines"
+     ]
+    },
+    {
+     "course_id": "c6337376205",
+     "title": "Machine Learning with Python",
+     "organization": "IBM",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Get ready to dive into the world of Machine Learning (ML) by using Python! This course is for you whether you want to advance your Data Science career or get started in Machine Learning and Deep Learning. This course will begin with a gentle introduction to Machine Learning and what it is, with topics like supervised vs unsupervised learning, linear & non-linear regression, simple regression and more.",
+     "skills": [
+      "Machine Learning",
+      "Regression",
+      "Hierarchical Clustering",
+      "classification",
+      "SciPy and scikit-learn"
+     ]
+    },
+    {
+     "course_id": "c95a7baf97f",
+     "title": "Linear Regression",
+     "organization": "Illinois Tech",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is best suited for individuals who have a technical background in mathematics/statistics/computer science/engineering pursuing a career change to jobs or industries that are data-driven such as finance, retain, tech, healthcare, government and many more. The opportunity is endless. This course is part of the Performance Based Admission courses for the Data Science program.",
+     "skills": [
+      "Statistics",
+      "Regression",
+      "R"
+     ]
+    },
+    {
+     "course_id": "ca3b13608fd",
+     "title": "Regression Analysis",
+     "organization": "University of Colorado Boulder",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The \"Regression Analysis\" course equips students with the fundamental concepts of one of the most important supervised learning methods, regression. Participants will explore various regression techniques and learn how to evaluate them effectively.",
+     "skills": [
+      "Ensemble Learning",
+      "Regression",
+      "Cross Validation",
+      "Scikit-Learn"
+     ]
+    },
+    {
+     "course_id": "cb274865823",
+     "title": "Supervised Machine Learning: Classification",
+     "organization": "IBM",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course introduces you to one of the main types of modeling families of supervised Machine Learning: Classification. You will learn how to train predictive models to classify categorical outcomes and how to use error metrics to compare across different models.",
+     "skills": [
+      "Ensemble Learning",
+      "Machine Learning",
+      "Classification Algorithms",
+      "Decision Tree"
+     ]
+    },
+    {
+     "course_id": "ccdbfc0985b",
+     "title": "Machine Learning: Classification",
+     "organization": "University of Washington",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Case Studies: Analyzing Sentiment & Loan Default Prediction In our case study on analyzing sentiment, you will create models that predict a class (positive/negative sentiment) from input features (text of the reviews, user profile information,...). In our second case study for this course, loan default prediction, you will tackle financial data, and predict when a loan is likely to be risky or safe for the bank.",
+     "skills": [
+      "Regression",
+      "Statistical Classification",
+      "Classification Algorithms",
+      "Decision Tree"
+     ]
+    },
+    {
+     "course_id": "cce78c1900b",
+     "title": "Build Regression, Classification, and Clustering Models",
+     "organization": "CertNexus",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In most cases, the ultimate goal of a machine learning project is to produce a model. Models make decisions, predictions—anything that can help the business understand itself, its customers, and its environment better than a human could. Models are constructed using algorithms, and in the world of machine learning, there are many different algorithms to choose from.",
+     "skills": [
+      "Regression",
+      "Machine Learning",
+      "classification",
+      "clustering"
+     ]
+    },
+    {
+     "course_id": "cefe440eaad",
+     "title": "Machine Learning: Concepts and Applications",
+     "organization": "The University of Chicago",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course gives you a comprehensive introduction to both the theory and practice of machine learning. You will learn to use Python along with industry-standard libraries and tools, including Pandas, Scikit-learn, and Tensorflow, to ingest, explore, and prepare data for modeling and then train and evaluate models using a wide variety of techniques.",
+     "skills": [
+      "Machine Learning",
+      "Deep Learning",
+      "Regression",
+      "Statistical Classification"
+     ]
+    },
+    {
+     "course_id": "cf09362c369",
+     "title": "Supervised Machine Learning: Regression and Classification",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In the first course of the Machine Learning Specialization, you will: • Build machine learning models in Python using popular machine learning libraries NumPy and scikit-learn.\n• Build and train supervised machine learning models for prediction and binary classification tasks, including linear regression and logistic regression",
+     "skills": [
+      "Regression",
+      "Regularization to Avoid Overfitting",
+      "Logistic Regression for Classification",
+      "Gradient Descent",
+      "Machine Learning"
+     ]
+    },
+    {
+     "course_id": "cf216c8ad1b",
+     "title": "Classification Analysis",
+     "organization": "University of Colorado Boulder",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The \"Classification Analysis\" course provides you with a comprehensive understanding of one of the fundamental supervised learning methods, classification. You will explore various classifiers, including KNN, decision tree, support vector machine, naive bayes, and logistic regression, and learn how to evaluate their performance.",
+     "skills": [
+      "Bayesian Statistics",
+      "Regression",
+      "Support Vector Machine (SVM)",
+      "classification",
+      "Decision Tree"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "ml-t4",
+   "query": "A beginner-friendly introduction to machine learning concepts.",
+   "candidates": [
+    {
+     "course_id": "c03187590c2",
+     "title": "Advanced Learning Algorithms",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In the second course of the Machine Learning Specialization, you will: • Build and train a neural network with TensorFlow to perform multi-class classification\n• Apply best practices for machine learning development so that your models generalize to data and tasks in the real world\n• Build and use decision trees and tree ensemble methods, including random forests and boosted trees",
+     "skills": [
+      "TensorFlow",
+      "Advice for Model Development",
+      "Deep Learning",
+      "Xgboost",
+      "Tree Ensembles"
+     ]
+    },
+    {
+     "course_id": "c2127f1c847",
+     "title": "Machine Learning Specialization",
+     "organization": "Stanford University",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "The Machine Learning Specialization is a foundational online program created in collaboration between DeepLearning.AI and Stanford Online. This beginner-friendly program will teach you the fundamentals of machine learning and how to use these techniques to build real-world AI applications.",
+     "skills": [
+      "Regression",
+      "Deep Learning",
+      "Decision Trees",
+      "Recommender Systems"
+     ]
+    },
+    {
+     "course_id": "c2c1c6e298d",
+     "title": "Machine Learning Introduction for Everyone",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This three-module course introduces machine learning and data science for everyone with a foundational understanding of machine learning models. You’ll learn about the history of machine learning, applications of machine learning, the machine learning model lifecycle, and tools for machine learning.",
+     "skills": [
+      "Artificial Intelligence",
+      "Reinforcement Learning",
+      "Machine Learning",
+      "Deep Learning",
+      "Machine Learning Model Lifecycle"
+     ]
+    },
+    {
+     "course_id": "c3bc3519e49",
+     "title": "Introduction to Applied Machine Learning",
+     "organization": "Alberta Machine Intelligence Institute",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is for professionals who have heard the buzz around machine learning and want to apply machine learning to data analysis and automation. Whether finance, medicine, engineering, business or other domains, this course will introduce you to problem definition and data preparation in a machine learning project.",
+     "skills": []
+    },
+    {
+     "course_id": "c40cab1cbfb",
+     "title": "Unsupervised Learning, Recommenders, Reinforcement Learning",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In the third course of the Machine Learning Specialization, you will: • Use unsupervised learning techniques for unsupervised learning: including clustering and anomaly detection.\n• Build recommender systems with a collaborative filtering approach and a content-based deep learning method.\n• Build a deep reinforcement learning model.",
+     "skills": [
+      "Anomaly Detection",
+      "Machine Learning",
+      "Reinforcement Learning",
+      "Collaborative Filtering",
+      "Recommender Systems"
+     ]
+    },
+    {
+     "course_id": "c4940268d0f",
+     "title": "Machine Learning Basics",
+     "organization": "Sungkyunkwan University",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you will: a) understand the basic concepts of machine learning.\nb) understand a typical memory-based method, the K nearest neighbor method.\nc) understand linear regression.\nd) understand model analysis.\nPlease make sure that you’re comfortable programming in Python and have a basic knowledge of mathematics including matrix multiplications, and conditional probability.",
+     "skills": []
+    },
+    {
+     "course_id": "c5e140585e0",
+     "title": "Introduction to Machine Learning",
+     "organization": "Duke University",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course will provide you a foundational understanding of machine learning models (logistic regression, multilayer perceptrons, convolutional neural networks, natural language processing, etc.) as well as demonstrate how these models can solve complex problems in a variety of industries, from medical diagnostics to image recognition to text prediction.",
+     "skills": [
+      "Deep Learning",
+      "Python",
+      "Machine Learning",
+      "PyTorch",
+      "Natural Language Processing"
+     ]
+    },
+    {
+     "course_id": "c77e5c92b37",
+     "title": "Foundations of Machine Learning",
+     "organization": "Fractal Analytics",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In a world where data-driven insights are reshaping industries, mastering the foundations of machine learning is a valuable skill that opens doors to innovation and informed decision-making. In this comprehensive course, you will be guided through the core concepts and practical aspects of machine learning.",
+     "skills": [
+      "Regression",
+      "Machine Learning",
+      "Data Pre-Processing",
+      "Decision Tree"
+     ]
+    },
+    {
+     "course_id": "c7e96f0c3fb",
+     "title": "Introduction to Generative AI",
+     "organization": "Duke University",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This introductory course is designed for beginners with no prior knowledge of generative AI. You will start by gaining a high-level understanding of what generative AI is and how it works. Through interactive lessons and hands-on examples, you will learn fundamental skills like providing effective prompts and iteratively improving the generated outputs.",
+     "skills": [
+      "Artificial Intelligence",
+      "Python",
+      "Machine Learning",
+      "GenAI",
+      "LLMs"
+     ]
+    },
+    {
+     "course_id": "cb6eaa533e7",
+     "title": "Machine Learning: an overview",
+     "organization": "Politecnico di Milano",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The course provides a general overview of the main methods in the machine learning field. Starting from a taxonomy of the different problems that can be solved through machine learning techniques, the course briefly presents some algorithmic solutions, highlighting when they can be successful, but also their limitations. These concepts will be explained through examples and case studies.",
+     "skills": []
+    },
+    {
+     "course_id": "cf09362c369",
+     "title": "Supervised Machine Learning: Regression and Classification",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In the first course of the Machine Learning Specialization, you will: • Build machine learning models in Python using popular machine learning libraries NumPy and scikit-learn.\n• Build and train supervised machine learning models for prediction and binary classification tasks, including linear regression and logistic regression",
+     "skills": [
+      "Regression",
+      "Regularization to Avoid Overfitting",
+      "Logistic Regression for Classification",
+      "Gradient Descent",
+      "Machine Learning"
+     ]
+    },
+    {
+     "course_id": "cf6a237ed5a",
+     "title": "Machine Learning Algorithms: Supervised Learning Tip to Tail",
+     "organization": "Alberta Machine Intelligence Institute",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course takes you from understanding the fundamentals of a machine learning project. Learners will understand and implement supervised learning techniques on real case studies to analyze business case scenarios where decision trees, k-nearest neighbours and support vector machines are optimally used.",
+     "skills": []
+    }
+   ]
+  },
+  {
+   "query_id": "da-d1",
+   "query": "Suggest a path from beginner to advanced data analytics.",
+   "candidates": [
+    {
+     "course_id": "c1af4af1209",
+     "title": "Introduction to Data Analytics for Accounting Professionals",
+     "organization": "Association of International Certified Professional Accountants",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course covers the foundations of data analytics and how to conduct and apply this to projects in your organization. This includes the following: - What does it mean to have a data-driven mindset? Having the right mindset will allow you to understand the problem that needs to be solved and make or recommend appropriate data-driven decisions in the context of the organization’s strategy and technologies.",
+     "skills": []
+    },
+    {
+     "course_id": "c26ebd11a29",
+     "title": "Advanced Business Analytics Specialization",
+     "organization": "University of Colorado Boulder",
+     "difficulty": "Intermediate",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "The Advanced Business Analytics Specialization brings together academic professionals and experienced practitioners to share real world data analytics skills you can use to grow your business, increase profits, and create maximum value for your shareholders.",
+     "skills": [
+      "Data Analysis",
+      "SQL",
+      "Data Visualization",
+      "Mathematical Optimization"
+     ]
+    },
+    {
+     "course_id": "c27463b986e",
+     "title": "Introduction to Data Analytics for Business",
+     "organization": "University of Colorado Boulder",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course will expose you to the data analytics practices executed in the business world. We will explore such key areas as the analytical process, how data is created, stored, accessed, and how the organization works with data and creates the environment in which analytics can flourish.",
+     "skills": [
+      "Data Model",
+      "Data Quality",
+      "Data Analysis",
+      "SQL"
+     ]
+    },
+    {
+     "course_id": "c33f07cc0f0",
+     "title": "SAS Visual Business Analytics Professional Certificate",
+     "organization": "SAS",
+     "difficulty": "Beginner",
+     "course_type": "Professional Certificate",
+     "description_quality": "Unreviewed",
+     "summary": "Using SAS Visual Analytics, you will learn to access and manipulate data, analyze data with a variety of interactive reports and graphics, and design and share dashboards to visualize your data. SAS Visual Analytics is a useful skill in a variety of careers, including business analyst, researcher, statistician, or data scientist.",
+     "skills": []
+    },
+    {
+     "course_id": "c4539e20aa5",
+     "title": "Getting Started with SAS Visual Analytics",
+     "organization": "SAS",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you learn more about SAS Visual Analytics and the SAS Viya platform, how to access and investigate data in SAS Visual Analytics, and how to prepare data for analysis using SAS Data Studio. In this module you learn about the scope and structure of the courses in this Professional Certificate.",
+     "skills": []
+    },
+    {
+     "course_id": "c7276f4f912",
+     "title": "Performing Network, Path, and Text Analyses in SAS Visual Analytics",
+     "organization": "SAS",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you learn about the data structure needed for network, path, and text analytics and how to create network analysis, path analysis, and text analytics in SAS Visual Analytics. In this module, you learn about the business scenario that you will follow for this course and where the files are located in the virtual lab. In this module, you learn more about network analysis in Visual Analytics.",
+     "skills": []
+    },
+    {
+     "course_id": "c965c9468c4",
+     "title": "Customer Data Analytics for Marketers",
+     "organization": "University of Colorado System",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course introduces marketing data analytics, focusing on the crucial concepts of correlation and causality. Learners will explore statistical concepts and tools to analyze and interpret marketing data, leading to more informed and impactful marketing strategies. The course begins with core statistical concepts, such as standard deviation, variance, and normal distributions, in the context of marketing decisions.",
+     "skills": [
+      "Structural Equation Modeling (SEM)",
+      "Core Statistical Concepts",
+      "Ethical Data Analytics",
+      "Visualization of Data Correlations",
+      "Marketing Data Analytics"
+     ]
+    },
+    {
+     "course_id": "cac5fa6c8bd",
+     "title": "Fundamentals of Generative AI for Beginners",
+     "organization": "Amazon Web Services",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Generative AI is a disruptive technology and its impact has been immense. It is causing businesses to rethink customer strategies and redesign their products, chipmakers are scrambling to keep up with the increased demand for processors, and in academia, educators are altering learning paths and curriculums in every field of study.",
+     "skills": [
+      "Data Analysis",
+      "Machine Learning",
+      "Data Processing"
+     ]
+    },
+    {
+     "course_id": "cb05a00606a",
+     "title": "Foundations of Data Science",
+     "organization": "Google",
+     "difficulty": "Advanced",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the first of seven courses in the Google Advanced Data Analytics Certificate, which will help develop the skills needed to apply for more advanced data professional roles, such as an entry-level data scientist or advanced-level data analyst. Data professionals analyze data to help businesses make better decisions.",
+     "skills": [
+      "Project Management",
+      "Sharing Insights With Stakeholders",
+      "Cross-Functional Team Dynamics",
+      "Asking Effective Questions",
+      "Effective Written Communication"
+     ]
+    },
+    {
+     "course_id": "cb217e5e995",
+     "title": "Introduction to Data Analytics",
+     "organization": "Meta",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course provides a practical understanding and framework for basic analytics tasks, including data extraction, cleaning, manipulation, and analysis. It introduces the OSEMN cycle for managing analytics projects and you'll examine real-world examples of how companies use data insights to improve decision-making.",
+     "skills": [
+      "Data Analysis",
+      "Marketing",
+      "Data Management",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "cde399f9a8b",
+     "title": "IBM Data Analyst Professional Certificate",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Professional Certificate",
+     "description_quality": "Unreviewed",
+     "summary": "Prepare for a career in thehigh-growth field of data analytics. In this program, you’ll learn in-demand skills like Python, Excel, and SQL to get job-ready in as little as 4 months. Data analysis is the process of collecting, storing, modeling, and analyzing data that can inform executive decision-making, and thedemand for skilled data analysts has never been greater.",
+     "skills": [
+      "Generative AI"
+     ]
+    },
+    {
+     "course_id": "ce4ae8301c5",
+     "title": "Excel Skills for Data Analytics and Visualization Specialization",
+     "organization": "Macquarie University",
+     "difficulty": "Intermediate",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "As data becomes the modern currency, so the ability to quickly and accurately analyse data has become of paramount importance. Therefore, data analytics and visualization are two of the most sought after skills for high paying jobs with strong future growth prospects.",
+     "skills": [
+      "Data Analysis",
+      "Spreadsheets",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "ce7dc45a0ca",
+     "title": "Fundamentals of Data Analysis",
+     "organization": "LearnQuest",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is the first of a series that aims to prepare you for a role working in data analytics. In this course, you’ll be introduced to many of the primary types of data analytics and core concepts. You’ll learn about the tools and skills required to conduct data analysis.",
+     "skills": [
+      "Data Collection",
+      "Data Analysis",
+      "Data queries",
+      "Data visualization Data exploration",
+      "Data Visualization"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "da-d2",
+   "query": "I want to make interactive dashboards in Tableau.",
+   "candidates": [
+    {
+     "course_id": "c23157e8c54",
+     "title": "Creating Dashboards and Storytelling with Tableau",
+     "organization": "University of California, Davis",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Leveraging the visualizations you created in the previous course, Visual Analytics with Tableau, you will create dashboards that help you identify the story within your data, and you will discover how to use Storypoints to create a powerful story to leave a lasting impression with your audience.",
+     "skills": [
+      "Storyboarding",
+      "BI Dashboards",
+      "Data Virtualization",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "c2498beb44b",
+     "title": "BI Essentials for Finance Analysts (Tableau Edition) Specialization",
+     "organization": "Corporate Finance Institute",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "This specialization helps analysts advance their data analysis skills by learning to manipulate, transform, and visualize data in Tableau, one of the most widely used data visualization tools. Analysts will also learn how to source data from a database using SQL.",
+     "skills": [
+      "BI Dashboards",
+      "Financial Analysis",
+      "Data Visualization",
+      "SQL",
+      "Data Transformation"
+     ]
+    },
+    {
+     "course_id": "c264c3f343a",
+     "title": "Fundamentals of Visualization with Tableau",
+     "organization": "University of California, Davis",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this first course of this specialization, you will discover what data visualization is, and how we can use it to better see and understand data. Using Tableau, we’ll examine the fundamental concepts of data visualization and explore the Tableau interface, identifying and applying the various tools Tableau has to offer.",
+     "skills": [
+      "Visualization (Computer Graphics)",
+      "BI Dashboards",
+      "Data Virtualization",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "c267cd7dde4",
+     "title": "Tableau Capstone Project",
+     "organization": "SkillUp EdTech",
+     "difficulty": "Advanced",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The Tableau Capstone Project allows you to apply what you've learned about making data-driven decisions to real business challenges companies face every day. Effective business intelligence (BI) is crucial in decision-making and strategizing in today's data-driven business environment.",
+     "skills": [
+      "Business Intelligence (BI)",
+      "BI Dashboards",
+      "Data Analysis",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "c3858f1b491",
+     "title": "Getting Started with Tableau",
+     "organization": "SkillUp EdTech",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This short course is designed for anyone seeking to unlock the full potential of Tableau Public, a leading data visualization tool. Starting from the fundamentals, you will progress through each module, gaining hands-on experience in importing, exploring, and visualizing data. From creating basic visualizations to designing interactive dashboards and compelling stories, this course covers it all.",
+     "skills": [
+      "Data Analysis",
+      "BI Dashboards",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "c9c9c2616b6",
+     "title": "Visual Analytics with Tableau",
+     "organization": "University of California, Davis",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this third course of the specialization, we’ll drill deeper into the tools Tableau offers in the areas of charting, dates, table calculations and mapping. We’ll explore the best choices for charts, based on the type of data you are using. We’ll look at specific types of charts including scatter plots, Gantt charts, histograms, bullet charts and several others, and we’ll address charting guidelines.",
+     "skills": [
+      "Visual Analytics",
+      "Map",
+      "BI Dashboards",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "cc34eb59325",
+     "title": "Advanced Data Visualization with Tableau",
+     "organization": "SkillUp EdTech",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This advanced Tableau course covers a broad variety of topics to provide you with advanced analytics and data visualization skills. The course walks you through connecting Tableau to SQL databases, creating data linkages, and creating hierarchies for effective analysis, starting with data connectivity and modeling.",
+     "skills": [
+      "Data Preparation",
+      "Data Analysis",
+      "BI Dashboards",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "cc3dae932f4",
+     "title": "Communicating Data Insights with Tableau",
+     "organization": "Tableau Learning Partner",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The Communicating Data Insights with Tableau Course focuses on reporting best practices using Tableau. You will learn how to create interactive dashboards and craft compelling presentations based on your data analysis. This course will also teach you best practices for data storytelling to convey business insights and provide stakeholders with the data to effectively explore and build their own insights.",
+     "skills": [
+      "Data storytelling",
+      "Interactive Dashboards",
+      "Data Presentations"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "da-t1",
+   "query": "How do I analyse spreadsheets of sales numbers to find trends?",
+   "candidates": [
+    {
+     "course_id": "c209041a9e2",
+     "title": "Introduction to Data Analysis Using Excel",
+     "organization": "Rice University",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The use of Excel is widespread in the industry. It is a very powerful data analysis tool and almost all big and small businesses use Excel in their day to day functioning. This is an introductory course in the use of Excel and is designed to give you a working knowledge of Excel with the aim of getting to use it for more advance topics in Business Statistics later.",
+     "skills": [
+      "Lookup Table",
+      "Data Analysis",
+      "Spreadsheets",
+      "Pivot Table"
+     ]
+    },
+    {
+     "course_id": "c2b9025f458",
+     "title": "Data for Business Analysts Using Microsoft Excel",
+     "organization": "Microsoft",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you’ll learn how to make use of Excel in business scenarios for data analysis. You’ll also learn how to utilize formulas and functions for data analysis. Specifically, this course will help you gain knowledge and skills for preparing data for analysis using Microsoft Excel and take you one step closer to becoming a Business Analyst.",
+     "skills": [
+      "Spreadsheets",
+      "Preparing Data",
+      "Pivot Tables",
+      "Data Analysis",
+      "Formulas and Functions"
+     ]
+    },
+    {
+     "course_id": "c3087fdca8b",
+     "title": "IBM Data Analytics with Excel and R Professional Certificate",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Professional Certificate",
+     "description_quality": "Unreviewed",
+     "summary": "Prepare for the in-demand field of data analytics. In this program, you’ll learn high valued skills like Excel, Cognos Analytics, and R programming language toget job-ready in less than 3 months. Data analytics is a strategy-based science where data is analyzed to find trends, answer questions, shape business processes, and aid decision-making.",
+     "skills": [
+      "Data Visualization",
+      "Data Science",
+      "Spreadsheets",
+      "Data Analysis",
+      "IBM Cognos Analytics",
+      "Relational Databases (RDBMS)",
+      "BI Dashboards",
+      "R"
+     ]
+    },
+    {
+     "course_id": "c384986ab4f",
+     "title": "Foundations of Marketing Analytics Specialization",
+     "organization": "Emory University",
+     "difficulty": "Intermediate",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "In this specialization you will learn how to: • Find, extract, organize and describe data to support business decisions • Identify, quantify and interpret relationships between variables • Derive customer insights from your data • Develop spreadsheet models to analyze data, evaluate risk and optimize business decisions • Present and justify a course of action to management The capstone project will give you an...",
+     "skills": [
+      "Statistics",
+      "Market Segmentation",
+      "Spreadsheets",
+      "Marketing"
+     ]
+    },
+    {
+     "course_id": "c5830808462",
+     "title": "Capstone Project: Predicting Safety Stock",
+     "organization": "LearnQuest",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, we'll make predictions on product usage and calculate optimal safety stock storage. We'll start with a time series of shoe sales across multiple stores on three different continents. To begin, we'll look for unique insights and other interesting things we can find in the data by performing groupings and comparing products within each store.",
+     "skills": [
+      "SARIMA modeling",
+      "Machine Learning",
+      "timeseries",
+      "Safety Stock",
+      "demand prediction"
+     ]
+    },
+    {
+     "course_id": "c5eb8b7b4df",
+     "title": "Business Statistics and Analysis Specialization",
+     "organization": "Rice University",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "The Business Statistics and Analysis Specialization is designed to equip you with a basic understanding of business data analysis tools and techniques. Informed by our world-classData Science master'sOpens in a new taband PhD course material, you’ll master essential spreadsheet functions, build descriptive business data measures, and develop your aptitude for data modeling.",
+     "skills": [
+      "Spreadsheets",
+      "Regression",
+      "Statistics"
+     ]
+    },
+    {
+     "course_id": "c7534608a59",
+     "title": "Excel Fundamentals for Data Analysis",
+     "organization": "Macquarie University",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "As data becomes the modern currency, so the ability to analyse the data quickly and accurately has become of paramount importance. Excel with its extraordinarily broad range of features and capabilities is one of the most widely used programs for doing this. In the first course of our Excel Skills for Data Analysis and Visualization Specialization, you will learn the fundamentals of Excel for data analysis.",
+     "skills": [
+      "Data Analysis",
+      "Spreadsheets",
+      "Data Cleaning"
+     ]
+    },
+    {
+     "course_id": "c771d7f9328",
+     "title": "Introduction to Spreadsheets and Models",
+     "organization": "University of Pennsylvania",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The simple spreadsheet is one of the most powerful data analysis tools that exists, and it’s available to almost anyone. Major corporations and small businesses alike use spreadsheet models to determine where key measures of their success are now, and where they are likely to be in the future. But in order to get the most out of a spreadsheet, you have the know-how to use it.",
+     "skills": [
+      "Monte Carlo Method",
+      "Spreadsheets",
+      "Linear Programming (LP)",
+      "Solver"
+     ]
+    },
+    {
+     "course_id": "c7d70209f98",
+     "title": "Data Analysis with Spreadsheets and SQL",
+     "organization": "Meta",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course introduces you to how to use spreadsheets and SQL queries to analyze and extract data. You will learn how to practically apply the OSEMN data analysis framework and spreadsheet functions to clean data, calculate summary statistics, evaluate correlations, and more. You’ll also dive into common data visualization techniques and learn how to use dashboards to tell a story with your data.",
+     "skills": [
+      "Spreadsheets",
+      "Data Analysis",
+      "SQL",
+      "BI Dashboards",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "ca52b475b36",
+     "title": "Microsoft Copilot for Sales Specialization",
+     "organization": "Microsoft",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "Unlock Your Full Sales Potential with AI The sales landscape is evolving rapidly, driven by advancements in artificial intelligence. To thrive in this competitive market, sales professionals must harness the power of AI to optimize their performance and drive growth. Our Copilot for Sales Specialization equips you with the essential skills and knowledge to excel.",
+     "skills": [
+      "Leveraging Customer Data",
+      "Personalized Communication",
+      "Emerging AI Trends",
+      "Sales Forecasting",
+      "Pipeline Management",
+      "Copilot for Sales",
+      "GenAI",
+      "Ethical Consideration"
+     ]
+    },
+    {
+     "course_id": "cadb630c87c",
+     "title": "Analysing: Numeric and digital literacies Specialization",
+     "organization": "Macquarie University",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "Being financially and data-literate is a requirement of all effective leaders. This includes the ability to analyse data and harness its value, as well as to leverage these skills to become a future-focused business leader.",
+     "skills": [
+      "Financial Analysis",
+      "Financial Modeling",
+      "Data Visualization",
+      "Statistical analysis skills"
+     ]
+    },
+    {
+     "course_id": "cc1e8223afc",
+     "title": "Excel Essentials and Beyond",
+     "organization": "Board Infinity",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Dive into \"Excel Essentials and Beyond\", a comprehensive exploration of Excel, the world's leading spreadsheet tool. This course is thoughtfully crafted for both newcomers to Excel and also for those aiming for mastery. We begin by introducing Excel's robust interface and foundational features, ensuring a firm grasp of data organization techniques.",
+     "skills": [
+      "Spreadsheets",
+      "Data Manipulation",
+      "Data Visualization",
+      "Pivot Table",
+      "Dashboard Creation"
+     ]
+    },
+    {
+     "course_id": "ccc8a69a7b2",
+     "title": "Linear Regression for Business Statistics",
+     "organization": "Rice University",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Regression Analysis is perhaps the single most important Business Statistics tool used in the industry. Regression is the engine behind a multitude of data analytics applications used for many forms of forecasting and prediction. This is the fourth course in the specialization, \"Business Statistics and Analysis\". The course introduces you to the very important tool known as Linear Regression.",
+     "skills": [
+      "Log–Log Plot",
+      "Interaction (Statistics)",
+      "Regression"
+     ]
+    },
+    {
+     "course_id": "cee614d3979",
+     "title": "Google Sheets - Advanced Topics",
+     "organization": "Google Cloud",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course builds on some of the concepts covered in the earlier Google Sheets course. In this course, you will learn how to apply and customize themes In Google Sheets, and explore conditional formatting options.",
+     "skills": []
+    }
+   ]
+  },
+  {
+   "query_id": "da-t2",
+   "query": "I know Excel, help me become a data analyst.",
+   "candidates": [
+    {
+     "course_id": "c22b3a30a04",
+     "title": "Practice Exam for Tableau Certified Data Analyst",
+     "organization": "SkillUp EdTech",
+     "difficulty": "Advanced",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course will help you to prepare for the Tableau Certified Data Analyst exam. You will learn about strategies for taking the Tableau Certified Data Analyst exam and explore key study resources to help you pass the exam. You will also be able to take practice and graded quizzes based on exam topics.",
+     "skills": [
+      "Practice Exam",
+      "BI Dashboards",
+      "Tableau Prep Builder",
+      "Tableau Certified Data Analyst",
+      "Tableau Certification"
+     ]
+    },
+    {
+     "course_id": "c5d151bd335",
+     "title": "Prepare Data for Exploration",
+     "organization": "Google",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the third course in the Google Data Analytics Certificate. As you continue to build on your understanding of the topics from the first two courses, you’ll be introduced to new topics that will help you gain practical data analytics skills. You’ll learn how to use tools like spreadsheets and SQL to extract and make use of the right data for your objectives, and how to organize and protect your data.",
+     "skills": [
+      "Data Collection",
+      "Spreadsheets",
+      "Metadata",
+      "SQL",
+      "Data Ethics"
+     ]
+    },
+    {
+     "course_id": "c6c7a0f13ac",
+     "title": "Data Analyst Career Guide and Interview Preparation",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Data analytics professionals are in high demand around the world, and the trend shows no sign of slowing. There are lots of great jobs available, but lots of great candidates too. How can you get the edge in such a competitive field? This course will prepare you to enter the job market as a great candidate for a data analyst position.",
+     "skills": []
+    },
+    {
+     "course_id": "cde399f9a8b",
+     "title": "IBM Data Analyst Professional Certificate",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Professional Certificate",
+     "description_quality": "Unreviewed",
+     "summary": "Prepare for a career in thehigh-growth field of data analytics. In this program, you’ll learn in-demand skills like Python, Excel, and SQL to get job-ready in as little as 4 months. Data analysis is the process of collecting, storing, modeling, and analyzing data that can inform executive decision-making, and thedemand for skilled data analysts has never been greater.",
+     "skills": [
+      "Generative AI"
+     ]
+    },
+    {
+     "course_id": "ce4017ae225",
+     "title": "Ask Questions to Make Data-Driven Decisions",
+     "organization": "Google",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the second course in the Google Data Analytics Certificate. You’ll build on your understanding of the topics that were introduced in the first course of this certificate program. The material will help you learn how to ask effective questions, make data-driven decisions, and meet stakeholders’ needs.",
+     "skills": [
+      "Decision-Making",
+      "Spreadsheets",
+      "Data Analysis",
+      "Problem Solving",
+      "Questioning"
+     ]
+    },
+    {
+     "course_id": "ce8f3f2f517",
+     "title": "Introduction to Data Analytics",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Ready to start a career in Data Analysis but don’t know where to begin? This course presents you with a gentle introduction to Data Analysis, the role of a Data Analyst, and the tools used in this job. You will learn about the skills and responsibilities of a data analyst and hear from several data experts sharing their tips & advice to start a career.",
+     "skills": [
+      "Data Science",
+      "Spreadsheets",
+      "Data Analysis",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "cec441f61aa",
+     "title": "Foundations: Data, Data, Everywhere",
+     "organization": "Google",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the first course in the Google Data Analytics Certificate. Organizations of all kinds need data analysts to help them improve their processes, identify opportunities and trends, launch new products, and make thoughtful decisions. In this course, you’ll be introduced to the world of data analytics through hands-on curriculum developed by Google.",
+     "skills": [
+      "Spreadsheets",
+      "Data Analysis",
+      "SQL",
+      "Data Visualization",
+      "Data Cleaning"
+     ]
+    },
+    {
+     "course_id": "ceeffebcd3e",
+     "title": "Analyze Data to Answer Questions",
+     "organization": "Google",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the fifth course in the Google Data Analytics Certificate. In this course, you’ll explore what it means to actually analyze your data. You’ll take what you’ve learned up to this point and apply it to make sense of the data you’ve collected. You’ll learn how to organize and format your data using spreadsheets and SQL to help you look at and think about your data in different ways.",
+     "skills": [
+      "Data Aggregation",
+      "Spreadsheets",
+      "Data Analysis",
+      "Data Calculations",
+      "SQL"
+     ]
+    },
+    {
+     "course_id": "cefd2647589",
+     "title": "Process Data from Dirty to Clean",
+     "organization": "Google",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the fourth course in the Google Data Analytics Certificate. In this course, you’ll continue to build your understanding of data analytics and the concepts and tools that data analysts use in their work. You’ll learn how to check and clean your data using spreadsheets and SQL, as well as how to verify and report your data cleaning results.",
+     "skills": [
+      "Spreadsheets",
+      "Data Integrity",
+      "Sample Size Determination",
+      "SQL",
+      "Data Cleaning"
+     ]
+    },
+    {
+     "course_id": "cf2735916d4",
+     "title": "Introduction to Business Analytics",
+     "organization": "Tableau Learning Partner",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The Introduction to Business Analytics teaches you the foundational skills in Tableau and business analytics. You will be introduced to essential concepts like analytics and insights and the foundational steps of the business analysis process. You’ll learn about the different types of analytics that businesses use, and you’ll be introduced to a data analytics lifecycle framework.",
+     "skills": [
+      "Data Analytics Lifecycle",
+      "Foundational Project Management",
+      "Data Literacy"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "da-t3",
+   "query": "Learn to clean messy datasets and visualise the results.",
+   "candidates": [
+    {
+     "course_id": "c0c824af989",
+     "title": "Data Visualization for Genome Biology",
+     "organization": "University of Toronto",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The past decade has seen a vast increase in the amount of data available to biologists, driven by the dramatic decrease in cost and concomitant rise in throughput of various next-generation sequencing technologies, such that a project unimaginable 10 years ago was recently proposed, the Earth BioGenomes Project, which aims to sequence the genomes of all eukaryotic species on the planet within the next 10 years.",
+     "skills": []
+    },
+    {
+     "course_id": "c165407a2e8",
+     "title": "Tidyverse Skills for Data Science in R Specialization",
+     "organization": "Johns Hopkins University",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "This Specialization is intended for data scientists with some familiarity with the R programming language who are seeking to do data science using the Tidyverse family of packages. Through 5 courses, you will cover importing, wrangling, visualizing, and modeling data using the powerful Tidyverse framework.",
+     "skills": [
+      "Data Science",
+      "Data Analysis",
+      "Data Visualization",
+      "R",
+      "Predictive Modelling"
+     ]
+    },
+    {
+     "course_id": "c68f7e31ce8",
+     "title": "Python Data Analytics",
+     "organization": "Meta",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course introduces the use of the Python programming language to manipulate datasets as an alternative to spreadsheets. You will follow the OSEMN framework of data analysis to pull, clean, manipulate, and interpret data all while learning foundational programming principles and basic Python functions.",
+     "skills": [
+      "Data Analysis",
+      "Python",
+      "Pandas",
+      "Data Visualization"
+     ]
+    },
+    {
+     "course_id": "c78d555edba",
+     "title": "Learn SQL Basics for Data Science Specialization",
+     "organization": "University of California, Davis",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "This Specialization is intended for a learner with no previous coding experience seeking to develop SQL query fluency. Through four progressively more difficult SQL projects with data science applications, you will cover topics such as SQL basics, data wrangling, SQL analysis, AB testing, distributed computing using Apache Spark, Delta Lake and more.",
+     "skills": [
+      "Data Analysis",
+      "SQL",
+      "Apache Spark",
+      "Delta Lake"
+     ]
+    },
+    {
+     "course_id": "c9400b1ff78",
+     "title": "R Programming and Tidyverse Capstone Project",
+     "organization": "University of Colorado Boulder",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this third and final course of the \"Expressway to Data Science: R Programming and Tidyverse\" specialization you will reinforce and display your R and tidyverse skills by completing an analysis of COVID-19 data! Here is a chance to apply your skills to a real-world dataset that has effected all of us. Throughout the capstone, you will import COVID-19 data; clean, tidy, and join datasets; and develop visualizations.",
+     "skills": [
+      "Data Analysis",
+      "Communication",
+      "Data Manipulation",
+      "Data Visualization",
+      "R"
+     ]
+    },
+    {
+     "course_id": "ccdd2d07e12",
+     "title": "Introduction to the Tidyverse",
+     "organization": "Johns Hopkins University",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course introduces a powerful set of data science tools known as the Tidyverse. The Tidyverse has revolutionized the way in which data scientists do almost every aspect of their job. We will cover the simple idea of \"tidy data\" and how this idea serves to organize data for analysis and modeling.",
+     "skills": [
+      "Data Management",
+      "Data Visualization",
+      "R",
+      "tidying data"
+     ]
+    },
+    {
+     "course_id": "ccecc9bf644",
+     "title": "Launching into Machine Learning",
+     "organization": "Google Cloud",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The course begins with a discussion about data: how to improve data quality and perform exploratory data analysis. We describe Vertex AI AutoML and how to build, train, and deploy an ML model without writing a single line of code. You will understand the benefits of Big Query ML.",
+     "skills": [
+      "TensorFlow",
+      "Bigquery",
+      "Machine Learning",
+      "Data Cleaning"
+     ]
+    },
+    {
+     "course_id": "cdb7abd38c9",
+     "title": "Data Analysis and Visualization Foundations Specialization",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "Deriving insights from data and communicating findings has become an increasingly important part of virtually every profession. This Specialization prepares you for this data-driven transformation by teaching you the core principles of data analysis and visualization and by giving you the tools and hands-on practice to communicate the results of your data discoveries effectively.",
+     "skills": [
+      "Data Analysis",
+      "Spreadsheets",
+      "IBM Cognos Analytics",
+      "BI Dashboards",
+      "Data Visualization",
+      "Data Structure",
+      "cognos analytics",
+      "Pivot Charts"
+     ]
+    },
+    {
+     "course_id": "ce1285a03f3",
+     "title": "Data Visualization with Python & R for Engineers",
+     "organization": "Northeastern University",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The primary objective of this course is to offer students an opportunity to learn how to use visualization tools and techniques for data exploration, knowledge discovery, data storytelling, and decision making in engineering, healthcare operations, manufacturing, and related applications. This course covers basics of data mining and visualization, and Python.",
+     "skills": [
+      "Numpy"
+     ]
+    },
+    {
+     "course_id": "ce7e08162b9",
+     "title": "Data Visualization Best Practices",
+     "organization": "University of California, Irvine",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, we will cover the basics of visualization and how it fits into the Data Science workflow. We will focus on the main concepts behind the purpose of visualization and the design principles for creating effective, easy-to-communicate results. You will also set up your Tableau environment, practice data loading, and perform univariate descriptive analysis of the S&P 500 stock sectors.",
+     "skills": []
+    },
+    {
+     "course_id": "ceada0ec81c",
+     "title": "Data Processing and Manipulation",
+     "organization": "University of Colorado Boulder",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The \"Data Processing and Manipulation\" course provides students with a comprehensive understanding of various data processing and manipulation concepts and tools. Participants will learn how to handle missing values, detect outliers, perform sampling and dimension reduction, apply scaling and discretization techniques, and explore data cube and pivot table operations.",
+     "skills": [
+      "Python",
+      "Data Warehousing",
+      "Pandas",
+      "Scaling",
+      "Pivot Table"
+     ]
+    },
+    {
+     "course_id": "cefd2647589",
+     "title": "Process Data from Dirty to Clean",
+     "organization": "Google",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the fourth course in the Google Data Analytics Certificate. In this course, you’ll continue to build your understanding of data analytics and the concepts and tools that data analysts use in their work. You’ll learn how to check and clean your data using spreadsheets and SQL, as well as how to verify and report your data cleaning results.",
+     "skills": [
+      "Spreadsheets",
+      "Data Integrity",
+      "Sample Size Determination",
+      "SQL",
+      "Data Cleaning"
+     ]
+    },
+    {
+     "course_id": "cfcda8aa73d",
+     "title": "Fundamental Tools of Data Wrangling",
+     "organization": "University of Colorado Boulder",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Data wrangling is a crucial step in the data analysis process, as it involves the transformation and preparation of raw data into a suitable format for analysis. The \"Fundamental Tools for Data Wrangling\" course is designed to provide participants with essential skills and knowledge to effectively manipulate, clean, and analyze data.",
+     "skills": [
+      "Data Structure",
+      "Ipython",
+      "Python",
+      "Numpy",
+      "Pandas"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "da-t4",
+   "query": "Power BI for business reporting.",
+   "candidates": [
+    {
+     "course_id": "c0d858566f2",
+     "title": "BI Essentials for Finance Analysts (Power BI Edition) Specialization",
+     "organization": "Corporate Finance Institute",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "This specialization helps analysts to advance their data analysis skills by learning to manipulate, transform, and visualize data in Microsoft Power BI, the most widely used data visualization tool. You’ll also understand how to source data from a database.",
+     "skills": [
+      "BI Dashboards",
+      "Financial Analysis",
+      "Data Visualization",
+      "SQL",
+      "Data Analysis Expressions (DAX)",
+      "Data Transformation"
+     ]
+    },
+    {
+     "course_id": "c5ee53c0aad",
+     "title": "Microsoft Power BI Data Analyst Professional Certificate",
+     "organization": "Microsoft",
+     "difficulty": "Beginner",
+     "course_type": "Professional Certificate",
+     "description_quality": "Unreviewed",
+     "summary": "Learners who complete this program will receive a 50% discount voucher to take the PL-300 Certification Exam. Business Intelligence analysts are highly sought after as more organizations rely on data-driven decision-making.",
+     "skills": [
+      "Generative AI in Power BI",
+      "Data Analysis",
+      "Spreadsheets",
+      "SQL",
+      "BI Dashboards",
+      "Power Query"
+     ]
+    },
+    {
+     "course_id": "c9a1c2d61cc",
+     "title": "Insights of Power BI",
+     "organization": "Fractal Analytics",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Today's business world is becoming increasingly data-driven. Small and large businesses use data to make decisions about sales, hiring, goals, and all areas they have data for. While most businesses have access to data of one type or another, it can be intimidating for an average business user to understand the data without a background in data analytics.",
+     "skills": [
+      "Data Model",
+      "Data Analysis",
+      "Data Visualization",
+      "BI Dashboards",
+      "Dashboard Creation"
+     ]
+    },
+    {
+     "course_id": "caad2beee83",
+     "title": "Power BI Data Analyst Associate Prep",
+     "organization": "SkillUp EdTech",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This short course will guide you on preparing for the PL-300: Microsoft Power BI Data Analyst exam. This exam is the requirement for Microsoft Certified: Power BI Data Analyst Associate certification. The course provides you with a detailed understanding of the Power BI concepts, its features, and capabilities. By the end of this course, you will be able to:",
+     "skills": [
+      "Data Analysis",
+      "SQL",
+      "Data Visualization",
+      "Data Cleaning",
+      "Data Analysis Expressions (DAX) functions"
+     ]
+    },
+    {
+     "course_id": "cbf82852430",
+     "title": "Power BI Fundamentals",
+     "organization": "Corporate Finance Institute",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Power BI Fundamentals is for analysts looking to create professional, meaningful, and intuitive Power BI reports from a variety of data sources. Power BI is the most widely adopted business intelligence tool, offering powerful functionality to import, transform, analyze, and visualize data.",
+     "skills": []
+    },
+    {
+     "course_id": "cdd0865880d",
+     "title": "Analysis and Visualization of Data with Power BI",
+     "organization": "Microsoft",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you will learn report design and formatting in Power BI, which offers extraordinary visuals for building reports and dashboards. Additionally, you will learn how to use report navigation to tell a compelling, data-driven story in Power BI. You will explore how to get a statistical summary for your data and how to create and export reports in Power BI.",
+     "skills": [
+      "Data Analysis",
+      "Data Visualization",
+      "BI Dashboards",
+      "Design Reports",
+      "Design Dashboards"
+     ]
+    },
+    {
+     "course_id": "cdd4ae8c5a4",
+     "title": "Power BI for Data Science and Analytics",
+     "organization": "Edureka",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the Power BI for Data Science and Analytics Course. This course helps learners become proficient in utilizing the Power BI tool for data analytics. Leverage important Power BI features to extract more valuable insights from data and visuals. Centralize your data with the help of dataflows for modeling data that can also be used for text and image analytics. By the end of this course, you’ll be able to:\n1.",
+     "skills": [
+      "Machine Learning",
+      "Analytic Applications",
+      "report creation",
+      "Analyzing AI Generated Reports",
+      "Publishing Dashboards"
+     ]
+    },
+    {
+     "course_id": "cfdaca3a9f3",
+     "title": "Advanced Microsoft Power BI",
+     "organization": "Edureka",
+     "difficulty": "Advanced",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to Advanced Microsoft Power BI, where you'll embark on a journey to acquire practical expertise in data handling and machine learning which later used to harness the power of Microsoft Power BI for data visualization and decision making skills. Throughout this course, you'll explore the industry-specific applications of Power BI and use advanced Power BI features.",
+     "skills": [
+      "Creating Reports",
+      "Publishing Reports",
+      "Automated Machine Learning",
+      "Incident Reporting",
+      "Data Transformation"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "cc-d1",
+   "query": "I want to learn cloud computing from the basics.",
+   "candidates": [
+    {
+     "course_id": "c0345065691",
+     "title": "Tencent Cloud Practitioner",
+     "organization": "Tencent Cloud",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is primarily aimed at cloud professionals who are interested in learning about Tencent Cloud's products and services. It equips learners with a foundational knowledge in cloud computing and prepares them to take the Tencent Cloud Practitioner examination.",
+     "skills": [
+      "Tencent Cloud Products",
+      "Cloud Computing",
+      "basic cloud knowledge",
+      "Tencent Cloud"
+     ]
+    },
+    {
+     "course_id": "c0d9a7f39ae",
+     "title": "Fundamentals of Cloud Computing",
+     "organization": "LearnQuest",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is the second of a series that aims to prepare you for a role working in data analytics. In this course, you will be introduced to many of the core concepts of cloud computing. You will learn about the primary deployment models. We’ll go through the common cloud computing service models. The hands on material offers the opportunity to review and configure a cloud account.",
+     "skills": []
+    },
+    {
+     "course_id": "c14dc800c57",
+     "title": "Cloud Fundamentals",
+     "organization": "LearnKartS",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the Cloud Fundamentals course! The course provides a comprehensive introduction to cloud computing concepts, technologies, and services. This course is designed to equip learners with the foundational knowledge required to understand and work with cloud environments, making it suitable for those who are new to the field of cloud computing.",
+     "skills": [
+      "Cloud Platforms",
+      "Cloud Computing Deployment Model",
+      "Cloud Service Provider",
+      "Cloud Computing Service Model"
+     ]
+    },
+    {
+     "course_id": "c87ff0e589d",
+     "title": "Cloud Computing Primer: Software as a Service (SaaS)",
+     "organization": "Codio",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Explore cloud computing basics without installing anything! This course is designed for semi-technical and business learners, providing a solid foundation of cloud computing basics. Learners will build an understanding of how software as a service (SaaS) works as well.",
+     "skills": [
+      "Cloud Computing",
+      "Software As A Service (SAAS)"
+     ]
+    },
+    {
+     "course_id": "cab99c179d7",
+     "title": "Cloud Computing Fundamentals on Alibaba Cloud",
+     "organization": "Alibaba Cloud Academy",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Course Description Looking to dive into the world of Alibaba Cloud with a comprehensive introduction to the range of products and solutions offered by Alibaba Cloud? Fundamental Architecting on Alibaba Cloud is a course designed for users looking to start this journey with a look into Alibaba Cloud's core products.",
+     "skills": [
+      "Cloud Security",
+      "database management",
+      "Object Storage",
+      "Cloud Computing"
+     ]
+    },
+    {
+     "course_id": "cc992dd1d5e",
+     "title": "Cloud Computing Technologies - Master's",
+     "organization": "Illinois Tech",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Suspect",
+     "summary": null,
+     "skills": [
+      "Shell Commands",
+      "networking basics",
+      "Amazon Elastic Compute Cloud (Amazon EC2)",
+      "Linux Administration"
+     ]
+    },
+    {
+     "course_id": "cc9b2fcc26e",
+     "title": "Cloud Computing Primer: Infrastructure as a Service (IaaS)",
+     "organization": "Codio",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Explore cloud computing basics without installing anything! This course is designed for semi-technical and business learners, providing a solid foundation of cloud computing basics. Learners will build an understanding of how infrastructure as a service (IaaS) works as well.",
+     "skills": [
+      "infrastructure as a service",
+      "Cloud Computing"
+     ]
+    },
+    {
+     "course_id": "ccbeeeef29a",
+     "title": "Cloud Computing Primer: Platform as a Service (PaaS)",
+     "organization": "Codio",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Explore cloud computing basics without installing anything! This course is designed for semi-technical and business learners, providing a solid foundation of cloud computing basics. Learners will build an understanding of how platform as a service (PaaS) works as well.",
+     "skills": [
+      "Cloud Platforms",
+      "Platform As A Service (PAAS)",
+      "Cloud Computing"
+     ]
+    },
+    {
+     "course_id": "cdff8ea69fb",
+     "title": "How to Get Into Cloud Computing",
+     "organization": "University of Leeds",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Cloud computing gives businesses more flexibility, allowing them to quickly scale resources up to meet business demands without having to invest in physical infrastructure. This allows businesses to accelerate innovation, streamline operations and reduce costs. It is no surprise that cloud computing professionals are in great demand and the sector is expected to grow.",
+     "skills": [
+      "Career Development",
+      "Cloud Computing"
+     ]
+    },
+    {
+     "course_id": "cee7d70ddd8",
+     "title": "Cloud Computing Basics (Cloud 101)",
+     "organization": "LearnQuest",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to Cloud Computing Basics (Cloud 101). Over the next few weeks, we will discuss the basics of Cloud computing: what it is, what it supports, and how it is delivered. We will delve into storage services, Cloud economics, levels of managed infrastructure, and Azure services. We will also explore different deployment models of Cloud computing, as well as several hosting scenarios.",
+     "skills": []
+    }
+   ]
+  },
+  {
+   "query_id": "cc-d2",
+   "query": "Prepare for the AWS Certified Cloud Practitioner exam.",
+   "candidates": [
+    {
+     "course_id": "c14dc800c57",
+     "title": "Cloud Fundamentals",
+     "organization": "LearnKartS",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the Cloud Fundamentals course! The course provides a comprehensive introduction to cloud computing concepts, technologies, and services. This course is designed to equip learners with the foundational knowledge required to understand and work with cloud environments, making it suitable for those who are new to the field of cloud computing.",
+     "skills": [
+      "Cloud Platforms",
+      "Cloud Computing Deployment Model",
+      "Cloud Service Provider",
+      "Cloud Computing Service Model"
+     ]
+    },
+    {
+     "course_id": "c2ca94e19b2",
+     "title": "Real-World Cloud Product Management Specialization",
+     "organization": "Advancing Women in Tech",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "Learn cloud product management using the same curriculum asAWSPMs! Gain insights to impress on your first (or next) cloud computing role, and prepare to successfully complete the AWS Certified Cloud Practitioner Exam.",
+     "skills": [
+      "Cloud Platforms",
+      "Technology Strategy",
+      "Product Management",
+      "Cloud Computing",
+      "Cloud Storage"
+     ]
+    },
+    {
+     "course_id": "c5848b14dd0",
+     "title": "Exam Prep: AWS Certified Cloud Practitioner Foundations",
+     "organization": "Amazon Web Services",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This new foundational-level course from Amazon Web Services (AWS), is designed to help you to assess your preparedness for the AWS Certified Cloud Practitioner certification exam. You will learn how to prepare for the exam by exploring the exam’s topic areas and how they map to both AWS Cloud practitioner roles and to specific areas of study.",
+     "skills": [
+      "Cloud Computing",
+      "Cloud Platforms"
+     ]
+    },
+    {
+     "course_id": "c7270a2c1e3",
+     "title": "AWS Cloud Practitioner Essentials",
+     "organization": "Amazon Web Services",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to AWS Cloud Practitioner Essentials. If you’re new to the cloud, whether you’re in a technical or non-technical role such as finance, legal, sales, marketing, this course will provide you with an understanding of fundamental AWS Cloud concepts to help you gain confidence to contribute to your organization’s cloud initiatives.",
+     "skills": [
+      "Cloud Security",
+      "Cloud Computing",
+      "Cloud Networking",
+      "Migration and Innovation",
+      "Cloud Platforms"
+     ]
+    },
+    {
+     "course_id": "c93e59cf747",
+     "title": "Cloud: Infrastructure as a Service - Master's",
+     "organization": "Illinois Tech",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Suspect",
+     "summary": null,
+     "skills": [
+      "Cloud Computing",
+      "AWS Certified Cloud Practitioner",
+      "AWS Elastic Cloud Compute (EC2)",
+      "Cloud Storage",
+      "AWS Lambda"
+     ]
+    },
+    {
+     "course_id": "c96e150c5db",
+     "title": "Exam Prep: AWS Certified Solutions Architect - Associate",
+     "organization": "Amazon Web Services",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This new intermediate-level course from Amazon Web Services (AWS) is designed to help you to assess your preparedness for the AWS Certified Solutions Architect - Associate exam. You will learn how to prepare for the exam by exploring the exam’s topic areas and how they map to architecting on AWS.",
+     "skills": [
+      "Cloud Security",
+      "Cloud Computing Architecture",
+      "Cloud Platforms"
+     ]
+    },
+    {
+     "course_id": "ce4d3ae4ee2",
+     "title": "AWS Cloud Practitioner Certification Specialization",
+     "organization": "LearnKartS",
+     "difficulty": "Beginner",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "This AWS Certified Cloud Practitioner specialization is designed for individuals seeking to develop proficiency in AWS cloud computing fundamentals. The specialization is aligned with the AWS Cloud Practitioner Certification exam structure and will help you prepare for the certification exam.",
+     "skills": [
+      "Cloud Deployment Model",
+      "Billing Management",
+      "Cloud Computing",
+      "AWS Services",
+      "AWS Security Principle",
+      "AWS Pricing",
+      "Cloud Service Model",
+      "AWS Infrastructure"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "cc-t1",
+   "query": "How do I deploy applications with Docker and Kubernetes?",
+   "candidates": [
+    {
+     "course_id": "c0c72eaa71f",
+     "title": "Container and Container Orchestration Fundamentals",
+     "organization": "LearnKartS",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the Container and Container Orchestration Fundamentals course! The course aligns with the Certified Kubernetes Application Developer certification exam preparation.",
+     "skills": [
+      "Microservices",
+      "Container Management",
+      "Docker Swarm",
+      "Containers"
+     ]
+    },
+    {
+     "course_id": "c7e00caae54",
+     "title": "Introduction to Containers w/ Docker, Kubernetes & OpenShift",
+     "organization": "IBM",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Take the next step in your software engineering career by getting skilled in container tools and technologies! The average salary for jobs that require container skills is $137,000 in the US according to salary.com, making Devops professionals and developers with these skills highly in demand. More than 70 percent of Fortune 100 companies are running containerized applications. But why?",
+     "skills": [
+      "Openshift",
+      "Containers",
+      "Kubernetes",
+      "Cloud Computing"
+     ]
+    },
+    {
+     "course_id": "ca380656eae",
+     "title": "Deploy containers by using Azure Kubernetes Service",
+     "organization": "Microsoft",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Upon completion of this course, yoy will be adequately prepared to take Microsoft's Deploy containers by using Azure Kubernetes Service Applied Skill assessment. This course covers all necessary content and provides essential practice to boost your confidence and ensure success in the final assessment. Azure Kubernetes Service (AKS) isn't just a tool; it’s the strategic catalyst for orchestrating containers.",
+     "skills": [
+      "Clusters",
+      "Container",
+      "CLI",
+      "Nodes",
+      "Pods"
+     ]
+    },
+    {
+     "course_id": "caa3a4a0fe7",
+     "title": "Kubernetes Integration and Advanced Orchestration Techniques",
+     "organization": "LearnQuest",
+     "difficulty": "Advanced",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The culminating course in this specialization dives into the integration of Kubernetes with Continuous Integration and Continuous Deployment (CI/CD) pipelines, providing learners with a comprehensive understanding of the intricate relationship between container orchestration and streamlined software delivery processes.",
+     "skills": [
+      "Implement CI/CD pipelines",
+      "Design and implement custom controllers",
+      "Helm management in Kubernetes",
+      "Advanced Kubernetes cluster management",
+      "Create and manage Helm Charts"
+     ]
+    },
+    {
+     "course_id": "cb0df4828ba",
+     "title": "Kubernetes for Beginners",
+     "organization": "Packt",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Begin your journey into the world of Kubernetes with a structured course designed to make you proficient in container orchestration. The course starts with an introduction to Kubernetes, explaining its fundamental components such as pods, clusters, nodes, and services. You'll gain a clear understanding of how Kubernetes functions and the role of kubectl in managing your cluster.",
+     "skills": [
+      "service creation",
+      "Minikube",
+      "Kubernetes",
+      "Pod creation",
+      "Cluster"
+     ]
+    },
+    {
+     "course_id": "cba5349c666",
+     "title": "Fundamentals of Kubernetes Deployment",
+     "organization": "LearnQuest",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is designed to give you a deeper understanding of Kubernetes. Over the next few weeks, you'll learn about several features of Kubernetes, the Kubernetes Architecture, how to create clusters, and different installation configurations. We'll also explore deployments and how they are scaled, updated, and rolled back.",
+     "skills": []
+    },
+    {
+     "course_id": "cbac0ca5535",
+     "title": "Certified Kubernetes Application Developer (CKAD) Specialization",
+     "organization": "LearnKartS",
+     "difficulty": "Intermediate",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "This specialization is intended for individuals seeking to develop proficiency in the architecture of Kubernetes and container orchestration techniques. The course is aligned with theCertified Kubernetes Application Developer (CKAD) examstructure and will help you prepare for the CKAD exam. CKAD is a 3-course series.",
+     "skills": [
+      "Multi-container Pod",
+      "Orchestration",
+      "Persistent volumes",
+      "ConfigMaps and Secrets",
+      "Pod Design",
+      "Kubernetes",
+      "Kubernetes Networking",
+      "Auto Scaling"
+     ]
+    },
+    {
+     "course_id": "cbc8d5385f8",
+     "title": "AI Workflow: AI in Production",
+     "organization": "IBM",
+     "difficulty": "Advanced",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the sixth course in the IBM AI Enterprise Workflow Certification specialization. You are STRONGLY encouraged to complete these courses in order as they are not individual independent courses, but part of a workflow where each course builds on the previous ones. This course focuses on models in production at a hypothetical streaming media company. There is an introduction to IBM Watson Machine Learning.",
+     "skills": [
+      "Artificial Intelligence",
+      "Data Science",
+      "Python",
+      "Information Engineering",
+      "Machine Learning"
+     ]
+    },
+    {
+     "course_id": "cc2fd7be5bd",
+     "title": "Managing Cloud-native Applications with Kubernetes",
+     "organization": "Red Hat",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Managing Cloud-native Applications with Kubernetes (DO100b) is designed for IT professionals without previous cloud application deployment experience to learn basic Kubernetes skills. This course is the second course of a three-course specialization. In this specialization, you will run, deploy, and test containerized applications with zero-downtime releases.",
+     "skills": [
+      "Cloud Platforms",
+      "Cloud Computing",
+      "Kubernetes"
+     ]
+    },
+    {
+     "course_id": "cf556e8560a",
+     "title": "Advanced Application Management with Red Hat OpenShift",
+     "organization": "Red Hat",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course explores Red Hat OpenShift Container Platform (RHOCP) as a container orchestration platform. In this course, students will deploy applications to OpenShift. Students will learn how to let RHOCP containerize their source code, how to scale the deployments, and how to troubleshoot issues with the deployments.",
+     "skills": [
+      "Cloud Platforms",
+      "Cloud Computing",
+      "Kubernetes"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "cc-t2",
+   "query": "I know Linux and networking, help me move into cloud engineering.",
+   "candidates": [
+    {
+     "course_id": "c2a451a4909",
+     "title": "Data Engineering, Big Data, and Machine Learning on GCP Specialization",
+     "organization": "Google Cloud",
+     "difficulty": "Intermediate",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "87% of Google Cloud certified users feel more confident in their cloud skills. This program provides the skills you need to advance your career and provides training to support your preparation for the industry-recognizedGoogle Cloud Professional Data EngineerOpens in a new tabcertification.",
+     "skills": [
+      "TensorFlow",
+      "Bigquery",
+      "Cloud Platforms",
+      "Cloud Computing"
+     ]
+    },
+    {
+     "course_id": "c46af0f8d02",
+     "title": "Modernizing Data Lakes and Data Warehouses with Google Cloud",
+     "organization": "Google Cloud",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The two key components of any data pipeline are data lakes and warehouses. This course highlights use-cases for each type of storage and dives into the available data lake and warehouse solutions on Google Cloud in technical detail.",
+     "skills": []
+    },
+    {
+     "course_id": "c51240681bf",
+     "title": "Introduction to Cloud Computing",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Start your cloud computing journey with this self-paced introductory course! Whether you need general cloud computing knowledge for school or business, or you are considering a career change, this beginner-friendly course is right for you. In this course you’ll learn about essential characteristics of cloud computing and emerging technologies supported by cloud.",
+     "skills": [
+      "Cloud Computing",
+      "Hybrid Multicloud",
+      "DevOps",
+      "Iaas PaaS Saas"
+     ]
+    },
+    {
+     "course_id": "c5a99f41474",
+     "title": "Introduction to Data Engineering on Google Cloud",
+     "organization": "Google Cloud",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you learn about data engineering on Google Cloud, the roles and responsibilities of data engineers, and how those map to offerings provided by Google Cloud. You also learn about ways to address data engineering challenges. This section welcomes you to the Introduction to Data Engineering on Google Cloud course, and provides an overview of the course structure and goals.",
+     "skills": []
+    },
+    {
+     "course_id": "cc62cbe500e",
+     "title": "Cloud Machine Learning Engineering and MLOps",
+     "organization": "Duke University",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the fourth course in the Building Cloud Computing Solutions at Scale Specialization! In this course, you will build upon the Cloud computing and data engineering concepts introduced in the first three courses to apply Machine Learning Engineering to real-world projects.",
+     "skills": []
+    },
+    {
+     "course_id": "cd1b9b6cd1e",
+     "title": "Building Cloud Computing Solutions at Scale Specialization",
+     "organization": "Duke University",
+     "difficulty": "Intermediate",
+     "course_type": "Specialization",
+     "description_quality": "Unreviewed",
+     "summary": "With more companies leveraging software that runs on the Cloud, there is a growing need to find and hire individuals with the skills needed to build solutions on a variety of Cloud platforms. Employers agree: Cloud talent is hard to find.",
+     "skills": [
+      "Cloud Platforms",
+      "Cloud Databases",
+      "Machine Learning",
+      "Cloud Computing",
+      "Cloud API"
+     ]
+    },
+    {
+     "course_id": "cdff8ea69fb",
+     "title": "How to Get Into Cloud Computing",
+     "organization": "University of Leeds",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Cloud computing gives businesses more flexibility, allowing them to quickly scale resources up to meet business demands without having to invest in physical infrastructure. This allows businesses to accelerate innovation, streamline operations and reduce costs. It is no surprise that cloud computing professionals are in great demand and the sector is expected to grow.",
+     "skills": [
+      "Career Development",
+      "Cloud Computing"
+     ]
+    },
+    {
+     "course_id": "ce590b0575f",
+     "title": "Cloud Data Engineering",
+     "organization": "Duke University",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the third course in the Building Cloud Computing Solutions at Scale Specialization! In this course, you will learn how to apply Data Engineering to real-world projects using the Cloud computing concepts introduced in the first two courses of this series.",
+     "skills": []
+    },
+    {
+     "course_id": "ce751de0256",
+     "title": "Preparing for Your Associate Cloud Engineer Journey",
+     "organization": "Google Cloud",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course helps you structure your preparation for the Associate Cloud Engineer exam. You will learn about the Google Cloud domains covered by the exam and how to create a study plan to improve your domain knowledge. Welcome to Preparing for the Associate Cloud Engineer Journey.",
+     "skills": [
+      "Cloud Platforms",
+      "Cloud Computing",
+      "GCP ACE Certification"
+     ]
+    },
+    {
+     "course_id": "ce95568934d",
+     "title": "Introduction to Data Engineering",
+     "organization": "DeepLearning.AI",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you will be introduced to the data engineering lifecycle, from data generation in source systems, to ingestion, transformation, storage, and serving data to downstream stakeholders. You’ll study the key undercurrents that affect all stages of the lifecycle, and start developing a framework for how to think like a data engineer.",
+     "skills": [
+      "The principles of good data architecture",
+      "Requirements Gathering",
+      "AWS cloud fundamentals",
+      "Thinking like a data engineer",
+      "Translating requirements into tool and technology choices"
+     ]
+    },
+    {
+     "course_id": "cf2cfd0d0ce",
+     "title": "Microsoft Azure for Data Engineering",
+     "organization": "Microsoft",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The world of data has evolved and the advent of cloud technologies is providing new opportunities for businesses to explore. In this course, you will learn the various data platform technologies available, and how a Data Engineer can take advantage of this technology to an organization's benefit.",
+     "skills": [
+      "Cloud Platforms",
+      "Data Security",
+      "Information Engineering",
+      "Cloud Data Solutions"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "cc-t3",
+   "query": "Renting servers and storage over the internet instead of owning hardware.",
+   "candidates": [
+    {
+     "course_id": "c0489cbcf47",
+     "title": "Introduction to Information Technology and AWS Cloud",
+     "organization": "Amazon Web Services",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Technology is omnipresent, but how did we get here? And what does the future hold for a world that's increasingly connected, mobile and data-rich? This course is intended to give learners enough technical context to understand how to build solutions in the cloud starting from zero technical knowledge.",
+     "skills": [
+      "Cloud Security",
+      "Project Management",
+      "Data Analysis",
+      "Information Technology",
+      "Cloud Computing"
+     ]
+    },
+    {
+     "course_id": "c1ead5560b7",
+     "title": "System Administration and IT Infrastructure Services",
+     "organization": "Google",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course will transition you from working on a single computer to an entire fleet. Systems administration is the field of IT that’s responsible for maintaining reliable computers systems in a multi-user environment. In this course, you’ll learn about the infrastructure services that keep all organizations, big and small, up and running.",
+     "skills": [
+      "Directory Service",
+      "Lightweight Directory Access Protocol (LDAP)",
+      "Backup"
+     ]
+    },
+    {
+     "course_id": "c388cd80c73",
+     "title": "Getting Started with Amazon ECR",
+     "organization": "Amazon Web Services",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "With Amazon Elastic Container Registry (Amazon ECR), you can store, share, and deploy your container software anywhere. Amazon ECR is a fully managed container registry offering high-performance hosting that helps you reliably deploy application images and artifacts anywhere. In this course, you will learn the benefits and technical concepts of Amazon ECR.",
+     "skills": []
+    },
+    {
+     "course_id": "c52295be60e",
+     "title": "Computer Networking",
+     "organization": "Illinois Tech",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you will study the fundamental concepts involved in interconnecting devices for communications. You will also explore protocols, network hardware, and network services. The career skills acquired in this course will begin your journey into the world of networking.",
+     "skills": []
+    },
+    {
+     "course_id": "c6cbc11e559",
+     "title": "Managing Storage and Networking",
+     "organization": "SkillUp EdTech",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is a part of the AZ-800 Exam Prep specialization. It equips you with the skills and knowledge to understand the implementation of domain name system and Dynamic Host Configuration Protocol (DHCP). The course focuses on configuring and managing virtual private network (VPN), public key infrastructure (PKI), and Web application proxy (WAP).",
+     "skills": [
+      "Windows Server Storage Replica",
+      "Domain Name System (DNS)",
+      "IP Address Management",
+      "Dynamic Host Configuration Protocol (DHCP)",
+      "Windows Server File Servers"
+     ]
+    },
+    {
+     "course_id": "c707eeec88f",
+     "title": "Dell Technologies Technical Support for Hardware",
+     "organization": "Dell",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is designed to provide aspiring IT professionals with a comprehensive understanding of hardware device components and the skills needed to troubleshoot common hardware issues in both client and enterprise environments. This course will equip learners with the knowledge to confidently approach hardware-related challenges, ensuring they can maintain and repair devices effectively to minimize downtime.",
+     "skills": [
+      "Hardware Troubleshooting",
+      "Computer Hardware"
+     ]
+    },
+    {
+     "course_id": "c7369b62482",
+     "title": "GCP Computing and Storage Services",
+     "organization": "LearnKartS",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the GCP Computing and Storage Services course! This course provides an in-depth exploration of Google Cloud Platform's (GCP) computing and storage services, designed to help you effectively manage, deploy, and scale applications using GCP infrastructure.",
+     "skills": [
+      "Orchestration",
+      "Cloud Computing",
+      "DevOps",
+      "Data Analysis"
+     ]
+    },
+    {
+     "course_id": "c90e7d2fb9c",
+     "title": "Cloud Computing Applications, Part 1: Cloud Systems and Infrastructure",
+     "organization": "University of Illinois Urbana-Champaign",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the Cloud Computing Applications course, the first part of a two-course series designed to give you a comprehensive view on the world of Cloud Computing and Big Data! In this first course we cover a multitude of technologies that comprise the modern concept of cloud computing.",
+     "skills": [
+      "Cloud Computing",
+      "Cloud Storage"
+     ]
+    },
+    {
+     "course_id": "c9ed54a2254",
+     "title": "Cloud Systems Software",
+     "organization": "Georgia Institute of Technology",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course provides an introduction to programming frameworks and their implementation issues in the Cloud. It explains multiple topics, including: scalable distributed data stores, resource management (for supporting multi-tenancy and elasticity) and virtualization techniques.",
+     "skills": []
+    },
+    {
+     "course_id": "cb16433369e",
+     "title": "Foundations of Computer Hardware and Storage",
+     "organization": "Packt",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This course is designed to provide a solid foundation in computer hardware and mass storage technologies, focusing on concepts critical to passing the CompTIA A+ certification exams. You will start by exploring the essentials of the CompTIA A+, understanding why it's a key certification for IT professionals.",
+     "skills": [
+      "Computer Hardware",
+      "mass storage",
+      "partitioning",
+      "IT certification",
+      "CompTIA A+"
+     ]
+    },
+    {
+     "course_id": "cee7d70ddd8",
+     "title": "Cloud Computing Basics (Cloud 101)",
+     "organization": "LearnQuest",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to Cloud Computing Basics (Cloud 101). Over the next few weeks, we will discuss the basics of Cloud computing: what it is, what it supports, and how it is delivered. We will delve into storage services, Cloud economics, levels of managed infrastructure, and Azure services. We will also explore different deployment models of Cloud computing, as well as several hosting scenarios.",
+     "skills": []
+    },
+    {
+     "course_id": "cf419620d38",
+     "title": "Introduction to Networking and Storage",
+     "organization": "IBM",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Jumpstart your career in Information Technology (IT) with this beginner friendly, self-paced course! By taking this course you will enhance your base knowledge of essential skills in networking, storage, and system administration. You'll first learn about networking fundamentals which include: network types, network cables, topologies, and models.",
+     "skills": [
+      "Wireless Networks",
+      "Network Troubleshooting",
+      "Networking",
+      "Cloud Storage",
+      "Networking Hardware"
+     ]
+    },
+    {
+     "course_id": "cf7f42ca4aa",
+     "title": "Interfacing with the Raspberry Pi",
+     "organization": "University of California, Irvine",
+     "difficulty": "Unknown",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "The Raspberry Pi uses a variety of input/output devices based on protocols such as HDMI, USB, and Ethernet to communicate with the outside world. In this class you will learn how to use these protocols with other external devices (sensors, motors, GPS, orientation, LCD screens etc.) to get your IoT device to interact with the real world.",
+     "skills": [
+      "Python",
+      "Application Programming Interfaces (API)",
+      "Internet Of Things (IOT)",
+      "Raspberry Pi"
+     ]
+    }
+   ]
+  },
+  {
+   "query_id": "cc-t4",
+   "query": "Google Cloud fundamentals for beginners.",
+   "candidates": [
+    {
+     "course_id": "c06cd56c659",
+     "title": "Networking in Google Cloud: Fundamentals",
+     "organization": "Google Cloud",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "\"Networking in Google cloud is a 6 part course series. Welcome to the first course of our six part course series, Networking in Google Cloud: Fundamentals. This course provides a comprehensive overview of core networking concepts, including networking fundamentals, virtual private clouds (VPCs), and the sharing of VPC networks. Additionally, the course covers network logging and monitoring techniques.",
+     "skills": []
+    },
+    {
+     "course_id": "c3d1f128917",
+     "title": "Getting Started with Google Kubernetes Engine",
+     "organization": "Google Cloud",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the Getting Started with Google Kubernetes Engine course. If you're interested in Kubernetes, a software layer that sits between your applications and your hardware infrastructure, then you’re in the right place! Google Kubernetes Engine brings you Kubernetes as a managed service on Google Cloud.",
+     "skills": [
+      "DevOps",
+      "Cloud Platforms",
+      "Kubernetes",
+      "Jenkins (Software)"
+     ]
+    },
+    {
+     "course_id": "c548b23b208",
+     "title": "Google IT Automation with Python Professional Certificate",
+     "organization": "Google",
+     "difficulty": "Beginner",
+     "course_type": "Professional Certificate",
+     "description_quality": "Unreviewed",
+     "summary": "This beginner-level, six-course certificate, developed by Google, is designed to provide IT professionals with in-demand skills -- including Python, Git, and IT automation -- that can help you advance your career. Knowing how to write code to solve problems and automate solutions is a crucial skill for anybody in IT. Python, in particular, is now themost in-demand programming language by employersOpens in a new tab.",
+     "skills": [
+      "Configuration Management",
+      "Python",
+      "Git",
+      "Troubleshooting & Debugging",
+      "Automation"
+     ]
+    },
+    {
+     "course_id": "c607c0a72c9",
+     "title": "Architecting with Google Kubernetes Engine: Foundations",
+     "organization": "Google Cloud",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, \"Architecting with Google Kubernetes Engine: Foundations,\" you get a review of the layout and principles of Google Cloud, followed by an introduction to creating and managing software containers and an introduction to the architecture of Kubernetes. In this module, you'll become familiar with the structure and layout of the course. This module helps you start off with the right framework of concepts.",
+     "skills": []
+    },
+    {
+     "course_id": "c6a090df492",
+     "title": "Cloud Computing and GCP Fundamentals",
+     "organization": "LearnKartS",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Welcome to the Cloud Computing and GCP Fundamentals course! This course provides a comprehensive introduction to cloud computing concepts and Google's Cloud Platform (GCP). Designed for beginners and professionals looking to enhance their knowledge of cloud services, this course covers essential principles, methodologies, and best practices in the field.",
+     "skills": [
+      "Data Security",
+      "Cisco Certified Entry Networking Technician",
+      "Cloud Computing",
+      "DevOps",
+      "Windows Deployment Services"
+     ]
+    },
+    {
+     "course_id": "c71e19247a0",
+     "title": "Google Cloud DevOps Fundamentals",
+     "organization": "Board Infinity",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In the \"Google Cloud DevOps Fundamentals\" course, you will immerse yourself in the world of DevOps, starting from its principles and benefits to the hands-on application of these concepts in the Google Cloud Platform (GCP) environment. This course is meticulously structured into two key modules that guide you through a journey from understanding DevOps to managing DevOps pipelines effectively.",
+     "skills": [
+      "DevOps",
+      "Cloud Platforms"
+     ]
+    },
+    {
+     "course_id": "c871d161cf7",
+     "title": "Google Cloud Fundamentals: Core Infrastructure",
+     "organization": "Google Cloud",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Google Cloud Fundamentals: Core Infrastructure introduces important concepts and terminology for working with Google Cloud. Through videos and hands-on labs, this course presents and compares many of Google Cloud's computing and storage services, along with important resource and policy management tools.",
+     "skills": [
+      "Google Compute Engine",
+      "Google App Engine (GAE)",
+      "Cloud Platforms",
+      "Cloud Computing"
+     ]
+    },
+    {
+     "course_id": "ca5eb625754",
+     "title": "Developing Applications with Google Cloud: Foundations",
+     "organization": "Google Cloud",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "In this course, you learn the fundamentals of application development on Google Cloud. You learn best practices for cloud applications, and how to select compute and data options to match your application use cases. You're introduced to generative AI and how it's used to help build applications.",
+     "skills": []
+    },
+    {
+     "course_id": "cc53a1f821a",
+     "title": "Google Cloud Compute and Scalability for AWS Professionals",
+     "organization": "Google Cloud",
+     "difficulty": "Intermediate",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "This is the second course of a four-course series for cloud architects and engineers with existing AWS knowledge. It aims to compare Google Cloud and AWS solutions and guide professionals on their use. This course focuses on compute resources and load balancing in Google Cloud.",
+     "skills": []
+    },
+    {
+     "course_id": "cc7ba146608",
+     "title": "Google Cloud VMware Engine",
+     "organization": "Board Infinity",
+     "difficulty": "Beginner",
+     "course_type": "Course",
+     "description_quality": "Unreviewed",
+     "summary": "Unlock the potential of Google Cloud VMware Engine with this introductory course designed to provide a high-level overview of its multifaceted capabilities. Spread across three lessons, this course delves into the foundational concepts of virtualization, cloud computing, and the specifics of Google Cloud VMware Engine.",
+     "skills": [
+      "Network Security",
+      "Cloud Platforms",
+      "Cloud Computing"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+.skeleton { pointer-events: none; }
+.sk-line {
+  display: block;
+  height: 16px;
+  background: var(--panel);
+}
+.sk-table { display: grid; gap: var(--tile-gap); margin-top: var(--s5); }
+.sk-row { display: flex; gap: var(--tile-gap); padding-left: calc(2rem + var(--tile-gap)); }
+.sk-tile {
+  width: var(--tile);
+  height: var(--tile);
+  box-shadow: inset 0 0 0 var(--rule) var(--hair);
+}
+.sk-course { display: grid; gap: var(--s2); padding: var(--s4) 0; border-bottom: 1px solid var(--hair); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sk-line, .sk-tile { animation: pulse 1.4s ease-in-out infinite; }
+}

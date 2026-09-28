@@ -1,0 +1,62 @@
+{
+  "version": "2026-09-28.1",
+  "source_note": "Curated learning guidance written for this project from catalog coverage and common university course sequencing. These are recommendations, not official university prerequisites.",
+  "skills": {
+    "Python":             {"abbr": "Py", "title_patterns": ["^(an? )?(intro(duction)? to |learn |crash course on )?python\\b", "\\bpython (programming|basics|fundamentals|essentials|for (everybody|beginners|data science))", "programming (in|with|for everybody)[^:]*python"]},
+    "SQL":                {"abbr": "Sq", "title_patterns": ["^(an? )?(intro(duction)? to |learn )?sql\\b", "\\bsql (for|basics|fundamentals|essentials|queries)", "databases and sql", "\\bsql\\b.*\\bdata\\b"]},
+    "Statistics":         {"abbr": "St", "title_patterns": ["\\bstatistics\\b", "\\bprobability\\b", "\\bstatistical inference\\b"]},
+    "Linear Algebra":     {"abbr": "La", "title_patterns": ["linear algebra", "matrix algebra"]},
+    "Calculus":           {"abbr": "Ca", "title_patterns": ["(?<!propositional )(?<!stochastic )\\bcalculus\\b"]},
+    "Machine Learning":   {"abbr": "Ml", "title_patterns": ["(?<!for )machine learning"], "implied_by": []},
+    "Regression":         {"abbr": "Rg", "title_patterns": ["\\bregression\\b"]},
+    "Deep Learning":      {"abbr": "Dl", "title_patterns": ["deep learning", "neural network"], "implied_by": ["TensorFlow", "PyTorch", "Keras"]},
+    "Spreadsheets":       {"abbr": "Ss", "title_patterns": ["\\bexcel\\b", "spreadsheet", "google sheets"]},
+    "Data Analysis":      {"abbr": "Da", "title_patterns": ["data analysis", "data analytics"]},
+    "Data Cleaning":      {"abbr": "Dc", "title_patterns": ["data cleaning", "data wrangling", "clean(ing)? (your )?data", "data preparation"]},
+    "Data Visualization": {"abbr": "Dv", "title_patterns": ["data visuali[sz]ation", "visuali[sz]ing data", "data storytelling"]},
+    "BI Dashboards":      {"abbr": "Bi", "title_patterns": ["\\btableau\\b", "power bi", "dashboard", "business intelligence"]},
+    "Linux":              {"abbr": "Lx", "title_patterns": ["\\blinux\\b", "\\bbash\\b", "\\bunix\\b", "command line"]},
+    "Networking":         {"abbr": "Nw", "title_patterns": ["computer network", "network(ing)? (fundamentals|basics|essentials)", "tcp/ip", "(?<!social )(?<!professional )(?<!english: )\\bnetworking\\b"]},
+    "Cloud Computing":    {"abbr": "Cc", "title_patterns": ["cloud computing", "cloud (fundamentals|basics|essentials|foundations|concepts|practitioner)", "intro(duction)? to (the )?cloud"]},
+    "Cloud Platforms":    {"abbr": "Cp", "title_patterns": ["\\baws\\b", "amazon web services", "\\bazure\\b", "google cloud", "\\bgcp\\b"]},
+    "Containers":         {"abbr": "Ct", "title_patterns": ["\\bdocker\\b", "\\bcontainers?\\b", "containeri[sz]ation"]},
+    "Kubernetes":         {"abbr": "Ku", "title_patterns": ["kubernetes", "\\bk8s\\b", "\\bgke\\b"]},
+    "DevOps":             {"abbr": "Do", "title_patterns": ["devops", "ci/cd", "continuous (integration|delivery)"]},
+    "Cloud Security":     {"abbr": "Cs", "title_patterns": ["cloud security", "security in (the )?(google cloud|aws|azure|cloud)", "(aws|azure|google cloud) security"]}
+  },
+  "dependencies": [
+    {"skill": "Machine Learning", "requires": ["Python", "Statistics", "Linear Algebra"], "reason": "Machine learning courses routinely assume programming, basic probability and statistics, and vectors and matrices."},
+    {"skill": "Regression", "requires": ["Statistics"], "reason": "Regression builds directly on descriptive statistics and inference."},
+    {"skill": "Deep Learning", "requires": ["Machine Learning", "Calculus"], "reason": "Neural network training extends core machine learning and relies on derivatives for gradient descent."},
+    {"skill": "Data Analysis", "requires": ["Spreadsheets", "Statistics"], "reason": "Introductory analytics courses start from spreadsheets and summary statistics."},
+    {"skill": "Data Cleaning", "requires": ["Spreadsheets"], "reason": "Cleaning techniques are usually taught first on tabular data in spreadsheets."},
+    {"skill": "Data Visualization", "requires": ["Data Analysis"], "reason": "Choosing a chart depends on having analysed what the data says."},
+    {"skill": "BI Dashboards", "requires": ["Data Visualization", "SQL"], "reason": "Dashboard tools combine visual design with queries against a database."},
+    {"skill": "Cloud Computing", "requires": ["Linux", "Networking"], "reason": "Cloud servers are mostly Linux machines reached over a network."},
+    {"skill": "Cloud Platforms", "requires": ["Cloud Computing"], "reason": "Provider-specific courses (AWS, Azure, Google Cloud) assume general cloud concepts."},
+    {"skill": "Containers", "requires": ["Linux"], "reason": "Docker containers package Linux processes and are driven from the command line."},
+    {"skill": "Kubernetes", "requires": ["Containers"], "reason": "Kubernetes orchestrates containers."},
+    {"skill": "DevOps", "requires": ["Linux", "Containers"], "reason": "CI/CD pipelines build and ship software on Linux runners, usually as containers."},
+    {"skill": "Cloud Security", "requires": ["Cloud Computing", "Networking"], "reason": "Securing cloud workloads assumes knowledge of cloud services and network traffic."}
+  ],
+  "tracks": {
+    "machine_learning": {
+      "label": "Machine learning",
+      "target_skills": ["Machine Learning", "Regression", "Deep Learning"],
+      "detect": ["machine learning", "\\bml\\b", "deep learning", "neural net", "\\bai\\b", "artificial intelligence", "data scien"],
+      "query_hint": "machine learning"
+    },
+    "data_analytics": {
+      "label": "Data analytics",
+      "target_skills": ["SQL", "Data Analysis", "Data Cleaning", "Data Visualization", "BI Dashboards"],
+      "detect": ["data analy", "analytics", "business intelligence", "dashboard", "visuali[sz]", "tableau", "power bi", "data scien"],
+      "query_hint": "data analytics"
+    },
+    "cloud_computing": {
+      "label": "Cloud computing",
+      "target_skills": ["Cloud Computing", "Cloud Platforms", "Containers", "Kubernetes", "DevOps", "Cloud Security"],
+      "detect": ["cloud", "\\baws\\b", "azure", "\\bgcp\\b", "google cloud", "devops", "kubernetes", "docker", "container"],
+      "query_hint": "cloud computing"
+    }
+  }
+}
