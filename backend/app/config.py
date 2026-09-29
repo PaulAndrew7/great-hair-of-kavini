@@ -5,6 +5,20 @@ import os
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
+def _load_env_file(path: Path) -> None:
+    """Read KEY=VALUE lines from backend/.env (git-ignored); real environment variables win."""
+    if not path.exists():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip("'\""))
+
+
+_load_env_file(REPO_ROOT / "backend" / ".env")
 DATA_DIR = Path(os.environ.get("PRIOR_DATA_DIR", REPO_ROOT / "data"))
 RAW_DIR = DATA_DIR / "raw"
 PROCESSED_DIR = DATA_DIR / "processed"
@@ -20,6 +34,10 @@ COURSE_IDS_JSON = PROCESSED_DIR / "course_ids.json"
 MANIFEST_JSON = PROCESSED_DIR / "manifest.json"
 DATA_QUALITY_JSON = PROCESSED_DIR / "data_quality.json"
 EVAL_REPORT_JSON = EVAL_DIR / "report.json"
+EVAL_QUERIES_JSON = EVAL_DIR / "queries.json"
+EVAL_PROFILES_JSON = EVAL_DIR / "profiles.json"
+EVAL_JUDGMENTS_JSON = EVAL_DIR / "judgments.json"
+CALIBRATION_JSON = EVAL_DIR / "calibration.json"
 
 SKILL_ALIASES_JSON = RULES_DIR / "skill_aliases.json"
 GOAL_SKILLS_JSON = RULES_DIR / "goal_skills.json"
@@ -53,6 +71,17 @@ SUSPECT_DESCRIPTION_SIMILARITY = 0.12
 # A tagged track skill counts as a course's primary subject when the course embedding is at least this
 # close to the skill query (title evidence always counts). Below it the skill is only 'listed'.
 PRIMARY_SKILL_SIMILARITY = 0.38
+
+# AI-drafted tracks (app/track_designer.py). The gateway fixes the chat model server-side (gpt-4o-mini), so no
+# model name is sent. Without a key, or with PRIOR_LLM=off (tests, scripts/evaluate.py), Auto uses curated tracks only.
+LLM_URL = os.environ.get("PRIOR_LLM_URL", "https://keygateway1.arshnivlabs.com").rstrip("/")
+LLM_KEY = os.environ.get("PRIOR_LLM_KEY", "")
+LLM_MODEL_LABEL = os.environ.get("PRIOR_LLM_MODEL_LABEL", "gpt-4o-mini")
+LLM_ENABLED = bool(LLM_KEY) and os.environ.get("PRIOR_LLM", "on").lower() not in ("off", "0", "false")
+LLM_TIMEOUT_S = float(os.environ.get("PRIOR_LLM_TIMEOUT", "30"))
+LLM_MAX_TOKENS = 500  # the gateway's ceiling
+MAX_AI_SKILLS = 8
+MAX_AI_TARGETS = 4
 
 MAX_PATH_STEPS = 5
 MAX_GOAL_CHARS = 500

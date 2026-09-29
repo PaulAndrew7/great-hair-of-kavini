@@ -11,10 +11,10 @@ See [architecture.pdf](architecture.pdf) for the data-to-recommendation flow.
 - *Why:* the catalog is 6,642 courses. A 6,642 x 384 matrix is 10 MB; exact cosine similarity over it takes a few milliseconds. A vector database, message queue or second service would add setup steps and failure modes without a measured need.
 - *Trade-off:* the service holds everything in memory and starts in about 12 seconds (catalog load, BM25 index build, model load). That is acceptable for a local demo; a larger catalog would need a persisted BM25 index and an approximate-nearest-neighbour index.
 
-**No LLM.** Explanations are templates filled from the recommendation's own data.
+**Explanations are templates; an LLM only drafts tracks.** Explanations are filled from the recommendation's own data. The one LLM use is `app/track_designer.py`: with Track on Auto, gpt-4o-mini (through the course gateway, `backend/.env`) drafts the skill track for the goal, adapted from a curated track when one is detected, new otherwise.
 
-- *Why:* every sentence the student reads can be traced to a catalog field or a rule, nothing is invented, it runs offline and costs nothing per request.
-- *Trade-off:* explanations are less fluent than generated text, and the goal parser understands fewer phrasings than a language model would (the evaluation shows two misses, section 9).
+- *Why:* every sentence the student reads can still be traced to a catalog field or a rule. Three hand-curated tracks left most goals without a chart; a drafted track gives any goal one. The model only proposes skill names, an order and keywords. Curated skills keep their curated prerequisites; a new skill is tied to courses through catalog tags and titles, the same embedding check as curated skills decides whether a course mainly teaches it, dependency cycles are dropped, and a skill no course mainly teaches is left out (its dependents inherit its prerequisites). Everything drafted is labelled "AI-drafted" in the chart, the path and the answer check.
+- *Trade-off:* a drafted track is unreviewed and can differ slightly between runs; the first search for a goal waits 3-5 s for the model (cached per goal afterwards, so What-If never waits). Tests and `scripts/evaluate.py` switch it off (`PRIOR_LLM=off`), so the measured numbers describe the curated pipeline only, and drafted tracks have no measured quality. Without a key or network, Auto falls back to the curated tracks and says so. Explanations are less fluent than generated text, and the goal parser understands fewer phrasings than a language model would (the evaluation shows two misses, section 9).
 
 ## 2. Data preparation
 
@@ -108,7 +108,7 @@ What remains is reported as unresolved with a reason ("No course teaches Calculu
 
 | Not built | Reason |
 |---|---|
-| LLM chat or generated explanations | Unverifiable text; offline and cost constraints; templates suffice |
+| LLM chat or generated explanations | Unverifiable text; templates suffice. The LLM only drafts tracks (section 1) |
 | Vector database, Elasticsearch | 6,642 vectors fit in memory; exact search is milliseconds |
 | Accounts, saved profiles | Not required by the brief; avoids storing personal data |
 | Automatic retraining from feedback | Too little feedback to learn from safely; would make results change without explanation |

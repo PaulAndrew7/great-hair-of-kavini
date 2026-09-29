@@ -9,11 +9,13 @@ from . import config
 
 Difficulty = Literal["Beginner", "Intermediate", "Advanced", "Mixed"]
 TrackId = Literal["machine_learning", "data_analytics", "cloud_computing"]
+# "custom" is an AI-drafted track (app/track_designer.py); it appears in responses only, never in requests.
+ProfileTrackId = Literal["machine_learning", "data_analytics", "cloud_computing", "custom"]
 SearchMode = Literal["bm25", "semantic", "hybrid"]
 FeedbackLabel = Literal["relevant", "not_relevant", "too_advanced", "too_basic", "already_learned"]
 SkillState = Literal["known", "simulated", "missing"]
 PrereqStatus = Literal["met", "unmet", "unknown"]
-PrereqSource = Literal["course description", "curated guidance"]
+PrereqSource = Literal["course description", "curated guidance", "AI-drafted guidance"]
 EvidenceSource = Literal["catalog tag", "course title"]
 
 
@@ -121,6 +123,16 @@ class Retrieval(BaseModel):
     semantic_rank: Optional[int] = None
     semantic_similarity: Optional[float] = None
     matched_terms: list[str] = []
+    # Per-result evaluation (app/live_eval.py). confidence is a calibrated estimate, not a similarity percentage.
+    confidence: Optional[float] = None
+    confidence_band: Optional[Literal["high", "medium", "low"]] = None
+    cosine: Optional[float] = None
+    keyword_coverage: Optional[float] = None
+    query_terms: int = 0
+    matched_query_terms: list[str] = []
+    channels: int = 0
+    judged_relevant: Optional[bool] = None
+    judgment_reason: Optional[str] = None
 
 
 class CourseCard(BaseModel):
@@ -151,13 +163,24 @@ class Recommendation(CourseCard):
     advisor: Advisor
 
 
+class AiTrack(BaseModel):
+    model: str
+    base_track: Optional[TrackId]      # curated track it was adapted from; None for a new track
+    base_label: Optional[str]
+    new_skills: list[str]              # skills the curated rules do not define
+    left_out: list[str]                # proposed skills left out: no catalog course mainly teaches them
+    unteachable: list[str]             # kept although no catalog course mainly teaches them
+    notes: list[str]                   # what validation changed (dropped cycles, trimmed skills)
+
+
 class Profile(BaseModel):
     goal: str
     search_text: str
-    track_id: Optional[TrackId]
+    track_id: Optional[ProfileTrackId]
     track_label: Optional[str]
-    track_status: Literal["detected", "selected", "ambiguous", "unsupported"]
+    track_status: Literal["detected", "selected", "ambiguous", "unsupported", "generated"]
     track_candidates: list[TrackId]
+    ai_track: Optional[AiTrack] = None
     confirmed_skills: list[str]
     inferred_skills: list[str]
     negated_skills: list[str]
@@ -177,6 +200,7 @@ class SkillTile(BaseModel):
     course_count: int
     requires: list[str]
     reason: Optional[str]
+    origin: Literal["curated", "ai"] = "curated"
     path_step: Optional[int] = None
 
 
@@ -189,7 +213,7 @@ class Coverage(BaseModel):
 class SkillGap(BaseModel):
     available: bool
     reason: Optional[str] = None
-    track_id: Optional[TrackId] = None
+    track_id: Optional[ProfileTrackId] = None
     tiles: list[SkillTile] = []
     target_skills: list[str] = []
     supporting_skills: list[str] = []
@@ -200,6 +224,12 @@ class SkillGap(BaseModel):
     coverage: Optional[Coverage] = None
 
 
+class StepMatch(BaseModel):
+    skill_similarity: Optional[float] = None  # course embedding vs the skill it was chosen for
+    goal_similarity: Optional[float] = None   # course embedding vs the goal text
+    evidence: Literal["course title", "catalog tag"]
+
+
 class PathStep(BaseModel):
     step: int
     course: CourseCard
@@ -208,6 +238,7 @@ class PathStep(BaseModel):
     prerequisites: Prerequisites
     also_lists: list[str]
     notes: list[str]
+    match: StepMatch
 
 
 class Unresolved(BaseModel):
@@ -224,6 +255,106 @@ class LearningPath(BaseModel):
     complete: bool = False
 
 
+class ReliabilityBin(BaseModel):
+    lo: float
+    hi: float
+    n: int
+    predicted: float
+    observed: float
+
+
+class CalibrationSummary(BaseModel):
+    labels: int
+    queries: int
+    base_rate: float
+    features: list[str]
+    method: str
+    brier: float
+    baseline_brier: float
+    log_loss: float
+    accuracy: float
+    auc: Optional[float]
+    reliability: list[ReliabilityBin]
+
+
+class RetrievalEval(BaseModel):
+    extrapolated: bool
+    shown: int
+    k: int
+    expected_relevant: Optional[float]
+    expected_precision: Optional[float]
+    top_confidence: Optional[float]
+    min_confidence: Optional[float]
+    channel_agreement: Optional[float]
+    agreement_depth: int
+    query_terms: list[str]
+    unmatched_terms: list[str]
+
+
+class GroundTruth(BaseModel):
+    query_id: str
+    split: str
+    judged: int
+    relevant: int
+    shown: int
+    precision_at_k: float
+    rr_at_k: float
+    note: str
+
+
+class TrackEval(BaseModel):
+    status: str
+    confidence: Literal["certain", "high", "medium", "low", "none", "drafted"]
+    scores: dict[str, int]
+    margin: int
+    explanation: str
+
+
+class GapEval(BaseModel):
+    profile_id: str
+    precision: float
+    recall: float
+    f1: float
+    exact: bool
+    false_positives: list[str]
+    false_negatives: list[str]
+
+
+class PathEval(BaseModel):
+    steps: int
+    target_coverage_now: Optional[float]
+    target_coverage_projected: Optional[float]
+    unresolved: int
+    duplicates: int
+    prerequisite_violations: int
+    violations: list[str]
+    unverified_steps: int
+    mean_skill_similarity: Optional[float]
+
+
+class ReferenceEval(BaseModel):
+    created: Optional[str]
+    mode: str
+    precision_at_5: Optional[float]
+    mrr_at_5: Optional[float]
+    queries: Optional[int]
+    gap_f1: Optional[float]
+    gap_profiles: Optional[int]
+    path_target_coverage: Optional[float]
+    path_prerequisite_violations: Optional[int]
+
+
+class QueryEvaluation(BaseModel):
+    retrieval: RetrievalEval
+    calibration: Optional[CalibrationSummary]
+    ground_truth: Optional[GroundTruth]
+    track: TrackEval
+    skill_gap: Optional[GapEval]
+    path: Optional[PathEval]
+    reference: Optional[ReferenceEval]
+    notes: list[str]
+
+
 class RecommendResponse(BaseModel):
     request_id: str
     data_version: str
@@ -236,6 +367,7 @@ class RecommendResponse(BaseModel):
     courses: list[Recommendation]
     skill_gap: SkillGap
     learning_path: LearningPath
+    evaluation: QueryEvaluation
     warnings: list[Warning_]
     timing_ms: float
 
@@ -298,5 +430,6 @@ class HealthResponse(BaseModel):
     data_version: Optional[str]
     course_count: int
     model: Optional[dict]
+    llm: Optional[dict] = None
     message: str
     warnings: list[str]

@@ -97,3 +97,8 @@
 @media (max-width: 760px) {
   .props-wide { display: block; overflow-x: auto; }
 }
+
+.eval-scroll { overflow-x: auto; }
+.eval-rr { color: var(--ink-2); font-weight: 600; font-size: var(--text-sm); }
+.eval-qid { font-size: var(--text-xs); color: var(--ink-2); margin-right: var(--s2); }
+.props td.num:has(.eval-rr) { white-space: nowrap; }

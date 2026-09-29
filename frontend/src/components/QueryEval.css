@@ -1,0 +1,80 @@
+.qe {
+  display: grid;
+  gap: var(--s3);
+  margin-top: var(--s8);
+  padding-top: var(--s5);
+  border-top: var(--rule-heavy) solid var(--ink);
+}
+.qe-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s2) var(--s5); }
+.qe-head h2 {
+  font-size: var(--text-xl);
+  font-weight: 850;
+  font-stretch: 108%;
+  letter-spacing: -0.015em;
+}
+.qe-sub { font-size: var(--text-sm); color: var(--ink-2); max-width: 80ch; }
+
+/* The kind of a number is printed as a square key, never colour alone:
+   estimated = half-filled, measured = solid, checked = outline. */
+.qe-key { font-weight: 750; color: var(--ink); white-space: nowrap; }
+.qe-key::before,
+.qe-label::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border: var(--rule) solid currentColor;
+  vertical-align: -1px;
+}
+.qe-key[data-kind='measured']::before,
+.qe-tile[data-kind='measured'] .qe-label::before { background: currentColor; }
+.qe-key[data-kind='estimated']::before,
+.qe-tile[data-kind='estimated'] .qe-label::before { background: linear-gradient(135deg, currentColor 50%, transparent 50%); }
+
+.qe-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  border-top: var(--rule-heavy) solid var(--ink);
+}
+.qe-tile {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+  padding: var(--s3) var(--s4) var(--s3) 0;
+  border-bottom: 1px solid var(--hair);
+}
+.qe-tile + .qe-tile { padding-left: var(--s4); border-left: 1px solid var(--hair); }
+.qe-label { font-size: var(--text-xs); font-weight: 750; color: var(--ink-2); }
+.qe-value {
+  font-size: var(--text-2xl);
+  font-weight: 850;
+  font-stretch: 110%;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.qe-tile-sub { font-size: var(--text-xs); color: var(--ink-2); line-height: 1.35; }
+/* A caution is marked with the chart's yellow bar plus the words in the sub-line. */
+.qe-tile[data-warn] { background: linear-gradient(var(--yellow), var(--yellow)) top / 100% 3px no-repeat; }
+
+.qe-note { font-size: var(--text-sm); color: var(--ink-2); max-width: 90ch; }
+.qe .disclose { margin-top: var(--s1); }
+
+.qe-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: var(--s5) var(--s6);
+  padding: var(--s4);
+  background: var(--panel);
+}
+.qe-details[hidden] { display: none; }
+.qe-details section { display: grid; gap: var(--s3); align-content: start; min-width: 0; }
+.qe-details h3 { font-size: var(--text-md); font-weight: 850; }
+.qe-details p { font-size: var(--text-sm); line-height: 1.45; }
+.qe-details .props { font-size: var(--text-sm); }
+.qe-details .props td.num { font-size: var(--text-md); }
+.qe-caption { caption-side: top; text-align: left; font-size: var(--text-xs); font-weight: 750; color: var(--ink-2); padding-bottom: var(--s1); }
+
+@media (max-width: 640px) {
+  .qe-tile + .qe-tile { padding-left: 0; border-left: 0; }
+}

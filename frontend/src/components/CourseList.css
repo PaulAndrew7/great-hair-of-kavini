@@ -45,6 +45,25 @@
   border: var(--rule) solid var(--ink);
 }
 
+.course-conf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2) var(--s4);
+  font-size: var(--text-sm);
+}
+.course-conf > span:not(.conf-meter) { display: inline-flex; align-items: center; gap: var(--s2); }
+.conf-meter {
+  flex: none;
+  width: 72px;
+  height: 8px;
+  border: 1px solid var(--ink);
+  background: var(--stock);
+}
+.conf-meter > span { display: block; height: 100%; background: var(--ink); }
+.conf-band { color: var(--ink-2); }
+.conf-label { font-weight: 750; }
+
 .course-prereq {
   display: flex;
   align-items: baseline;

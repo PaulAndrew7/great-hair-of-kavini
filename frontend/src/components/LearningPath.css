@@ -140,3 +140,5 @@
   .step-adds { grid-column: 2; justify-items: start; text-align: left; }
   .step-adds-tiles { justify-content: flex-start; }
 }
+
+.step-match { font-size: var(--text-xs); color: var(--ink-2); }

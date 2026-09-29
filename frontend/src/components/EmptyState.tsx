@@ -11,7 +11,11 @@ const EXAMPLE_FOR: Record<TrackId, string> = {
 }
 
 /** Before the first search: teach the chart by showing each track's table, unfilled. */
-export default function EmptyState({ catalog, onPick }: { catalog: CatalogInfo | null; onPick: (goal: string) => void }) {
+export default function EmptyState({ catalog, aiTracks, onPick }: {
+  catalog: CatalogInfo | null
+  aiTracks: boolean
+  onPick: (goal: string) => void
+}) {
   return (
     <section className="empty" aria-labelledby="empty-title">
       <div className="empty-copy">
@@ -20,9 +24,17 @@ export default function EmptyState({ catalog, onPick }: { catalog: CatalogInfo |
           Prior reads which skills you already have, lays out the rest in learning order, and picks real courses
           from the catalog for each gap. Every course comes with the reasons it was chosen and any concerns.
         </p>
-        <p>
-          Charts and learning paths cover the three tracks below. Any other goal still gets matching courses.
-        </p>
+        {aiTracks ? (
+          <p>
+            With Track on Auto, any goal gets a chart and a path: an AI model drafts the skills for your goal, and
+            every course in them still comes from the catalog. The three tracks below are curated by hand; pick one
+            to use it as it is.
+          </p>
+        ) : (
+          <p>
+            Charts and learning paths cover the three tracks below. Any other goal still gets matching courses.
+          </p>
+        )}
       </div>
       {catalog && (
         <ul className="empty-tracks">

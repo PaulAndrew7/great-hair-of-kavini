@@ -39,7 +39,7 @@ The site has two pages, chosen in the top bar: **Discover** (where students use 
 - Your edits always win over what Prior guessed. It also understands "don't": "I don't know Python yet" does **not** count Python as known.
 
 **3. Track and filters (optional).**
-- **Track** is the subject area. "Auto" lets Prior detect it from your goal (it shows what it detected, e.g. "Auto: Machine learning"). You can also pick one yourself.
+- **Track** is the subject area. On **Auto**, an AI model drafts a track for your goal: it adapts one of the three hand-made tracks when your goal fits one, or makes a new one (cybersecurity, UX design, React…). The button then reads "Auto: AI-drafted", and the chart carries an **AI-drafted** label. Pick Machine learning, Data analytics or Cloud computing yourself to use the hand-made track exactly as it is.
 - **Filters** narrow the course list: **Difficulty** (Beginner, Intermediate, Advanced), **Organization** (e.g. IBM, Google), and **Minimum rating** (4.0, 4.5 or 4.7 and up). A course with no level or no rating is never counted as matching a filter, because we don't know.
 
 **4. Read the results.** The results area has two columns.
@@ -75,7 +75,8 @@ Each step says what it **builds on** and where that information came from, for e
 At the very bottom, a small grey line records which version of the data was used and how long the answer took (usually 20–30 thousandths of a second).
 
 **5. Special messages.** Prior tells you plainly when something is off:
-- a goal outside the three subjects (e.g. "learn the violin") still gets matching courses, but the chart is replaced by **"No skill chart for this goal"**;
+- if the AI model can't be reached, a grey line says so and Prior falls back to the three hand-made tracks: a goal outside them (e.g. "learn the violin") still gets matching courses, but the chart is replaced by **"No skill chart for this goal"**;
+- if the AI proposed a skill no catalog course mainly teaches, the chart says it was **left out**;
 - a goal that fits two subjects asks **"Which track did you mean?"**;
 - filters that exclude everything say so, with a **Clear filters** button;
 - if the back end isn't running, the page says so and shows the command to start it.
@@ -220,8 +221,8 @@ Other checks:
 
 ## 10. What Prior does *not* do
 
-- It covers only three subjects in depth (machine learning, data analytics, cloud computing). Other goals get course matches only.
-- It doesn't use a chatbot or paid AI service.
+- Only three subjects (machine learning, data analytics, cloud computing) are curated by hand. Other goals get AI-drafted tracks, which nobody has reviewed and which the evaluation does not measure.
+- It uses an AI model only to draft tracks. It isn't a chatbot, and it never lets the model write explanations or choose courses.
 - It has no accounts and stores no personal profile beyond anonymous feedback.
 - It doesn't know official university prerequisites; only 8 courses have prerequisites taken from their own descriptions.
 - The catalog's skill tags are imperfect, so a course is occasionally credited with a skill it only touches on.

@@ -43,3 +43,10 @@ def test_semantic_search_is_refused_not_faked(client):
     assert client.post("/search", json={"query": "cloud security", "mode": "semantic"}).status_code == 503
     assert client.post("/search", json={"query": "cloud security", "mode": "hybrid"}).status_code == 503
     assert client.post("/search", json={"query": "cloud security", "mode": "bm25"}).status_code == 200
+
+
+def test_keyword_only_confidence_is_the_base_rate_not_a_ranking_signal(client):
+    r = client.post("/recommend", json={"goal": "I want to learn cloud computing from the basics."}).json()
+    confs = {c["retrieval"]["confidence"] for c in r["courses"]}
+    assert len(confs) == 1  # no semantic signal: every result gets the same labelled base rate
+    assert r["evaluation"]["calibration"]["auc"] is None and r["evaluation"]["retrieval"]["channel_agreement"] is None

@@ -21,6 +21,7 @@ from .schemas import (CatalogResponse, FeedbackRequest, FeedbackResponse, Health
                       RecommendResponse, SearchRequest, SearchResponse)
 from .search import Embedder, Filters, SearchEngine
 from .skills import SkillModel
+from .track_designer import GatewayClient, TrackDesigner
 
 log = logging.getLogger("prior")
 
@@ -69,6 +70,10 @@ def startup() -> None:
             continue
         reviewed[cid] = entry
     state.recommender = Recommender(catalog, engine, skills, PrereqModel(skills, reviewed))
+    if config.LLM_ENABLED:
+        rec = state.recommender
+        rec.designer = TrackDesigner(catalog, skills, rec.prereqs, rec.path_ctx, embedder,
+                                     GatewayClient(config.LLM_URL, config.LLM_KEY, config.LLM_TIMEOUT_S))
     state.warnings = list(catalog.warnings) + problems
     state.started_ms = round((time.perf_counter() - t0) * 1000, 1)
     log.info("ready in %.0f ms, mode=%s, courses=%d", state.started_ms, engine.mode, len(catalog.courses))
@@ -114,6 +119,9 @@ def health() -> dict[str, Any]:
         "course_count": len(state.catalog.courses),
         "model": {"name": config.MODEL_NAME, "revision": config.MODEL_REVISION[:12], "loaded": not degraded,
                   "error": state.model_error},
+        # Configured, not probed: /health never waits on the gateway.
+        "llm": {"enabled": state.recommender is not None and state.recommender.designer is not None,
+                "model": config.LLM_MODEL_LABEL, "gateway": config.LLM_URL},
         "message": "Keyword-only mode: the embedding model could not be loaded." if degraded
         else f"Ready. Hybrid retrieval over {len(state.catalog.courses):,} courses.",
         "warnings": state.warnings,

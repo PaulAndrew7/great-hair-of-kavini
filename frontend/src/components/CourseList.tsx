@@ -1,6 +1,6 @@
 import { ArrowSquareOut, CaretDown } from '@phosphor-icons/react'
 import { useId, useState } from 'react'
-import type { FeedbackLabel, Recommendation, SkillTile } from '../types'
+import type { FeedbackLabel, Recommendation, Retrieval, SkillTile } from '../types'
 import CourseMeta from './CourseMeta'
 import Feedback from './Feedback'
 import './CourseList.css'
@@ -12,6 +12,7 @@ interface Props {
   effective: string[]
   searchText: string
   eligibleCount: number
+  extrapolated: boolean
   onFeedback: (course: Recommendation, label: FeedbackLabel, comment?: string) => Promise<void>
 }
 
@@ -24,8 +25,41 @@ function prereqLine(c: Recommendation): { state: string; text: string } {
   return { state: 'met', text: `Ready: you have ${p.required.join(', ')}.` }
 }
 
-function Entry({ course, isNew, tiles, effective, onFeedback }: {
+const BAND = { high: 'high', medium: 'medium', low: 'low' } as const
+
+/** Calibrated chance this result is relevant, plus the human label when this query has one. */
+function Confidence({ r, extrapolated }: { r: Retrieval; extrapolated: boolean }) {
+  if (r.confidence === null && r.judged_relevant === null) return null
+  return (
+    <p className="course-conf">
+      {r.confidence !== null && (
+        <>
+          <span className="conf-meter" aria-hidden="true"><span style={{ width: `${Math.round(r.confidence * 100)}%` }} /></span>
+          <span><strong className="num">{Math.round(r.confidence * 100)}%</strong> est. chance relevant{extrapolated
+            ? <span className="conf-band"> (extrapolated: subject outside the labelled set)</span>
+            : r.confidence_band && <span className="conf-band"> ({BAND[r.confidence_band]})</span>}</span>
+        </>
+      )}
+      {r.judged_relevant !== null && (
+        <span className="conf-label" data-relevant={r.judged_relevant}>
+          <span className="mark" data-state={r.judged_relevant ? 'known' : 'missing'} aria-hidden="true" />
+          Labelled {r.judged_relevant ? 'relevant' : 'not relevant'}
+        </span>
+      )}
+    </p>
+  )
+}
+
+function channelText(r: Retrieval): string {
+  const parts = []
+  if (r.bm25_rank !== null) parts.push(`keyword #${r.bm25_rank}`)
+  if (r.semantic_rank !== null) parts.push(`semantic #${r.semantic_rank}`)
+  return `${r.channels === 2 ? 'Both channels' : parts.length ? 'One channel' : 'No channel'}${parts.length ? ` (${parts.join(', ')})` : ''}, fused #${r.fused_rank}.`
+}
+
+function Entry({ course, isNew, tiles, effective, extrapolated, onFeedback }: {
   course: Recommendation
+  extrapolated: boolean
   isNew: boolean
   tiles: SkillTile[]
   effective: string[]
@@ -46,6 +80,7 @@ function Entry({ course, isNew, tiles, effective, onFeedback }: {
           {course.title}
         </h3>
         <CourseMeta course={course} />
+        <Confidence r={course.retrieval} extrapolated={extrapolated} />
         {(primary.length > 0 || course.path_step) && (
           <div className="course-teaches">
             {primary.map((e) => {
@@ -76,6 +111,25 @@ function Entry({ course, isNew, tiles, effective, onFeedback }: {
               ? <ul>{course.advisor.consider.map((t) => <li key={t}>{t}</li>)}</ul>
               : <p>Nothing flagged in the catalog data for this course.</p>}
           </section>
+          <section>
+            <h4>How sure is this match</h4>
+            <ul>
+              {course.retrieval.confidence !== null && (
+                <li>Estimated {Math.round(course.retrieval.confidence * 100)}% chance relevant, from a model calibrated on labelled results.</li>
+              )}
+              {course.retrieval.cosine !== null && <li>Semantic similarity <span className="num">{course.retrieval.cosine.toFixed(2)}</span> (cosine, 0 to 1; not a percentage).</li>}
+              {course.retrieval.query_terms > 0 && (
+                <li>
+                  Contains {course.retrieval.matched_query_terms.length} of {course.retrieval.query_terms} search terms
+                  {course.retrieval.matched_query_terms.length > 0 && ` (${course.retrieval.matched_query_terms.join(', ')})`}.
+                </li>
+              )}
+              <li>{channelText(course.retrieval)}</li>
+              {course.retrieval.judged_relevant !== null && (
+                <li>Human label: {course.retrieval.judged_relevant ? 'relevant' : 'not relevant'}{course.retrieval.judgment_reason && `. ${course.retrieval.judgment_reason}`}</li>
+              )}
+            </ul>
+          </section>
           {course.summary && (
             <section>
               <h4>From the catalog</h4>
@@ -94,7 +148,7 @@ function Entry({ course, isNew, tiles, effective, onFeedback }: {
   )
 }
 
-export default function CourseList({ courses, baselineIds, tiles, effective, searchText, eligibleCount, onFeedback }: Props) {
+export default function CourseList({ courses, baselineIds, tiles, effective, searchText, eligibleCount, extrapolated, onFeedback }: Props) {
   return (
     <section className="courses" aria-labelledby="courses-title">
       <header className="courses-head">
@@ -108,7 +162,7 @@ export default function CourseList({ courses, baselineIds, tiles, effective, sea
         <ol className="course-list">
           {courses.map((c) => (
             <Entry key={c.course_id} course={c} isNew={baselineIds !== null && !baselineIds.includes(c.course_id)}
-              tiles={tiles} effective={effective} onFeedback={onFeedback} />
+              tiles={tiles} effective={effective} extrapolated={extrapolated} onFeedback={onFeedback} />
           ))}
         </ol>
       )}

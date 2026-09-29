@@ -14,3 +14,5 @@ frontend/dist/
 .impeccable/live/
 .impeccable/hook.cache.json
 .impeccable/questions/
+# Local secrets (LLM gateway key), never committed
+backend/.env

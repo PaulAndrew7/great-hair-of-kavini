@@ -2,7 +2,7 @@ import { ArrowClockwise, WarningOctagon } from '@phosphor-icons/react'
 import { useCallback, useEffect, useState } from 'react'
 import type { ServiceState } from '../App'
 import { api, ApiError } from '../api'
-import type { EvaluationReport } from '../types'
+import type { EvalQueryRow, EvaluationReport } from '../types'
 import './Evaluation.css'
 
 const MODE_LABEL = { bm25: 'Keyword (BM25)', semantic: 'Semantic (MiniLM)', hybrid: 'Hybrid (RRF)' } as const
@@ -67,6 +67,44 @@ export default function Evaluation({ service }: { service: ServiceState }) {
   )
 }
 
+/** Every labelled query, every method: the per-query evaluation behind the averages above. */
+function PerQuery({ blocks }: { blocks: NonNullable<EvaluationReport['retrieval']> }) {
+  const rows = new Map<string, { query: string; split: string; modes: Partial<Record<EvalQueryRow['mode'], EvalQueryRow>> }>()
+  for (const b of blocks) {
+    for (const r of b.per_query ?? []) {
+      const entry = rows.get(r.query_id) ?? { query: r.query, split: b.split, modes: {} }
+      entry.modes[r.mode] = r
+      rows.set(r.query_id, entry)
+    }
+  }
+  if (rows.size === 0) return null
+  const cell = (r?: EvalQueryRow) => (r ? <>{fmt(r.precision_at_5)} <span className="eval-rr">/ {fmt(r.rr_at_5)}</span></> : '')
+  return (
+    <section className="eval-section" aria-labelledby="perq-title">
+      <h2 id="perq-title">Every query</h2>
+      <p className="eval-note">Precision@5 / reciprocal rank@5 for each labelled query. Run any of these on Discover to see it scored live.</p>
+      <div className="eval-scroll">
+        <table className="props props-wide">
+          <thead>
+            <tr><th scope="col">Query</th><th scope="col">Split</th><th scope="col">Keyword</th><th scope="col">Semantic</th><th scope="col">Hybrid</th></tr>
+          </thead>
+          <tbody>
+            {[...rows.entries()].map(([id, e]) => (
+              <tr key={id}>
+                <th scope="row"><span className="num eval-qid">{id}</span> {e.query}</th>
+                <td>{e.split}</td>
+                <td className="num">{cell(e.modes.bm25)}</td>
+                <td className="num">{cell(e.modes.semantic)}</td>
+                <td className="num">{cell(e.modes.hybrid)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
 function Report({ report }: { report: EvaluationReport }) {
   return (
     <div className="eval-body">
@@ -101,6 +139,37 @@ function Report({ report }: { report: EvaluationReport }) {
           </section>
         )
       })}
+
+      {report.retrieval && <PerQuery blocks={report.retrieval} />}
+
+      {report.confidence && report.confidence.hybrid && (
+        <section className="eval-section" aria-labelledby="conf-title">
+          <h2 id="conf-title">Confidence calibration</h2>
+          <p className="eval-note">
+            Discover shows each course&rsquo;s estimated chance of being relevant. The estimate comes from a model fitted on{' '}
+            {report.confidence.labels} labelled results from {report.confidence.queries} queries, and it is scored
+            leave-one-query-out, so these numbers come from queries the model did not see.
+          </p>
+          <table className="props">
+            <thead><tr><th scope="col">Mode</th><th scope="col">Brier</th><th scope="col">Base-rate Brier</th><th scope="col">Accuracy</th><th scope="col">AUC</th></tr></thead>
+            <tbody>
+              {(['hybrid', 'keyword_only'] as const).map((m) => {
+                const c = report.confidence?.[m]
+                return c ? (
+                  <tr key={m}>
+                    <th scope="row">{m === 'hybrid' ? 'Hybrid' : 'Keyword only'}</th>
+                    <td className="num">{c.brier.toFixed(3)}</td>
+                    <td className="num">{c.baseline_brier.toFixed(3)}</td>
+                    <td className="num">{fmt(c.accuracy)}</td>
+                    <td className="num">{c.auc === null ? 'n/a' : fmt(c.auc)}</td>
+                  </tr>
+                ) : null
+              })}
+            </tbody>
+          </table>
+          <p className="eval-note">{report.confidence.method} Lower Brier is better. An AUC of 0.5 is chance, so the hybrid signal is real but weak.</p>
+        </section>
+      )}
 
       <div className="eval-grid">
         {report.skill_gap && (

@@ -38,7 +38,9 @@ export default function ProfileBar(props: Props) {
     if (value !== filters.organization) onFilters({ ...filters, organization: value })
   }
 
-  const detected = profile?.track_status === 'detected' ? profile.track_label : null
+  // Auto shows what it resolved to: a detected curated track, or the track an AI model drafted for this goal.
+  const detected = profile?.track_status === 'detected' || profile?.track_status === 'generated' ? profile.track_label : null
+  const drafted = profile?.track_status === 'generated'
   const inferredShown = skills.filter((s) => inferred.includes(s))
 
   return (
@@ -84,7 +86,10 @@ export default function ProfileBar(props: Props) {
         <div className="segmented">
           <label>
             <input type="radio" name="track" checked={track === null} onChange={() => onTrack(null)} />
-            <span>Auto{detected && track === null ? <span className="seg-detail">: {detected}</span> : null}</span>
+            <span>Auto{detected && track === null ? (
+              // A drafted track's name heads the chart; here it would push the curated tracks onto a second row.
+              <span className="seg-detail" title={detected}>: {drafted ? 'AI-drafted' : detected}</span>
+            ) : null}</span>
           </label>
           {catalog?.tracks.map((t) => (
             <label key={t.id}>

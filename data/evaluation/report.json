@@ -1,5 +1,5 @@
 {
- "created": "2026-09-28T09:08:14+00:00",
+ "created": "2026-09-29T05:06:10+00:00",
  "conditions": {
   "Catalog version": "997a4813-dd69c366",
   "Courses": 6642,
@@ -1534,12 +1534,77 @@
  },
  "latency": {
   "requests": 30,
-  "median_ms": 27.7,
-  "p95_ms": 31.8,
-  "max_ms": 32.8,
-  "server_median_ms": 25.9,
-  "cold_start_ms": 12839.4,
+  "median_ms": 22.2,
+  "p95_ms": 28.1,
+  "max_ms": 28.4,
+  "server_median_ms": 20.6,
+  "cold_start_ms": 12208.8,
   "machine": "Windows 11, AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD, 16 logical CPUs, Python 3.13.14, CPU inference. Warm requests run in-process through FastAPI (routing, validation, serialisation) without a network hop; cold start covers catalog load, BM25 index build and model load after Python imports."
+ },
+ "confidence": {
+  "labels": 187,
+  "queries": 18,
+  "base_rate": 0.738,
+  "method": "Ridge-penalised logistic regression on labelled pooled results; quality measured leave-one-query-out (each query scored by a model that never saw its labels). Baseline predicts the training base rate.",
+  "hybrid": {
+   "brier": 0.1803,
+   "baseline_brier": 0.1995,
+   "log_loss": 0.5516,
+   "accuracy": 0.749,
+   "auc": 0.632,
+   "reliability": [
+    {
+     "lo": 0.25,
+     "hi": 0.5,
+     "n": 2,
+     "predicted": 0.496,
+     "observed": 0.0
+    },
+    {
+     "lo": 0.5,
+     "hi": 0.75,
+     "n": 83,
+     "predicted": 0.649,
+     "observed": 0.687
+    },
+    {
+     "lo": 0.75,
+     "hi": 1.0,
+     "n": 102,
+     "predicted": 0.818,
+     "observed": 0.794
+    }
+   ],
+   "features": [
+    "sim",
+    "sem_rr",
+    "both"
+   ]
+  },
+  "keyword_only": {
+   "brier": 0.1995,
+   "baseline_brier": 0.1995,
+   "log_loss": 0.5912,
+   "accuracy": 0.738,
+   "auc": null,
+   "reliability": [
+    {
+     "lo": 0.5,
+     "hi": 0.75,
+     "n": 141,
+     "predicted": 0.732,
+     "observed": 0.851
+    },
+    {
+     "lo": 0.75,
+     "hi": 1.0,
+     "n": 46,
+     "predicted": 0.761,
+     "observed": 0.391
+    }
+   ],
+   "features": []
+  }
  },
  "edge_cases": [
   {

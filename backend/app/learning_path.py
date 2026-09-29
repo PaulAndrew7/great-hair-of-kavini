@@ -1,7 +1,7 @@
 """Deterministic greedy learning path over the whole filtered catalog (plan section 5.4)."""
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 import numpy as np
@@ -26,6 +26,18 @@ class PathContext:
     skills: SkillModel
     prereqs: PrereqModel
     skill_vectors: dict[str, np.ndarray] | None  # None in keyword-only mode
+    # An AI-drafted track adds skills the shared catalog records do not tag. Its evidence lives here, per track,
+    # so the shared course dicts are never mutated per request.
+    extra_courses: dict[str, list[int]] = field(default_factory=dict)
+    extra_evidence: dict[int, list[dict[str, Any]]] = field(default_factory=dict)
+
+    def course(self, pos: int) -> dict[str, Any]:
+        course = self.catalog.courses[pos]
+        extra = self.extra_evidence.get(pos)
+        return {**course, "track_skills": course["track_skills"] + extra} if extra else course
+
+    def courses_for(self, skill: str) -> list[int]:
+        return self.extra_courses.get(skill) or self.catalog.skill_courses.get(skill, [])
 
 
 def difficulty_penalty(difficulty: str, period: int, beginner: bool) -> int:
@@ -45,8 +57,7 @@ def build_path(
     beginner: bool,
     filters_active: bool,
 ) -> dict[str, Any]:
-    targets = ctx.skills.tracks[track_id]["target_skills"]
-    required = ctx.skills.closure(targets)
+    required = ctx.skills.track_required(track_id)
     covered = set(effective)
     missing = set(required) - covered
     steps: list[dict[str, Any]] = []
@@ -59,10 +70,10 @@ def build_path(
             break
         best: tuple | None = None
         for skill in ctx.skills.ordered(learnable):
-            for pos in ctx.catalog.skill_courses.get(skill, []):
+            for pos in ctx.courses_for(skill):
                 if pos in selected or not eligible[pos]:
                     continue
-                course = ctx.catalog.courses[pos]
+                course = ctx.course(pos)
                 primary = {ev["skill"] for ev in course["track_skills"] if ev.get("strength", "primary") == "primary"}
                 gain = primary & learnable  # a skill the course only lists in passing is never credited
                 if not gain:
@@ -74,6 +85,7 @@ def build_path(
                 period = min(ctx.skills.period[s] for s in gain)
                 penalty = difficulty_penalty(course["difficulty"], period, beginner)
                 score = -DIFFICULTY_WEIGHT * penalty
+                skill_rel = goal_rel = None
                 if ctx.skill_vectors is not None:
                     vec = ctx.catalog.embeddings[pos]
                     skill_rel = max(float(vec @ ctx.skill_vectors[s]) for s in gain)
@@ -85,14 +97,14 @@ def build_path(
                 score += QUALITY_WEIGHT * quality
                 key = (tier, -len(gain), -round(score, 4), -(rating or 0.0), course["course_id"])
                 if best is None or key < best[0]:
-                    best = (key, pos, gain, prereq)
+                    best = (key, pos, gain, prereq, skill_rel, goal_rel)
         if best is None:
             for skill in learnable:
                 stuck[skill] = "no_course"
             missing -= learnable
             continue
-        _, pos, gain, prereq = best
-        course = ctx.catalog.courses[pos]
+        _, pos, gain, prereq, skill_rel, goal_rel = best
+        course = ctx.course(pos)
         also = [ev["skill"] for ev in course["track_skills"] if ev["skill"] not in gain]
         notes = []
         known_overlap = [s for s in also if s in effective]
@@ -104,11 +116,17 @@ def build_path(
             notes.append("Also tags " + ", ".join(passing) + ", but is not mainly about it, so it is not counted here.")
         if prereq["status"] == "unknown":
             notes.append("Prerequisites for this course are not verified.")
+        evidence = [ev for ev in course["track_skills"] if ev["skill"] in gain]
         steps.append({
             "step": len(steps) + 1,
             "pos": pos,
             "new_skills": ctx.skills.ordered(gain),
-            "new_skill_evidence": [ev for ev in course["track_skills"] if ev["skill"] in gain],
+            "new_skill_evidence": evidence,
+            "match": {
+                "skill_similarity": None if skill_rel is None else round(skill_rel, 3),
+                "goal_similarity": None if goal_rel is None or goal_vec is None else round(goal_rel, 3),
+                "evidence": "course title" if any(ev["source"] == "course title" for ev in evidence) else "catalog tag",
+            },
             "prerequisites": prereq,
             "also_lists": also,
             "notes": notes,
@@ -121,10 +139,10 @@ def build_path(
     for skill in ctx.skills.ordered(set(required) - covered):
         blockers = [d for d in ctx.skills.deps.get(skill, []) if d not in covered]
         if stuck.get(skill) == "no_course" or not any(
-            eligible[p] for p in ctx.catalog.skill_courses.get(skill, [])
+            eligible[p] for p in ctx.courses_for(skill)
         ):
             reason = f"No course in the catalog teaches {skill}"
-            if filters_active and ctx.catalog.skill_courses.get(skill):
+            if filters_active and ctx.courses_for(skill):
                 reason += " with the current filters"
             reason += "."
         elif blockers:

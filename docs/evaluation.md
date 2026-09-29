@@ -106,6 +106,21 @@ Well under the two-second target for a warm recommendation. Across four runs the
 
 The ambiguity check fires only when two tracks' detection phrases both match. "data" alone is not a data-analytics phrase, so the goal went straight to cloud computing. The student can still switch track with the Track control, but the system did not ask.
 
+### Per-query evaluation and confidence (added 29 September 2026)
+
+Every `/recommend` answer now carries an `evaluation` block, shown on Discover as **Answer check**, and every course carries its own confidence. Three kinds of number are kept apart:
+
+- **Estimated.** Each course gets an estimated chance of being relevant from a small logistic model over three retrieval signals: semantic cosine similarity, semantic rank, and whether both channels found the course. The query's estimated Precision@5 is the sum of those chances divided by 5. The model is fitted on the 187 labelled results in `judgments.json` and scored **leave-one-query-out**, so every quality figure below comes from queries the model did not see.
+- **Measured.** When the goal is exactly one of the 18 labelled queries, the shown courses are scored against their labels (Precision@5, reciprocal rank), and each course shows its label. When the resulting skills match one of the 9 frozen profiles, the skill gap is scored too (precision, recall, F1).
+- **Checked.** Rule tests that need no labels: track-detection cue margin, keyword/semantic top-10 agreement, and path prerequisite violations, duplicates and target coverage (the same checks the offline report runs).
+
+| Confidence model (held out, 187 labels, 18 queries) | Brier | Base-rate Brier | Accuracy | AUC |
+|---|---:|---:|---:|---:|
+| Hybrid mode | 0.180 | 0.200 | 0.75 | 0.63 |
+| Keyword-only mode (constant base rate) | 0.200 | 0.200 | 0.74 | n/a |
+
+**The signal is weak, and the UI says so.** Almost every top-5 result is already on topic (74% of labelled results are relevant), so there is little left for a score to separate. Keyword-overlap features did not beat the base rate at all. The feature set was chosen from a handful of candidates on this same cross-validation, so these figures are slightly optimistic. All labelled queries come from the three supported tracks. For any other subject (for example "GenAI" or "violin") the estimate is extrapolated, and the UI marks it that way. The model only annotates results; it never reorders them, so the retrieval metrics above are unchanged (checked: identical to the committed report).
+
 ## What the results mean
 
 **Semantic retrieval does most of the work.** It leads Precision@5 on both splits. It is strongest where the goal and the catalog use different words: "renting servers and storage over the internet" (0.6 against 0.2 for BM25) and "help me move into cloud engineering" (0.8 against 0.0).
@@ -131,5 +146,5 @@ The ambiguity check fires only when two tracks' detection phrases both match. "d
 cd backend
 .venv\Scripts\python scripts\evaluate.py pool   # after changing queries, ranking or data: lists unjudged candidates, blind
 # add labels for anything listed to data/evaluation/judgments.json
-.venv\Scripts\python scripts\evaluate.py        # writes data/evaluation/report.json
+.venv\Scripts\python scripts\evaluate.py        # writes data/evaluation/report.json and calibration.json
 ```

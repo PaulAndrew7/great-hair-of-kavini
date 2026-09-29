@@ -5,13 +5,16 @@
 
 .results {
   display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); /* courses | skill chart and path */
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); /* courses | path, then skill chart */
   gap: var(--s7);
   padding-top: var(--s6);
   transition: opacity var(--medium) var(--ease-out);
 }
 .results[data-stale] { opacity: 0.55; }
-.results-main { min-width: 0; }
+.results-main { min-width: 0; display: grid; align-content: start; }
+/* The path leads the column; the skill chart follows it. */
+.results-main > .path:first-child { padding-top: 0; }
+.results-main > .path + * { margin-top: var(--s7); }
 .results-side { display: grid; gap: var(--s4); align-content: start; min-width: 0; }
 
 .course-warning { max-width: none; padding: var(--s4); }

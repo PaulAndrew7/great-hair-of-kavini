@@ -37,7 +37,8 @@ Hybrid retrieval (BM25 + local sentence embeddings, fused by Reciprocal Rank Fus
 - Similarity scores are not match percentages; never display "95% match".
 - Prerequisites are either explicit metadata or visibly labelled curated guidance; unreviewed prerequisites stay "not verified", never "none".
 - Coverage is curriculum coverage (target skills covered / total), never a competence score. Path skills are "projected after the path", not mastered.
-- No LLM, no accounts, no vector database, no paid APIs. Must work offline after setup.
+- One LLM use only: with Track on Auto, a model behind the course gateway (gpt-4o-mini) drafts the skill track for the goal. It never writes explanations or picks courses; drafted skills are tied to catalog evidence and labelled "AI-drafted" wherever they appear. Without a key or network the app falls back to the three curated tracks, so it still works offline after setup.
+- No accounts, no vector database.
 - Filters: difficulty, organization, minimum rating. Unknown values never satisfy an explicit filter.
 
 ## Brand Commitments

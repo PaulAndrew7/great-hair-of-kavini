@@ -10,6 +10,19 @@
   justify-content: space-between;
   gap: var(--s4) var(--s6);
 }
+.chart-name { display: grid; gap: var(--s2); min-width: 0; max-width: 46ch; }
+.chart-origin { font-size: var(--text-sm); color: var(--ink-2); line-height: 1.4; }
+/* Printed label, not colour alone: the same outline key the answer check uses for "checked". */
+.chart-ai {
+  display: inline-block;
+  margin-right: var(--s1);
+  padding: 0 6px;
+  border: var(--rule) solid var(--ink);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
 .chart-head h2 {
   font-size: var(--text-3xl);
   font-weight: 850;

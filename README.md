@@ -7,7 +7,7 @@ Prior turns a learning goal written in plain language ("I know Python and SQL. H
 3. a short, ordered **learning path** built from real catalog courses;
 4. a **What-If** toggle that recomputes gaps and path as if the student already knew a skill, and shows the real change, including "no change".
 
-It runs locally: one FastAPI service (hybrid BM25 + sentence-embedding retrieval, skill-gap and path logic, SQLite feedback) and one React app with two screens, Discover and Evaluation. No LLM, no paid API, no vector database. After a one-time download it works offline.
+It runs locally: one FastAPI service (hybrid BM25 + sentence-embedding retrieval, skill-gap and path logic, SQLite feedback) and one React app with two screens, Discover and Evaluation. With Track on **Auto**, an LLM (gpt-4o-mini, through the course gateway) drafts a skill track for any goal, so every goal gets a chart and a path; the three curated tracks remain for anyone who picks one. No vector database. After a one-time download it works offline, falling back to the curated tracks.
 
 | Deliverable | Where |
 |---|---|
@@ -52,7 +52,11 @@ The processed catalog and embeddings in `data/processed/` are already built from
 
 The service checks at startup that the catalog, IDs, embeddings and manifest belong together, and refuses to serve mismatched artifacts.
 
-### 3. Run
+### 3. LLM key (optional)
+
+AI-drafted tracks need a gateway key. Copy `backend/.env.example` to `backend/.env` (git-ignored) and set `PRIOR_LLM_KEY`. Without it, or with `PRIOR_LLM=off`, the app runs exactly as before on the three curated tracks. `/health` reports `llm.enabled`.
+
+### 4. Run
 
 Two terminals:
 
@@ -73,7 +77,7 @@ Port 8100 is used because 8000 is often taken. To use another port, start uvicor
 
 ## Sample usage
 
-In the app, press the first example goal, or type your own and press Enter. Remove any skill chip that isn't true, pick filters, press "Why this course" on a result, and press a blue or yellow tile in the chart to try a What-If.
+In the app, press the first example goal, or type your own and press Enter. Remove any skill chip that isn't true, pick filters, press "Why this course" on a result, and press a blue or yellow tile in the chart to try a What-If. Skill chips are kept when you change the goal and across reloads. Every answer is evaluated as it arrives: **Answer check** shows estimated precision (calibrated), measured precision when the goal is one of the labelled evaluation queries, track-detection confidence and path checks, and each course shows its estimated chance of being relevant. See [docs/evaluation.md](docs/evaluation.md#per-query-evaluation-and-confidence-added-29-september-2026).
 
 The same pipeline over HTTP:
 
@@ -113,19 +117,19 @@ What-If is the same call with `"simulated_skills": ["Statistics"]`; simulated sk
 |---|---|
 | `GET /health` | Readiness, retrieval mode (hybrid or keyword-only), data version |
 | `GET /catalog` | Tracks, track skills, organizations, filter choices |
-| `POST /recommend` | Full result: profile, courses with explanations, skill gap, path, warnings. Also used for What-If |
+| `POST /recommend` | Full result: profile, courses with explanations and confidence, skill gap, path, per-query `evaluation`, warnings. Also used for What-If |
 | `POST /search` | Raw `bm25`, `semantic` or `hybrid` retrieval, for evaluation and debugging |
 | `POST /feedback` | Stores Relevant / Not relevant / Too advanced / Too basic / Already learned in SQLite |
 | `GET /evaluation` | The latest saved evaluation report (never runs models) |
 
-Skill charts and learning paths cover three tracks: machine learning, data analytics and cloud computing. Any other goal still gets search results, with a clear "no structured path" message.
+Curated skill charts and learning paths cover three tracks: machine learning, data analytics and cloud computing. With Track on Auto and an LLM key, any goal gets an AI-drafted track instead (`profile.track_id == "custom"`, `profile.ai_track` says which model drafted it and what validation changed). Without a key, other goals get search results with a clear "no structured path" message.
 
 ## Tests and evaluation
 
 ```powershell
 cd backend
-.venv\Scripts\python -m pytest -q                 # 31 checks: cleaning, skills/paths, API, degraded mode
-.venv\Scripts\python scripts\evaluate.py          # writes data/evaluation/report.json, shown on the Evaluation screen
+.venv\Scripts\python -m pytest -q                 # 48 checks: cleaning, skills/paths, API, per-query evaluation, degraded mode, AI-drafted tracks (fake model, offline)
+.venv\Scripts\python scripts\evaluate.py          # writes report.json (Evaluation screen) and calibration.json (per-course confidence)
 .venv\Scripts\python scripts\evaluate.py pool     # lists unjudged top-5 results after queries or ranking change
 ```
 

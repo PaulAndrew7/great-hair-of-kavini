@@ -2,7 +2,7 @@
 
 Usage (from backend/):
   .venv/Scripts/python scripts/evaluate.py pool   # write data/evaluation/pool.json: unjudged top-5 candidates, blind
-  .venv/Scripts/python scripts/evaluate.py        # score everything and write data/evaluation/report.json
+  .venv/Scripts/python scripts/evaluate.py        # score everything; write report.json and calibration.json
 
 Scoring refuses to run while any top-5 result lacks a judgment, so no metric counts an unjudged course.
 Feedback written during the run goes to a temporary database, never the real one.
@@ -20,12 +20,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+# The report measures the deterministic curated pipeline; AI-drafted tracks would make it unrepeatable.
+os.environ["PRIOR_LLM"] = "off"
 
 from app import config  # noqa: E402
 
-QUERIES_JSON = config.EVAL_DIR / "queries.json"
-PROFILES_JSON = config.EVAL_DIR / "profiles.json"
-JUDGMENTS_JSON = config.EVAL_DIR / "judgments.json"
+QUERIES_JSON = config.EVAL_QUERIES_JSON
+PROFILES_JSON = config.EVAL_PROFILES_JSON
+JUDGMENTS_JSON = config.EVAL_JUDGMENTS_JSON
 POOL_JSON = config.EVAL_DIR / "pool.json"
 MODES = ("bm25", "semantic", "hybrid")
 K = 5
@@ -182,6 +184,44 @@ def gap_and_path_metrics(client, profiles: list[dict], deps: dict[str, list[str]
     return skill_gap, paths
 
 
+def calibrate(state, queries: list[dict], judgments: dict) -> dict:
+    """Fit the confidence model on every labelled (query, course) pair and score it leave-one-query-out.
+
+    Features are computed exactly as /recommend computes them (app/live_eval.py). The model annotates results with an
+    estimated chance of relevance; it never reorders them, so fitting it on the labels does not touch the ranking metrics.
+    """
+    from app.confidence import FEATURES, cross_validate, fit
+    from app.search import Filters
+
+    from app.search import Hit
+
+    engine, evaluator = state.engine, state.recommender.evaluator
+    groups, rows, labels = [], [], []
+    for q in queries:
+        search_text = state.skills.parse_goal(q["text"]).target_text
+        qv = engine.encode_query(search_text)
+        hits = {h.course_id: h for h in engine.hybrid(search_text, Filters(), query_vec=qv)}
+        for cid, label in sorted(judgments.get(q["id"], {}).items()):
+            hit = hits.get(cid) or Hit(state.catalog.position[cid], cid)  # outside both channels' depth
+            groups.append(q["id"])
+            rows.append(evaluator.signals(hit, qv))
+            labels.append(bool(label["relevant"]))
+    models = {}
+    for mode, names in FEATURES.items():
+        w = fit(rows, labels, names)
+        models[mode] = {"features": names, "weights": [round(float(v), 6) for v in w],
+                        "cross_validation": cross_validate(groups, rows, labels, names)}
+    return {
+        "created": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "labels": len(labels),
+        "queries": len(set(groups)),
+        "base_rate": round(sum(labels) / len(labels), 3),
+        "method": "Ridge-penalised logistic regression on labelled pooled results; quality measured leave-one-query-out "
+                  "(each query scored by a model that never saw its labels). Baseline predicts the training base rate.",
+        "models": models,
+    }
+
+
 def edge_cases(client, cases: list[dict]) -> list[dict]:
     out = []
     for case in cases:
@@ -283,6 +323,7 @@ def run() -> None:
 
     ranked = runs(state, queries["queries"])
     retrieval = retrieval_metrics(queries["queries"], ranked, judgments["judgments"])
+    calibration = calibrate(state, queries["queries"], judgments["judgments"]) if state.engine.mode == "hybrid" else None
     skill_gap, paths = gap_and_path_metrics(client, profiles["profiles"], deps)
     edges = edge_cases(client, queries["edge_cases"])
     lat = latency(client, [q["text"] for q in queries["queries"]])
@@ -309,6 +350,8 @@ def run() -> None:
         "skill_gap": skill_gap,
         "paths": paths,
         "latency": lat,
+        "confidence": None if calibration is None else {k: calibration[k] for k in ("labels", "queries", "base_rate", "method")}
+        | {mode: m["cross_validation"] | {"features": m["features"]} for mode, m in calibration["models"].items()},
         "edge_cases": edges,
         "findings": findings(retrieval, skill_gap, edges),
         "limitations": [
@@ -324,6 +367,8 @@ def run() -> None:
         ],
     }
     config.EVAL_REPORT_JSON.write_text(json.dumps(report, indent=1, ensure_ascii=False), encoding="utf-8")
+    if calibration is not None:
+        config.CALIBRATION_JSON.write_text(json.dumps(calibration, indent=1), encoding="utf-8")
 
     for block in retrieval:
         print(f"[{block['split']}] " + "  ".join(f"{r['mode']}: P@5 {r['precision_at_5']:.3f} MRR@5 {r['mrr_at_5']:.3f}"
@@ -331,6 +376,11 @@ def run() -> None:
     print(f"gaps: P {skill_gap['precision']} R {skill_gap['recall']} F1 {skill_gap['f1']} exact {skill_gap['exact_matches']}/{skill_gap['profiles']}")
     print(f"paths: coverage {paths['target_coverage']} unresolved {paths['unresolved_gaps']} dups {paths['duplicate_courses']} "
           f"violations {paths['prerequisite_violations']}")
+    if calibration is not None:
+        for mode, m in calibration["models"].items():
+            cv = m["cross_validation"]
+            print(f"confidence ({mode}, leave-one-query-out): Brier {cv['brier']} vs base {cv['baseline_brier']}, "
+                  f"accuracy {cv['accuracy']}, AUC {cv['auc']}")
     print(f"latency: median {lat['median_ms']} ms, p95 {lat['p95_ms']} ms, cold {lat['cold_start_ms']} ms")
     print("edge cases: " + ", ".join(f"{e['name']} {'pass' if e['passed'] else 'FAIL'}" for e in edges))
     print(f"-> {config.EVAL_REPORT_JSON}")

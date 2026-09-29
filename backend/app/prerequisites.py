@@ -2,7 +2,8 @@
 
 Two sources exist:
 - course description: a reviewed entry in data/rules/course_prerequisites.json quoting the catalog text;
-- curated guidance: derived from the skill dependencies of the track skills the course teaches.
+- curated guidance: derived from the skill dependencies of the track skills the course teaches;
+- AI-drafted guidance: the same, where a dependency comes from an AI-drafted track (app/track_designer.py).
 A course that teaches no modelled skill and has no reviewed entry is 'unknown', never 'none'.
 """
 from __future__ import annotations
@@ -41,10 +42,13 @@ class PrereqModel:
         if not taught:
             return [], None, None
         required: set[str] = set()
+        drafted = False
         for skill in taught:
-            required.update(self.skills.deps.get(skill, []))
+            deps = self.skills.deps.get(skill, [])
+            required.update(deps)
+            drafted |= bool(deps) and self.skills.origin.get(skill) == "ai"
         required -= taught
-        return self.skills.ordered(required), "curated guidance", None
+        return self.skills.ordered(required), "AI-drafted guidance" if drafted else "curated guidance", None
 
     def status(self, course: dict[str, Any], have: set[str]) -> dict[str, Any]:
         required, source, evidence = self.requirements(course)

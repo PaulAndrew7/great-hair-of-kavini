@@ -134,3 +134,40 @@ def test_misaligned_artifacts_are_refused(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "EMBEDDINGS_NPY", tmp_path / "embeddings.npy")
     with pytest.raises(catalog_module.CatalogError):
         catalog_module.load_catalog()
+
+
+def test_every_answer_carries_its_own_evaluation(client):
+    d = post(client, goal="I want to learn GenAI", known_skills=["Python", "SQL"])
+    assert d["profile"]["confirmed_skills"] == ["Python", "SQL"]  # typed skills survive a goal the parser can't place
+    ev = d["evaluation"]
+    for c in d["courses"]:
+        r = c["retrieval"]
+        assert 0 < r["confidence"] < 1 and r["confidence_band"] in ("high", "medium", "low")
+        assert r["judged_relevant"] is None  # not a labelled query: nothing is presented as measured
+    assert ev["ground_truth"] is None and ev["calibration"]["labels"] > 100
+    assert ev["retrieval"]["expected_relevant"] == pytest.approx(sum(c["retrieval"]["confidence"] for c in d["courses"]), abs=0.01)
+    assert ev["track"]["status"] == "unsupported" and ev["path"] is None
+    assert ev["retrieval"]["extrapolated"] and any("extrapolated" in n for n in ev["notes"])
+    assert ev["reference"]["precision_at_5"] is not None
+
+
+def test_labelled_query_is_scored_against_its_labels(client):
+    d = post(client, goal=DEMO)
+    gt = d["evaluation"]["ground_truth"]
+    assert gt["query_id"] == "ml-d1" and gt["judged"] <= gt["shown"] == len(d["courses"])
+    assert gt["relevant"] == sum(1 for c in d["courses"] if c["retrieval"]["judged_relevant"])
+    assert d["evaluation"]["skill_gap"]["profile_id"] == "ml-p1"  # frozen profile with no chip edits
+    assert d["evaluation"]["track"]["confidence"] == "high" and not d["evaluation"]["retrieval"]["extrapolated"]
+    path = d["evaluation"]["path"]
+    assert path["prerequisite_violations"] == 0 and path["duplicates"] == 0
+    assert all(s["match"]["skill_similarity"] is not None for s in d["learning_path"]["steps"])
+
+
+def test_typed_skill_named_in_goal_stays_explicit(client):
+    d = post(client, goal=DEMO, known_skills=["Python"])
+    assert "Python" not in d["profile"]["inferred_skills"] and "SQL" in d["profile"]["inferred_skills"]
+    assert d["evaluation"]["skill_gap"]["profile_id"] == "ml-p1"  # same resulting skills as the frozen profile
+    d = post(client, goal=DEMO, known_skills=["Statistics"])
+    assert d["evaluation"]["skill_gap"] is None  # different skills: the profile's expected gap no longer applies
+    d = post(client, goal=DEMO, simulated_skills=["Statistics"])
+    assert d["evaluation"]["skill_gap"] is None  # a what-if gap is not the labelled profile's gap

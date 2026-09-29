@@ -29,8 +29,18 @@ function buildsOn(step: PathStep, steps: PathStep[], confirmed: string[], simula
     const earlier = steps.find((s) => s.step < step.step && s.new_skills.includes(skill))
     return earlier ? `${skill} (step ${earlier.step})` : skill
   })
-  const source = p.source === 'course description' ? 'course description' : 'curated guidance'
+  const source = p.source === 'AI-drafted guidance' ? 'AI-drafted track, unreviewed' : p.source ?? 'curated guidance'
   return `Builds on ${parts.join(', ')}. Source: ${source}.`
+}
+
+/** How well the chosen course fits the skill it was picked for; cosine values, not percentages. */
+function matchText(step: PathStep): string {
+  const m = step.match
+  const parts = []
+  if (m.skill_similarity !== null) parts.push(`skill similarity ${m.skill_similarity.toFixed(2)}`)
+  if (m.goal_similarity !== null) parts.push(`goal similarity ${m.goal_similarity.toFixed(2)}`)
+  const evidence = m.evidence === 'course title' ? 'named in the course title' : 'a catalog tag'
+  return `Match: ${parts.length ? parts.join(', ') + '; ' : ''}skill evidence is ${evidence}.`
 }
 
 export default function LearningPath({ path, baseline, tiles, confirmed, simulated }: Props) {
@@ -85,6 +95,7 @@ export default function LearningPath({ path, baseline, tiles, confirmed, simulat
                   </h3>
                   <CourseMeta course={step.course} />
                   <p className="step-builds">{buildsOn(step, path.steps, confirmed, simulated)}</p>
+                  <p className="step-match">{matchText(step)}</p>
                   {step.prerequisites.evidence && (
                     <p className="step-quote">&ldquo;{step.prerequisites.evidence}&rdquo;</p>
                   )}

@@ -1,10 +1,11 @@
 import { useMemo, useState, type CSSProperties } from 'react'
-import type { SkillGap, SkillTile } from '../types'
+import type { AiTrack, SkillGap, SkillTile } from '../types'
 import './SkillChart.css'
 
 interface Props {
   gap: SkillGap
   trackLabel: string
+  ai: AiTrack | null            // set when an AI model drafted this track
   simulated: string[]
   unresolved: string[]
   onToggle: (skill: string) => void
@@ -51,7 +52,16 @@ function Key() {
   )
 }
 
-export default function SkillChart({ gap, trackLabel, simulated, unresolved, onToggle, revealKey, busy }: Props) {
+/** Where the track came from, in one line; the model's name and what validation changed are never hidden. */
+function aiLine(ai: AiTrack): string {
+  const from = ai.base_label ? `adapted from the curated ${ai.base_label.toLowerCase()} track` : 'a new track'
+  const parts = [`Drafted for your goal by ${ai.model}, ${from}. Skills and their order are suggestions; every course comes from the catalog.`]
+  if (ai.left_out.length) parts.push(`Left out ${ai.left_out.join(', ')}: no catalog course mainly teaches ${ai.left_out.length === 1 ? 'it' : 'them'}.`)
+  if (ai.unteachable.length) parts.push('The catalog has no course that mainly teaches these skills.')
+  return parts.join(' ')
+}
+
+export default function SkillChart({ gap, trackLabel, ai, simulated, unresolved, onToggle, revealKey, busy }: Props) {
   const [active, setActive] = useState<string | null>(null)
   // Optimistic: a pressed tile shows its what-if state before the recalculated response lands.
   const tiles = useMemo(
@@ -72,7 +82,7 @@ export default function SkillChart({ gap, trackLabel, simulated, unresolved, onT
     <>
       <strong>{activeTile.skill}</strong>
       {activeTile.requires.length > 0
-        ? <> builds on {activeTile.requires.join(', ')}. {activeTile.reason} <span className="readout-src">(curated guidance)</span></>
+        ? <> builds on {activeTile.requires.join(', ')}. {activeTile.reason} <span className="readout-src">({activeTile.origin === 'ai' ? 'AI-drafted, unreviewed' : 'curated guidance'})</span></>
         : <> has no modelled prerequisite in this track.</>}
       {' '}<span className="num">{activeTile.course_count}</span> catalog courses list it.
       {activeTile.path_step ? <> Your path covers it in step {activeTile.path_step}.</> : null}
@@ -85,7 +95,10 @@ export default function SkillChart({ gap, trackLabel, simulated, unresolved, onT
   return (
     <section className="chart" aria-labelledby="chart-title" aria-busy={busy}>
       <header className="chart-head">
-        <h2 id="chart-title">{trackLabel}</h2>
+        <div className="chart-name">
+          <h2 id="chart-title">{trackLabel}</h2>
+          {ai && <p className="chart-origin"><span className="chart-ai">AI-drafted</span> {aiLine(ai)}</p>}
+        </div>
         {coverage && (
           <div className="coverage" role="group" aria-label={`Goal skills: ${coverage.covered_now} of ${coverage.total} now, ${coverage.projected} of ${coverage.total} after the path`}>
             <div className="coverage-row">
@@ -141,7 +154,8 @@ export default function SkillChart({ gap, trackLabel, simulated, unresolved, onT
                 style={style}
                 aria-pressed={toggleable ? isSim : undefined}
                 aria-disabled={!toggleable || undefined}
-                aria-label={`${tile.skill}, ${stateLabel(tile)}${tile.path_step ? `, covered in path step ${tile.path_step}` : ''}, ${tile.course_count} catalog courses.${toggleable ? ' Press to toggle what-if.' : ''}`}
+                data-origin={tile.origin === 'ai' ? 'ai' : undefined}
+                aria-label={`${tile.skill}, ${stateLabel(tile)}${tile.origin === 'ai' ? ', added by the AI-drafted track' : ''}${tile.path_step ? `, covered in path step ${tile.path_step}` : ''}, ${tile.course_count} catalog courses.${toggleable ? ' Press to toggle what-if.' : ''}`}
                 onClick={() => toggleable && onToggle(tile.skill)}
                 onMouseEnter={() => setActive(tile.skill)}
                 onFocus={() => setActive(tile.skill)}
