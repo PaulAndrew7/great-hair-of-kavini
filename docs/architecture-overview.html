@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prior overview</title>
+<!-- Source for docs/architecture-overview.png (render: node docs/render_architecture.mjs overview). Explained in docs/architecture-overview.md. -->
+<style>
+  :root { --ink: #14181c; --ink2: #4a525a; --hair: #c9cfd4; --paper: #ffffff; --panel: #f3f5f6;
+          --cobalt: #1f4fd6; --cobalt-soft: #e6ecfb; --yellow-soft: #fdf5d9; --amber: #b88a00;
+          --violet: #6b3fc4; --violet-soft: #efe9fb; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 790px; background: var(--paper); color: var(--ink);
+               font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+  body { padding: 34px 40px; display: grid; grid-template-rows: auto 1fr auto; gap: 22px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 3px solid var(--ink); padding-bottom: 10px; }
+  h1 { font-size: 30px; font-weight: 800; }
+  h1 span { font-weight: 500; color: var(--ink2); font-size: 20px; margin-left: 10px; }
+  .legend { display: flex; gap: 18px; font-size: 13px; color: var(--ink2); }
+  .sw { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--ink); vertical-align: -2px; margin-right: 6px; }
+  .sw.store { background: var(--panel); } .sw.ui { background: var(--cobalt-soft); border-color: var(--cobalt); }
+  .sw.ext { background: var(--violet-soft); border-color: var(--violet); border-style: dashed; }
+  .sw.eval { background: var(--yellow-soft); border-color: var(--amber); }
+
+  main { display: grid; grid-template-columns: 300px 70px 1fr 70px 300px; min-height: 0; }
+  .col { display: flex; flex-direction: column; gap: 12px; }
+  .lane { font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink2);
+          border-bottom: 1px solid var(--hair); padding-bottom: 6px; }
+  .box { border: 2px solid var(--ink); background: var(--paper); padding: 12px 14px; }
+  .box h3 { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+  .box p { font-size: 13.5px; line-height: 1.4; color: var(--ink2); }
+  .store { background: var(--panel); }
+  .ui { background: var(--cobalt-soft); border-color: var(--cobalt); }
+  .ext { background: var(--violet-soft); border: 2px dashed var(--violet); }
+  .eval { background: var(--yellow-soft); border-color: var(--amber); }
+  code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.93em; color: var(--ink); }
+  .down { text-align: center; font-size: 20px; line-height: 1; margin: -4px 0; }
+
+  .service { border: 3px solid var(--ink); padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .service > .lane { border: 0; padding: 0; }
+  .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 30px; position: relative; }
+  .flow .box { position: relative; }
+  .flow .box .n { position: absolute; top: -11px; left: -11px; width: 24px; height: 24px; background: var(--ink); color: var(--paper);
+                  font-size: 13px; font-weight: 800; display: grid; place-items: center; }
+  .flow .box.arrow::after { content: "\2192"; position: absolute; right: -25px; top: 50%; transform: translateY(-50%); font-size: 20px; color: var(--ink); }
+  .side { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 2px; }
+  .gutter { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; font-size: 26px; }
+  .gutter small { font-size: 11.5px; color: var(--ink2); text-align: center; line-height: 1.25; }
+  .ext-row { display: flex; gap: 12px; align-items: center; }
+  .ext-row .box { flex: 1; }
+
+  footer { display: grid; grid-template-columns: 1fr 30px 1fr 30px 1fr; align-items: stretch; }
+  footer .arrow { display: grid; place-items: center; font-size: 20px; }
+  footer .lane { grid-column: 1 / -1; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Prior <span>University Course Finder: high-level architecture</span></h1>
+  <div class="legend">
+    <span><i class="sw store"></i>data on disk</span>
+    <span><i class="sw"></i>backend module</span>
+    <span><i class="sw ui"></i>frontend</span>
+    <span><i class="sw ext"></i>optional external service</span>
+    <span><i class="sw eval"></i>evaluation</span>
+  </div>
+</header>
+
+<main>
+  <section class="col">
+    <div class="lane">A · Data preparation (run once)</div>
+    <div class="box store"><h3>Coursera dataset</h3><p>6,645-row CSV from Hugging Face, pinned and hash-checked</p></div>
+    <div class="down">&darr;</div>
+    <div class="box"><h3>Clean <code>prepare_data.py</code></h3><p>Dedupe, stable IDs, normalise skills, flag suspect descriptions</p></div>
+    <div class="down">&darr;</div>
+    <div class="box"><h3>Embed <code>build_index.py</code></h3><p>MiniLM turns every course into a 384-number vector</p></div>
+    <div class="down">&darr;</div>
+    <div class="box store"><h3>Knowledge base</h3><p>Courses, embeddings, manifest, plus hand-reviewed skill and prerequisite rules</p></div>
+  </section>
+
+  <div class="gutter">&rarr;<small>loaded at<br>startup</small></div>
+
+  <section class="service">
+    <div class="lane">B · Backend: one FastAPI service (Python)</div>
+    <div class="flow">
+      <div class="box arrow"><span class="n">1</span><h3>Read the goal</h3><p>Pull out known skills, target skills and the track from plain English</p></div>
+      <div class="box arrow"><span class="n">2</span><h3>Pick the skill track</h3><p>Curated track, or an AI-drafted one checked against the catalog</p></div>
+      <div class="box"><span class="n">3</span><h3>Search</h3><p>Keyword (BM25) + meaning (embeddings), merged with RRF</p></div>
+      <div class="box arrow"><span class="n">4</span><h3>Skill gap</h3><p>Goal skills and their foundations minus what the student knows</p></div>
+      <div class="box arrow"><span class="n">5</span><h3>Learning path</h3><p>Up to 5 ordered catalog courses that respect prerequisites</p></div>
+      <div class="box"><span class="n">6</span><h3>Rank + explain</h3><p>Top 5 courses with Honest Advisor notes and a confidence check</p></div>
+    </div>
+    <div class="ext-row">
+      <div class="box ext"><h3>LLM gateway (gpt-4o-mini)</h3><p>Only used by step 2, only on Auto, only with a key. Off = curated tracks.</p></div>
+      <div class="box store"><h3>SQLite</h3><p>Stores the student's feedback on courses</p></div>
+    </div>
+    <div class="side">
+      <p style="font-size:13.5px;color:var(--ink2)">Endpoints: <code>/recommend</code> (the pipeline above, also What-If) · <code>/search</code> · <code>/feedback</code> · <code>/health</code> · <code>/catalog</code> · <code>/evaluation</code></p>
+      <p style="font-size:13.5px;color:var(--ink2)">No model? Runs keyword-only and says so. Everything runs locally after the one-time download.</p>
+    </div>
+  </section>
+
+  <div class="gutter">&harr;<small>JSON over<br>HTTP</small></div>
+
+  <section class="col">
+    <div class="lane">C · Frontend: React + Vite</div>
+    <div class="box ui"><h3>Discover screen</h3><p>Goal box, skill chips, filters, skill chart, learning path, course list, feedback buttons</p></div>
+    <div class="box ui"><h3>What-If</h3><p>Tap a missing skill: re-runs <code>/recommend</code> as if you knew it and shows what changed</p></div>
+    <div class="box ui"><h3>Evaluation screen</h3><p>Shows the saved accuracy report</p></div>
+  </section>
+</main>
+
+<footer>
+  <div class="lane">D · Offline evaluation (<code>scripts/evaluate.py</code>): same engine, fixed test set</div>
+  <div class="box eval"><h3>Frozen test set</h3><p>18 goals, 9 student profiles, 187 relevance labels</p></div>
+  <div class="arrow">&rarr;</div>
+  <div class="box eval"><h3>Measure</h3><p>Precision@5, MRR@5, skill-gap F1, path checks, latency</p></div>
+  <div class="arrow">&rarr;</div>
+  <div class="box eval"><h3><code>report.json</code></h3><p>Read by the Evaluation screen and the live answer check</p></div>
+</footer>
+</body>
+</html>

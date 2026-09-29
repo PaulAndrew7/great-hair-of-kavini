@@ -12,6 +12,7 @@ It runs locally: one FastAPI service (hybrid BM25 + sentence-embedding retrieval
 | Deliverable | Where |
 |---|---|
 | **Plain-language guide to the whole project and website** | [docs/how-it-works.md](docs/how-it-works.md) |
+| Simple architecture overview and technology choices (with alternatives) | [docs/architecture-overview.md](docs/architecture-overview.md) |
 | Architecture diagram (PDF and JPEG) | [docs/architecture.pdf](docs/architecture.pdf), [docs/architecture.jpg](docs/architecture.jpg) |
 | Design decisions and trade-offs | [docs/design.md](docs/design.md) |
 | Data preparation and quality report | [docs/data-quality.md](docs/data-quality.md) |
